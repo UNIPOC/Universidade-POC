@@ -2,57 +2,210 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UNIPOC - Página Inicial</title>
-  <link rel="stylesheet" href="estilo.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f4fc;
+      color: #3d2a5c;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(61, 42, 92, 0.1);
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: linear-gradient(135deg, #6f4eb6, #513a85);
+      border-radius: 16px;
+      padding: 24px;
+      color: white;
+    }
+
+    .texto-header {
+      flex: 1;
+    }
+
+    .texto-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+    }
+
+    .texto-header span.destaque {
+      color: #f7a4c0;
+    }
+
+    .texto-header p {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #e6d9f6;
+    }
+
+    .imagem-pipo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(81, 58, 133, 0.3);
+      object-fit: cover;
+    }
+
+    .frase-motivacional {
+      background-color: #ede6f7;
+      border-left: 6px solid #a76bcf;
+      padding: 16px 24px;
+      font-style: italic;
+      font-weight: 600;
+      color: #5d3f88;
+      border-radius: 10px;
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 32px;
+      justify-content: center;
+    }
+
+    .card {
+      flex: 1 1 220px;
+      padding: 18px;
+      background: linear-gradient(135deg, #7c5dc3, #a58dde);
+      color: white;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(124, 93, 195, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(124, 93, 195, 0.35);
+    }
+
+    .destaques {
+      margin-top: 40px;
+      background-color: #f1eaf9;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .destaques h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #6f4eb6;
+      margin-bottom: 16px;
+    }
+
+    .destaques ul {
+      list-style: disc;
+      padding-left: 20px;
+      color: #4e3a75;
+      font-weight: 500;
+      display: grid;
+      gap: 10px;
+    }
+
+    .rodape {
+      text-align: center;
+      padding: 20px 0 0;
+      font-size: 0.9rem;
+      color: #6b4e9e;
+      margin-top: 40px;
+      border-top: 1px solid #ddd1ed;
+    }
+
+    @media (max-width: 700px) {
+      .texto-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .imagem-pipo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <header class="cabecalho" role="banner">
-      <div class="conteudo-header">
-        <div class="texto-header">
-          <h1>Bem-vindo ao <span class="destaque">UNIPOC</span>!</h1>
-          <p>
-            Aqui você encontra resumos completos, videoaulas e muito conteúdo para te ajudar a passar na Universidade.
-          </p>
-        </div>
-        <img src="Pipo inicial.png" alt="Mascote Pipo sorrindo" class="imagem-pipo" />
+    <header>
+      <div class="texto-header">
+        <h1>Bem-vindo ao <span class="destaque">UNIPOC</span>!</h1>
+        <p>Estude com resumos, videoaulas e muito conteúdo para passar no ENEM e UECE!</p>
       </div>
+      <img src="Pipo inicial.png" alt="Mascote Pipo" class="imagem-pipo" />
     </header>
 
-    <section class="frase-motivacional" id="frasePipo" aria-live="polite" aria-atomic="true"></section>
+    <div class="frase-motivacional" id="frasePipo"></div>
 
-    <nav class="cards" aria-label="Navegação principal">
-      <a href="ensino-medio.html" class="card ensino-medio" tabindex="0" aria-describedby="descricaoEnsinoMedio">
-        <span aria-hidden="true">📚</span> Ensino Médio
-        <span id="descricaoEnsinoMedio" class="sr-only">- Resumos, videoaulas e exercícios para o Ensino Médio</span>
-      </a>
-      <a href="vestibulares.html" class="card vestibulares" tabindex="0" aria-describedby="descricaoVestibulares">
-        <span aria-hidden="true">🎯</span> Vestibulares
-        <span id="descricaoVestibulares" class="sr-only">- Preparação para vestibulares diversos</span>
-      </a>
-      <a href="#" class="card informacoes" tabindex="0" aria-describedby="descricaoInformacoes">
-        <span aria-hidden="true">ℹ️</span> Informações
-        <span id="descricaoInformacoes" class="sr-only">- Informações importantes sobre o site</span>
-      </a>
-    </nav>
+    <section class="cards">
+      <a href="ensino-medio.html" class="card">📚 Ensino Médio</a>
+      <a href="vestibulares.html" class="card">🎯 Vestibulares</a>
+      <a href="#" class="card">ℹ️ Informações</a>
+    </section>
 
-    <section class="destaques" aria-labelledby="tituloDestaques">
-      <h2 id="tituloDestaques">Destaques do UNIPOC</h2>
+    <section class="destaques">
+      <h2>Destaques do UNIPOC</h2>
       <ul>
-        <li>Resumos organizados e claros</li>
+        <li>Resumos organizados</li>
         <li>Videoaulas exclusivas</li>
-        <li>Conteúdo atualizado para o ENEM e UECE</li>
-        <li>Interatividade e exercícios práticos</li>
+        <li>Conteúdo atualizado</li>
+        <li>Exercícios e interatividade</li>
       </ul>
     </section>
 
-    <footer class="rodape" role="contentinfo">
-      <p>© 2025 UNIPOC • Estude com o Pipo, sua preguiça favorita!</p>
+    <footer class="rodape">
+      © 2025 UNIPOC • Estude com o Pipo, sua preguiça favorita!
     </footer>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const frases = [
+      "Nunca desista dos seus sonhos! – Pipo",
+      "Cada dia é uma nova oportunidade para aprender. – Pipo",
+      "Estudar com alegria rende muito mais! – Pipo",
+      "Você é capaz de tudo, acredite! – Pipo",
+      "Paciência e foco são seus melhores amigos. – Pipo"
+    ];
+
+    function novaFrase() {
+      const fraseElemento = document.getElementById("frasePipo");
+      const indice = Math.floor(Math.random() * frases.length);
+      fraseElemento.textContent = frases[indice];
+    }
+
+    // Garante que a frase só apareça quando a página estiver carregada
+    window.addEventListener("DOMContentLoaded", novaFrase);
+  </script>
 </body>
 </html>

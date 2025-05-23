@@ -184,7 +184,7 @@ header {
     rgba(255, 255, 255, 0) 70%
   );
   transform: rotate(25deg) translateX(-100%);
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
   pointer-events: none;
 }
 

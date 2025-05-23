@@ -155,6 +155,7 @@ header {
   }
 }
 
+/* === Efeito de reflexo (shine) nos botões === */
 .card {
   position: relative;
   overflow: hidden;

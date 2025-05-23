@@ -154,3 +154,44 @@ header {
     flex: 1 1 100%;
   }
 }
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #7c5dc3, #a58dde);
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(124, 93, 195, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: rotate(25deg) translateX(-100%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  transform: rotate(25deg) translateX(100%);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(124, 93, 195, 0.35);
+}

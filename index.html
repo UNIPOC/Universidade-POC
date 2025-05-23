@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UNIPOC - Página Inicial</title>
+  <!-- Link para o CSS externo -->
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="cabecalho">
+      <div class="conteudo-header">
+        <div class="texto-header">
+          <h1>Bem-vindo ao <span class="destaque">UNIPOC</span>!</h1>
+          <p>
+            Aqui você encontra resumos completos, videoaulas e muito conteúdo para te ajudar a passar na Universidade.
+          </p>
+        </div>
+        <img src="Pipo inicial.png" alt="Mascote Pipo" class="imagem-pipo" />
+      </div>
+    </header>
+
+    <div class="frase-motivacional" id="frasePipo"></div>
+
+    <section class="cards">
+      <a href="ensino-medio.html" class="card ensino-medio">📚 Ensino Médio</a>
+      <a href="vestibulares.html" class="card vestibulares">🎯 Vestibulares</a>
+      <a href="#" class="card informacoes">ℹ️ Informações</a>
+    </section>
+
+    <section class="destaques">
+      <h2>Destaques do UNIPOC</h2>
+      <ul>
+        <li>Resumos organizados e claros</li>
+        <li>Videoaulas exclusivas</li>
+        <li>Conteúdo atualizado para o ENEM e UECE</li>
+        <li>Interatividade e exercícios práticos</li>
+      </ul>
+    </section>
+
+    <footer class="rodape">
+      © 2025 UNIPOC • Estude com o Pipo, sua preguiça favorita!
+    </footer>
+  </div>
+
+  <script>
+    const frases = [
+      "Nunca desista dos seus sonhos! – Pipo",
+      "Cada dia é uma nova oportunidade para aprender. – Pipo",
+      "Estudar com alegria rende muito mais! – Pipo",
+      "Você é capaz de tudo, acredite! – Pipo",
+      "Paciência e foco são seus melhores amigos. – Pipo"
+    ];
+
+    function novaFrase() {
+      const fraseElemento = document.getElementById("frasePipo");
+      const indice = Math.floor(Math.random() * frases.length);
+      fraseElemento.textContent = frases[indice];
+    }
+
+    novaFrase();
+  </script>
+</body>
+</html>

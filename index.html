@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UNIPOC - Página Inicial</title>
-  <!-- Link para o CSS externo -->
   <link rel="stylesheet" href="estilo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="container">
-    <header class="cabecalho">
+    <header class="cabecalho" role="banner">
       <div class="conteudo-header">
         <div class="texto-header">
           <h1>Bem-vindo ao <span class="destaque">UNIPOC</span>!</h1>
@@ -17,20 +17,29 @@
             Aqui você encontra resumos completos, videoaulas e muito conteúdo para te ajudar a passar na Universidade.
           </p>
         </div>
-        <img src="Pipo inicial.png" alt="Mascote Pipo" class="imagem-pipo" />
+        <img src="Pipo inicial.png" alt="Mascote Pipo sorrindo" class="imagem-pipo" />
       </div>
     </header>
 
-    <div class="frase-motivacional" id="frasePipo"></div>
+    <section class="frase-motivacional" id="frasePipo" aria-live="polite" aria-atomic="true"></section>
 
-    <section class="cards">
-      <a href="ensino-medio.html" class="card ensino-medio">📚 Ensino Médio</a>
-      <a href="vestibulares.html" class="card vestibulares">🎯 Vestibulares</a>
-      <a href="#" class="card informacoes">ℹ️ Informações</a>
-    </section>
+    <nav class="cards" aria-label="Navegação principal">
+      <a href="ensino-medio.html" class="card ensino-medio" tabindex="0" aria-describedby="descricaoEnsinoMedio">
+        <span aria-hidden="true">📚</span> Ensino Médio
+        <span id="descricaoEnsinoMedio" class="sr-only">- Resumos, videoaulas e exercícios para o Ensino Médio</span>
+      </a>
+      <a href="vestibulares.html" class="card vestibulares" tabindex="0" aria-describedby="descricaoVestibulares">
+        <span aria-hidden="true">🎯</span> Vestibulares
+        <span id="descricaoVestibulares" class="sr-only">- Preparação para vestibulares diversos</span>
+      </a>
+      <a href="#" class="card informacoes" tabindex="0" aria-describedby="descricaoInformacoes">
+        <span aria-hidden="true">ℹ️</span> Informações
+        <span id="descricaoInformacoes" class="sr-only">- Informações importantes sobre o site</span>
+      </a>
+    </nav>
 
-    <section class="destaques">
-      <h2>Destaques do UNIPOC</h2>
+    <section class="destaques" aria-labelledby="tituloDestaques">
+      <h2 id="tituloDestaques">Destaques do UNIPOC</h2>
       <ul>
         <li>Resumos organizados e claros</li>
         <li>Videoaulas exclusivas</li>
@@ -39,27 +48,11 @@
       </ul>
     </section>
 
-    <footer class="rodape">
-      © 2025 UNIPOC • Estude com o Pipo, sua preguiça favorita!
+    <footer class="rodape" role="contentinfo">
+      <p>© 2025 UNIPOC • Estude com o Pipo, sua preguiça favorita!</p>
     </footer>
   </div>
 
-  <script>
-    const frases = [
-      "Nunca desista dos seus sonhos! – Pipo",
-      "Cada dia é uma nova oportunidade para aprender. – Pipo",
-      "Estudar com alegria rende muito mais! – Pipo",
-      "Você é capaz de tudo, acredite! – Pipo",
-      "Paciência e foco são seus melhores amigos. – Pipo"
-    ];
-
-    function novaFrase() {
-      const fraseElemento = document.getElementById("frasePipo");
-      const indice = Math.floor(Math.random() * frases.length);
-      fraseElemento.textContent = frases[indice];
-    }
-
-    novaFrase();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

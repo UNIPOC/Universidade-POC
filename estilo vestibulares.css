@@ -150,3 +150,78 @@ body {
     flex-direction: column;
   }
 }
+.menu-navegacao {
+  background-color: #5e3ea1;
+  color: white;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.menu-navegacao .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-itens {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-itens li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.menu-itens li a:hover {
+  color: #d9b3ff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .menu-itens {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #5e3ea1;
+    position: absolute;
+    top: 56px;
+    right: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .menu-itens.aberto {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

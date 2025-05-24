@@ -1,0 +1,212 @@
+/* Fonte e reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f8f4fb;
+  color: #3b2a6a; /* roxo escuro */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+.cabecalho-profissoes {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cabecalho-profissoes h1 {
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: #5a3ea0; /* roxo médio */
+  margin-bottom: 8px;
+}
+
+.cabecalho-profissoes .destaque {
+  color: #7c56d9; /* roxo claro */
+}
+
+.cabecalho-profissoes p {
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #6c5bb3;
+}
+
+/* Seção do teste */
+.teste-vocacional {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 12px rgb(122 92 191 / 0.15);
+  margin-bottom: 40px;
+}
+
+.teste-vocacional h2 {
+  font-weight: 700;
+  color: #5a3ea0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.teste-vocacional p {
+  font-size: 1rem;
+  color: #6c5bb3;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Perguntas */
+.pergunta {
+  margin-bottom: 20px;
+}
+
+.pergunta p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #4b3b7b;
+}
+
+.pergunta label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #594f86;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.pergunta label:hover {
+  color: #7c56d9;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #7c56d9;
+}
+
+/* Botão enviar */
+.botao-teste {
+  background-color: #7c56d9;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0;
+  box-shadow: 0 3px 8px rgb(124 86 217 / 0.5);
+  transition: background-color 0.3s ease;
+  width: fit-content;
+}
+
+.botao-teste:hover {
+  background-color: #5a3ea0;
+}
+
+/* Resultado */
+.resultado {
+  background-color: #ece6fa;
+  border-radius: 10px;
+  margin-top: 25px;
+  padding: 20px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #4b3b7b;
+  display: none;
+  text-align: center;
+  box-shadow: inset 0 0 8px rgb(124 86 217 / 0.3);
+}
+
+/* Seção categorias */
+.categorias {
+  margin-bottom: 40px;
+}
+
+.categorias h2 {
+  color: #5a3ea0;
+  font-weight: 800;
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Áreas profissionais */
+.area {
+  background-color: #f4efff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgb(124 86 217 / 0.15);
+}
+
+.area h3 {
+  color: #6c5bb3;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.area p {
+  color: #7b6db1;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.area ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #594f86;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Rodapé */
+.rodape {
+  text-align: center;
+  font-weight: 600;
+  color: #5a3ea0;
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  body {
+    padding: 15px 10px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .cabecalho-profissoes h1 {
+    font-size: 1.7rem;
+  }
+
+  .categorias h2 {
+    font-size: 1.5rem;
+  }
+
+  .area h3 {
+    font-size: 1.1rem;
+  }
+
+  .botao-teste {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}

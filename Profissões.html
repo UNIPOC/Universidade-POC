@@ -3,194 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UNIPOC - Teste Vocacional</title>
+  <title>UNIPOC - Profissões</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="estilo-profissoes.css" />
   <style>
-    /* Estilos básicos só pra exemplo, pode substituir pelo seu CSS */
     body {
       font-family: 'Inter', sans-serif;
-      background: #f3e8ff;
-      color: #3a0ca3;
-      margin: 0;
-      padding: 20px;
+      background: #f8f5fc;
+      color: #3a2a5d;
+      margin: 0; padding: 20px;
+    }
+    h1, h2 {
+      color: #6a4d9d;
     }
     .container {
       max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(58, 12, 163, 0.2);
-    }
-    h1, h2 {
-      text-align: center;
-      color: #6a0dad;
+      margin: 0 auto;
+      background: #fff;
+      padding: 25px 35px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgb(106 77 157 / 0.15);
     }
     .pergunta {
-      margin-bottom: 18px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+    .pergunta p {
+      font-weight: 600;
+      margin-bottom: 10px;
     }
     label {
-      display: block;
-      margin-top: 6px;
       cursor: pointer;
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
     }
     .botao-teste {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      background: #6a0dad;
+      background-color: #6a4d9d;
       color: white;
-      font-weight: 700;
       border: none;
+      padding: 12px 25px;
+      font-size: 16px;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 16px;
-      transition: background 0.3s ease;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
     }
     .botao-teste:hover {
-      background: #540b96;
+      background-color: #523d7a;
     }
-    #resultado {
-      margin-top: 25px;
-      padding: 20px;
-      border: 2px solid #6a0dad;
+    .resultado {
+      background-color: #eae3f9;
+      border: 2px solid #6a4d9d;
       border-radius: 8px;
-      background: #e9d6ff;
-      font-weight: 600;
+      padding: 20px;
+      margin-top: 30px;
       font-size: 18px;
-      text-align: center;
-      display: none;
+    }
+    .profissoes-lista {
+      margin-top: 12px;
+      padding-left: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Descubra sua Profissão Ideal com o Pipo!</h1>
-    <p style="text-align:center; margin-bottom: 30px;">
-      Responda às perguntas abaixo para descobrir qual área profissional combina mais com você.
-    </p>
+    <header>
+      <h1>Descubra sua Profissão Ideal com o <span style="color:#a77be0;">Pipo</span>!</h1>
+      <p>Responda ao teste vocacional e veja quais carreiras combinam com você.</p>
+    </header>
 
-    <form id="form-teste">
-      <div class="pergunta">
-        <p>1. O que você mais gosta de fazer no seu tempo livre?</p>
-        <label><input type="radio" name="q1" value="humanas" required> Ler livros ou discutir ideias</label>
-        <label><input type="radio" name="q1" value="linguagens"> Criar vídeos, desenhos ou músicas</label>
-        <label><input type="radio" name="q1" value="natureza"> Cuidar de plantas ou animais</label>
-        <label><input type="radio" name="q1" value="exatas"> Resolver desafios de lógica ou matemática</label>
-      </div>
+    <section class="teste-vocacional">
+      <h2>Teste Vocacional</h2>
 
-      <div class="pergunta">
-        <p>2. Em qual dessas disciplinas você tem melhor desempenho?</p>
-        <label><input type="radio" name="q2" value="humanas" required> História ou Sociologia</label>
-        <label><input type="radio" name="q2" value="linguagens"> Português ou Artes</label>
-        <label><input type="radio" name="q2" value="natureza"> Biologia ou Química</label>
-        <label><input type="radio" name="q2" value="exatas"> Matemática ou Física</label>
-      </div>
+      <form id="form-teste">
+        <div class="pergunta">
+          <p>1. O que você mais gosta de fazer no tempo livre?</p>
+          <label><input type="radio" name="q1" value="humanas" required> Ler livros ou escrever</label>
+          <label><input type="radio" name="q1" value="linguagens"> Criar vídeos, desenhos ou editar imagens</label>
+          <label><input type="radio" name="q1" value="natureza"> Observar a natureza, cuidar de plantas ou animais</label>
+          <label><input type="radio" name="q1" value="exatas"> Resolver problemas de lógica ou montar coisas</label>
+        </div>
 
-      <div class="pergunta">
-        <p>3. Qual dessas frases descreve melhor você?</p>
-        <label><input type="radio" name="q3" value="humanas" required> Gosto de entender as pessoas e a sociedade</label>
-        <label><input type="radio" name="q3" value="linguagens"> Adoro me expressar através da arte e comunicação</label>
-        <label><input type="radio" name="q3" value="natureza"> Quero ajudar a cuidar do meio ambiente e da saúde</label>
-        <label><input type="radio" name="q3" value="exatas"> Amo resolver problemas e pensar logicamente</label>
-      </div>
+        <div class="pergunta">
+          <p>2. Em qual dessas disciplinas você manda melhor?</p>
+          <label><input type="radio" name="q2" value="humanas" required> História ou Filosofia</label>
+          <label><input type="radio" name="q2" value="linguagens"> Português ou Artes</label>
+          <label><input type="radio" name="q2" value="natureza"> Biologia ou Química</label>
+          <label><input type="radio" name="q2" value="exatas"> Matemática ou Física</label>
+        </div>
 
-      <div class="pergunta">
-        <p>4. Que tipo de projeto te motiva mais?</p>
-        <label><input type="radio" name="q4" value="exatas" required> Criar soluções tecnológicas e inovadoras</label>
-        <label><input type="radio" name="q4" value="natureza"> Trabalhar com saúde, meio ambiente ou animais</label>
-        <label><input type="radio" name="q4" value="linguagens"> Produzir conteúdo artístico ou cultural</label>
-        <label><input type="radio" name="q4" value="humanas"> Organizar debates e ações sociais</label>
-      </div>
+        <div class="pergunta">
+          <p>3. Qual dessas frases combina mais com você?</p>
+          <label><input type="radio" name="q3" value="humanas" required> “Quero entender o mundo e as pessoas.”</label>
+          <label><input type="radio" name="q3" value="linguagens"> “Gosto de me expressar e ser criativo.”</label>
+          <label><input type="radio" name="q3" value="natureza"> “Quero ajudar a cuidar da vida e da saúde.”</label>
+          <label><input type="radio" name="q3" value="exatas"> “Quero construir soluções práticas para problemas.”</label>
+        </div>
 
-      <div class="pergunta">
-        <p>5. Como você prefere aprender?</p>
-        <label><input type="radio" name="q5" value="linguagens" required> Através da leitura e expressão criativa</label>
-        <label><input type="radio" name="q5" value="humanas"> Dialogando e entendendo opiniões</label>
-        <label><input type="radio" name="q5" value="exatas"> Fazendo experiências e usando números</label>
-        <label><input type="radio" name="q5" value="natureza"> Observando o funcionamento da vida</label>
-      </div>
+        <div class="pergunta">
+          <p>4. Que tipo de atividade você prefere?</p>
+          <label><input type="radio" name="q4" value="linguagens" required> Criar e comunicar ideias</label>
+          <label><input type="radio" name="q4" value="humanas"> Refletir sobre sociedade e cultura</label>
+          <label><input type="radio" name="q4" value="exatas"> Resolver problemas técnicos</label>
+          <label><input type="radio" name="q4" value="natureza"> Cuidar do meio ambiente e dos seres vivos</label>
+        </div>
 
-      <div class="pergunta">
-        <p>6. Qual dessas profissões te chama mais atenção?</p>
-        <label><input type="radio" name="q6" value="natureza" required> Médico, biólogo ou nutricionista</label>
-        <label><input type="radio" name="q6" value="linguagens"> Jornalista, publicitário ou designer</label>
-        <label><input type="radio" name="q6" value="exatas"> Engenheiro, programador ou matemático</label>
-        <label><input type="radio" name="q6" value="humanas"> Psicólogo, sociólogo ou professor</label>
-      </div>
+        <div class="pergunta">
+          <p>5. Como você prefere trabalhar?</p>
+          <label><input type="radio" name="q5" value="natureza" required> Ajudando pessoas e animais</label>
+          <label><input type="radio" name="q5" value="exatas"> Organizando e planejando sistemas</label>
+          <label><input type="radio" name="q5" value="linguagens"> Criando conteúdos e expressões</label>
+          <label><input type="radio" name="q5" value="humanas"> Discutindo ideias e liderando grupos</label>
+        </div>
 
-      <div class="pergunta">
-        <p>7. Quando enfrenta um problema, você prefere:</p>
-        <label><input type="radio" name="q7" value="exatas" required> Analisar dados e encontrar padrões</label>
-        <label><input type="radio" name="q7" value="humanas"> Conversar e entender os motivos</label>
-        <label><input type="radio" name="q7" value="natureza"> Pensar em soluções que ajudem pessoas e meio ambiente</label>
-        <label><input type="radio" name="q7" value="linguagens"> Usar criatividade para inovar</label>
-      </div>
+        <div class="pergunta">
+          <p>6. Qual dessas carreiras parece mais interessante para você?</p>
+          <label><input type="radio" name="q6" value="humanas" required> Psicologia, História ou Sociologia</label>
+          <label><input type="radio" name="q6" value="natureza"> Medicina, Biologia ou Nutrição</label>
+          <label><input type="radio" name="q6" value="linguagens"> Jornalismo, Design ou Artes</label>
+          <label><input type="radio" name="q6" value="exatas"> Engenharia, Matemática ou Tecnologia</label>
+        </div>
 
-      <div class="pergunta">
-        <p>8. Qual ambiente de trabalho você prefere?</p>
-        <label><input type="radio" name="q8" value="linguagens" required> Estúdio, agência ou estúdio de criação</label>
-        <label><input type="radio" name="q8" value="exatas"> Laboratório ou escritório técnico</label>
-        <label><input type="radio" name="q8" value="natureza"> Hospital, laboratório biológico ou campo</label>
-        <label><input type="radio" name="q8" value="humanas"> Escola, ONG ou espaço comunitário</label>
-      </div>
+        <div class="pergunta">
+          <p>7. Qual ambiente você prefere para trabalhar?</p>
+          <label><input type="radio" name="q7" value="linguagens" required> Escritório criativo ou estúdio</label>
+          <label><input type="radio" name="q7" value="exatas"> Laboratório ou ambiente técnico</label>
+          <label><input type="radio" name="q7" value="natureza"> Ao ar livre, em contato com a natureza</label>
+          <label><input type="radio" name="q7" value="humanas"> Instituições de ensino ou ONGs</label>
+        </div>
 
-      <div class="pergunta">
-        <p>9. Qual destas atividades te anima mais?</p>
-        <label><input type="radio" name="q9" value="humanas" required> Participar de debates e discussões</label>
-        <label><input type="radio" name="q9" value="exatas"> Programar e construir soluções técnicas</label>
-        <label><input type="radio" name="q9" value="linguagens"> Escrever, desenhar ou fotografar</label>
-        <label><input type="radio" name="q9" value="natureza"> Trabalhar com plantas, animais ou saúde</label>
-      </div>
+        <div class="pergunta">
+          <p>8. O que mais te motiva em um trabalho?</p>
+          <label><input type="radio" name="q8" value="natureza" required> Ajudar a melhorar a saúde e o meio ambiente</label>
+          <label><input type="radio" name="q8" value="humanas"> Entender e ajudar as pessoas</label>
+          <label><input type="radio" name="q8" value="linguagens"> Expressar criatividade</label>
+          <label><input type="radio" name="q8" value="exatas"> Resolver problemas complexos</label>
+        </div>
 
-      <div class="pergunta">
-        <p>10. Se você pudesse escolher um superpoder, qual seria?</p>
-        <label><input type="radio" name="q10" value="natureza" required> Curar doenças e ajudar a natureza</label>
-        <label><input type="radio" name="q10" value="humanas"> Entender e influenciar pessoas</label>
-        <label><input type="radio" name="q10" value="linguagens"> Criar mundos e histórias incríveis</label>
-        <label><input type="radio" name="q10" value="exatas"> Resolver qualquer problema com lógica</label>
-      </div>
+        <div class="pergunta">
+          <p>9. Qual dessas habilidades você acha que tem mais?</p>
+          <label><input type="radio" name="q9" value="exatas" required> Raciocínio lógico e organização</label>
+          <label><input type="radio" name="q9" value="natureza"> Empatia e cuidado</label>
+          <label><input type="radio" name="q9" value="humanas"> Comunicação e argumentação</label>
+          <label><input type="radio" name="q9" value="linguagens"> Criatividade e expressão artística</label>
+        </div>
 
-      <button type="submit" class="botao-teste">Ver Resultado</button>
-    </form>
+        <div class="pergunta">
+          <p>10. Como você prefere aprender algo novo?</p>
+          <label><input type="radio" name="q10" value="humanas" required> Lendo e discutindo</label>
+          <label><input type="radio" name="q10" value="exatas"> Experimentando e praticando</label>
+          <label><input type="radio" name="q10" value="linguagens"> Assistindo vídeos e criando</label>
+          <label><input type="radio" name="q10" value="natureza"> Observando e analisando</label>
+        </div>
 
-    <div id="resultado"></div>
+        <button type="submit" class="botao-teste">Ver resultado</button>
+      </form>
+
+      <div id="resultado" class="resultado" style="display:none;"></div>
+    </section>
   </div>
 
   <script>
     const form = document.getElementById('form-teste');
     const resultado = document.getElementById('resultado');
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+    const mensagens = {
+      humanas: {
+        texto: "Você tem perfil para Ciências Humanas! 🧠 Gosta de pensar criticamente e entender as pessoas.",
+        profissoes: [
+          "Psicologia", "História", "Geografia", "Sociologia", "Filosofia",
+          "Serviço Social", "Ciências Sociais", "Pedagogia", "Direito", "Administração"
+        ]
+      },
+      linguagens: {
+        texto: "Você tem perfil para Linguagens e Comunicação! 🎨 Expressar-se e criar são seus talentos.",
+        profissoes: [
+          "Publicidade e Propaganda", "Design Gráfico", "Jornalismo", "Rádio, TV e Internet",
+          "Letras", "Relações Públicas", "Moda", "Cinema", "Artes Visuais", "Produção Cultural"
+        ]
+      },
+      natureza: {
+        texto: "Você tem perfil para Ciências da Natureza! 🌱 Se importa com a vida e o meio ambiente.",
+        profissoes: [
+          "Medicina", "Enfermagem", "Veterinária", "Biomedicina", "Nutrição",
+          "Educação Física", "Biologia", "Farmácia", "Fisioterapia", "Zootecnia"
+        ]
+      },
+      exatas: {
+        texto: "Você tem perfil para Ciências Exatas! 🔧 Ama resolver problemas e pensar de forma lógica.",
+        profissoes: [
+          "Engenharia", "Ciência da Computação", "Física", "Matemática",
+          "Arquitetura", "Estatística", "Economia", "Química", "Sistemas de Informação", "Robótica"
+        ]
+      }
+    };
 
-      const perguntas = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
-      const contagem = { exatas: 0, humanas: 0, linguagens: 0, natureza: 0 };
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-      for (let pergunta of perguntas) {
-        const resposta = form.elements[pergunta].value;
-        if (contagem.hasOwnProperty(resposta)) {
-          contagem[resposta]++;
-        }
+      // Pega todas respostas do formulário
+      const respostas = [];
+      for(let i=1; i<=10; i++){
+        const resp = form.elements['q'+i].value;
+        respostas.push(resp);
       }
 
-      const areaMaisForte = Object.entries(contagem).sort((a,b) => b[1] - a[1])[0][0];
+      // Conta votos de cada área
+      const contagem = { humanas: 0, linguagens: 0, natureza: 0, exatas: 0 };
+      respostas.forEach(r => contagem[r]++);
 
-      const mensagens = {
-        exatas: "Você tem perfil para Ciências Exatas! 🔧 Ama resolver problemas e pensar de forma lógica.",
-        humanas: "Você tem perfil para Ciências Humanas! 🧠 Gosta de pensar criticamente e entender as pessoas.",
-        linguagens: "Você tem perfil para Linguagens e Comunicação! 🎨 Expressar-se e criar são seus talentos.",
-        natureza: "Você tem perfil para Ciências da Natureza! 🌱 Se importa com a vida e o meio ambiente."
-      };
+      // Descobre a área com mais votos
+      const areaMaisForte = Object.entries(contagem).sort((a,b) => b[1]-a[1])[0][0];
 
-      resultado.innerHTML = `<p>${mensagens[areaMaisForte]}</p>`;
+      // Monta o resultado
+      let htmlResultado = `<p>${mensagens[areaMaisForte].texto}</p>`;
+      htmlResultado += '<p><strong>Profissões recomendadas para você:</strong></p><ul class="profissoes-lista">';
+      mensagens[areaMaisForte].profissoes.forEach(prof => {
+        htmlResultado += `<li>${prof}</li>`;
+      });
+      htmlResultado += '</ul>';
+
+      resultado.innerHTML = htmlResultado;
       resultado.style.display = 'block';
-      resultado.scrollIntoView({behavior: 'smooth'});
+
+      // Scroll para o resultado
+      resultado.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 </body>
-</html>
+</html

@@ -150,78 +150,68 @@ body {
     flex-direction: column;
   }
 }
-.menu-navegacao {
-  background-color: #5e3ea1;
+
+/* Estilo do botão de menu */
+.botao-menu {
+  background-color: #6a4db2; /* tom roxo */
   color: white;
-  padding: 12px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.menu-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.menu-navegacao .logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-}
-
-.menu-itens {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.menu-itens li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.menu-itens li a:hover {
-  color: #d9b3ff;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  background: none;
   border: none;
-  color: white;
+  padding: 12px 20px;
+  font-size: 1.2rem;
   cursor: pointer;
+  border-radius: 6px;
+  margin: 12px 0;
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .menu-itens {
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    background-color: #5e3ea1;
-    position: absolute;
-    top: 56px;
-    right: 20px;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
+.botao-menu:hover {
+  background-color: #563d9b;
+}
 
-  .menu-itens.aberto {
-    display: flex;
-  }
+/* Menu fechado - escondido */
+.menu-fechado {
+  display: none;
+}
 
-  .menu-toggle {
-    display: block;
-  }
+/* Menu aberto - ocupa 100% da largura */
+.menu-aberto {
+  display: block;
+  background-color: #ece7f3; /* fundo claro roxo */
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Lista do menu */
+#menu-itens ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* Itens do menu */
+#menu-itens ul li {
+  margin: 10px 0;
+}
+
+/* Links do menu */
+#menu-itens ul li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #4b2e83; /* roxo escuro */
+  font-size: 1.15rem;
+  padding: 8px 20px;
+  display: inline-block;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+#menu-itens ul li a:hover {
+  background-color: #6a4db2;
+  color: white;
 }

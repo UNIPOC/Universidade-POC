@@ -3,71 +3,76 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Fonte e cores base */
 body {
-  background: #3b2f5c;
-  color: #e0dfee;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f1f8;
+  color: #3e2a53;
+  line-height: 1.6;
+  padding: 1rem;
 }
 
+/* Container centralizado */
 .container {
-  max-width: 1000px;
-  width: 100%;
-  background: #4a3f7a;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  padding: 30px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
+/* Cabeçalho */
 .cabecalho {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
 .cabecalho h1 {
   font-size: 2.5rem;
-  color: #d6caff;
-  margin-bottom: 10px;
+  color: #5e3e8c;
+  margin-bottom: 0.5rem;
 }
 
 .cabecalho p {
   font-size: 1.1rem;
-  color: #cfc9e8;
+  color: #6b588c;
 }
 
+/* Sessões de vestibular */
 .vestibular {
-  margin-bottom: 50px;
-  background: #362d5d;
-  padding: 20px 30px;
-  border-radius: 14px;
-  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
+  background-color: #ffffff;
+  border-left: 6px solid #7a4dc4;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(80, 56, 125, 0.15);
+  transition: transform 0.3s;
+}
+
+.vestibular:hover {
+  transform: scale(1.01);
 }
 
 .vestibular h2 {
-  font-size: 1.8rem;
-  color: #b38feb;
-  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: #4b2c74;
+  margin-bottom: 0.5rem;
 }
 
 .vestibular p {
   font-size: 1rem;
-  color: #e0dfee;
-  margin-bottom: 20px;
+  color: #514066;
+  margin-bottom: 1rem;
 }
 
+/* Vídeo responsivo */
 .video {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* 16:9 */
   height: 0;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .video iframe {
@@ -77,47 +82,71 @@ body {
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 12px;
 }
 
+/* Botões */
 .botoes {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 1rem;
   justify-content: center;
 }
 
 .botao {
-  background: #6c5ecf;
+  background: linear-gradient(135deg, #7a4dc4, #a583e3);
   color: white;
-  padding: 14px 26px;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
   text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 6px 15px rgba(108, 94, 207, 0.3);
-  transition: all 0.3s ease;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(122, 77, 196, 0.3);
+  transition: transform 0.2s ease;
 }
 
 .botao:hover {
-  background: #7c6fcf;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(108, 94, 207, 0.5);
+  transform: translateY(-3px);
 }
 
+.botao::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skewX(-20deg);
+  transition: left 0.8s ease;
+}
+
+.botao:hover::before {
+  left: 125%;
+}
+
+/* Rodapé */
 .rodape {
   text-align: center;
-  font-size: 14px;
-  color: #b1aee2;
-  padding-top: 10px;
-  border-top: 1px solid #5a4a90;
-  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #6c5e87;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d5c9e8;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .botao {
     width: 100%;
     text-align: center;
+  }
+
+  .botoes {
+    flex-direction: column;
   }
 }

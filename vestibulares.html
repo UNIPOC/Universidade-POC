@@ -9,17 +9,20 @@
 </head>
 <body>
   
-  <nav class="menu-navegacao">
-  <div class="menu-container">
-    <a href="index.html" class="logo">UNIPOC</a>
-    <button class="menu-toggle" id="botao-menu">&#9776;</button>
-    <ul class="menu-itens" id="menu-itens">
-      <li><a href="ensino-medio.html">Ensino Médio</a></li>
-      <li><a href="vestibulares.html">Vestibulares</a></li>
-      <li><a href="profissoes.html">Profissões</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </div>
+  <!-- Botão menu -->
+<button id="botao-menu" aria-label="Abrir menu de navegação" class="botao-menu">
+  ☰ Menu
+</button>
+
+<!-- Menu de navegação -->
+<nav id="menu-itens" class="menu-fechado" role="navigation" aria-label="Menu principal">
+  <ul>
+    <li><a href="ensino-medio.html">Ensino Médio</a></li>
+    <li><a href="vestibulares.html">Vestibulares</a></li>
+    <li><a href="profissoes.html">Profissões</a></li>
+    <li><a href="informacoes.html">Informações</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
 </nav>
 
   <div class="container">
@@ -70,7 +73,8 @@
   const menuItens = document.getElementById('menu-itens');
 
   botaoMenu.addEventListener('click', () => {
-    menuItens.classList.toggle('aberto');
+    menuItens.classList.toggle('menu-aberto');
+    menuItens.classList.toggle('menu-fechado');
   });
 </script>
 </body>

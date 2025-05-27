@@ -1,253 +1,215 @@
-/* RESET */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Corpo da página */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #f7f5fc, #e9e3f8);
-  color: #333;
+  background: #f5f0fa; /* lilás clarinho */
+  color: #3e2c65; /* roxo escuro */
   line-height: 1.6;
   padding: 20px;
-  scroll-behavior: smooth;
 }
 
-/* CABEÇALHO */
-header {
+/* Container geral para centralizar conteúdo e limitar largura */
+.container {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 0 15px;
+}
+
+/* Cabeçalhos */
+h2 {
+  font-size: 2.2rem;
+  color: #5c3a9e; /* roxo médio */
+  margin-bottom: 15px;
   text-align: center;
-  margin-bottom: 50px;
+  text-shadow: 0 1px 3px rgba(92,58,158,0.3);
 }
 
-header h1 {
-  font-size: 2.8rem;
-  color: #5b2d90;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-}
-
-header p {
-  color: #666;
-  font-size: 1.2rem;
-}
-
-/* TABS */
-.tabs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-  gap: 10px;
-}
-
-.tab-button {
-  background: linear-gradient(to right, #7c4dff, #a084f5);
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.tab-button:hover,
-.tab-button.active {
-  background: linear-gradient(to right, #5b2d90, #7c4dff);
-  transform: scale(1.05);
-}
-
-/* CONTEÚDO DAS TABS */
-.tab-content {
-  display: none;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* TESTE VOCACIONAL */
-.test-section {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  max-width: 850px;
-  margin: 0 auto 60px auto;
-}
-
-.test-section h2 {
-  color: #5b2d90;
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-  border-bottom: 2px solid #e0d2ff;
-  padding-bottom: 10px;
-}
-
-.question {
-  margin-bottom: 25px;
-}
-
-.question p {
-  font-weight: 600;
+h3 {
+  color: #4a2e8c;
   margin-bottom: 12px;
-  color: #40316b;
 }
 
-.question label {
-  display: block;
-  margin: 5px 0;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background-color: #f3efff;
-  cursor: pointer;
-  transition: background 0.3s;
+/* Formulário do teste vocacional */
+form {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(92,58,158,0.15);
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
 }
 
-.question input[type="radio"]:checked + label {
-  background-color: #d7c7ff;
-  font-weight: bold;
+form:hover {
+  box-shadow: 0 10px 25px rgba(92,58,158,0.25);
 }
 
-#submitTest {
-  background: linear-gradient(to right, #6a4bbd, #8e7fff);
-  color: #fff;
-  padding: 14px 30px;
+fieldset {
   border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  margin-top: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, background 0.3s ease;
+  margin-bottom: 20px;
 }
 
-#submitTest:hover {
-  background: linear-gradient(to right, #472b8d, #715cff);
-  transform: scale(1.05);
-}
-
-#result {
-  margin-top: 40px;
-  background-color: #f4eeff;
-  border-left: 5px solid #7c4dff;
-  padding: 20px;
-  border-radius: 12px;
-  font-size: 1.15rem;
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* MÍDIA: FILMES, SÉRIES ETC */
-.media-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 10px;
-  margin-bottom: 80px;
-}
-
-.media-card {
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  transition: transform 0.4s ease;
-}
-
-.media-card:hover {
-  transform: translateY(-10px);
-}
-
-.media-card img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-}
-
-.media-card .card-content {
-  padding: 18px;
-}
-
-.media-card h3 {
-  font-size: 1.3rem;
-  color: #5c3c94;
-  margin-bottom: 10px;
-}
-
-.media-card p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.media-card a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #5c3c94;
-  text-decoration: none;
+legend {
   font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #6e4bb7;
 }
 
-.media-card a:hover {
-  text-decoration: underline;
+label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-/* IMAGEM DO PIPO */
-.pipo-container {
+input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #6e4bb7;
+}
+
+/* Botão enviar */
+button#botao-enviar {
+  background-color: #6e4bb7;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(110,75,183,0.4);
+}
+
+button#botao-enviar:hover {
+  background-color: #5c3a9e;
+  box-shadow: 0 6px 15px rgba(92,58,158,0.6);
+}
+
+/* Resultado do teste */
+#resultado-teste {
+  background-color: #ede7f6;
+  border: 2px solid #6e4bb7;
+  padding: 20px;
+  border-radius: 10px;
+  color: #4a2e8c;
+  font-weight: 600;
+  box-shadow: 0 5px 10px rgba(110,75,183,0.2);
+}
+
+/* Seção de inspirações */
+#inspiracoes {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(92,58,158,0.15);
+}
+
+#inspiracoes p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #5a3d9a;
   text-align: center;
-  margin: 50px 0;
 }
 
-.pipo {
-  max-width: 220px;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  animation: float 4s ease-in-out infinite;
+/* Container para os cards em flexbox, responsivo */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
-/* RODAPÉ */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #888;
-  padding: 30px 0;
+/* Cada card */
+.card {
+  background: #f3eaff;
+  border: 2px solid #6e4bb7;
+  border-radius: 12px;
+  padding: 18px 20px;
+  flex: 1 1 350px;
+  box-shadow: 0 4px 15px rgba(110,75,183,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* ANIMAÇÕES */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(92,58,158,0.3);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+/* Listas dentro dos cards */
+.card ul {
+  list-style-type: disc;
+  margin-left: 18px;
+  color: #4a2e8c;
 }
 
-/* RESPONSIVO */
+.card li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* Videos do YouTube - wrapper responsivo */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(110,75,183,0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.video-wrapper:hover {
+  box-shadow: 0 10px 30px rgba(92,58,158,0.5);
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Imagem do Pipo decorativa (se você incluir depois) */
+#pipo-decoracao {
+  display: block;
+  margin: 30px auto;
+  max-width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(110,75,183,0.3);
+  transition: transform 0.5s ease;
+}
+
+#pipo-decoracao:hover {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 12px 35px rgba(92,58,158,0.5);
+}
+
+/* Responsividade para telas pequenas */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
+  .card-container {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .tab-button {
-    font-size: 0.9rem;
-    padding: 10px 16px;
+  #pipo-decoracao {
+    max-width: 180px;
   }
 
-  .test-section {
-    padding: 20px;
-  }
-
-  .media-card img {
-    height: 160px;
+  button#botao-enviar {
+    width: 100%;
+    font-size: 1.2rem;
   }
 }

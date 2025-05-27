@@ -2,236 +2,230 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UNIPOC - Profissões</title>
-  <link rel="icon" type="image/png" href="Pipo Lendo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8f5fc;
-      color: #3a2a5d;
-      margin: 0; padding: 20px;
-    }
-    h1, h2 {
-      color: #6a4d9d;
-    }
-    .container {
-      max-width: 700px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 25px 35px;
-      border-radius: 10px;
-      box-shadow: 0 0 12px rgb(106 77 157 / 0.15);
-    }
-    .pergunta {
-      margin-bottom: 20px;
-    }
-    .pergunta p {
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-    label {
-      cursor: pointer;
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 400;
-    }
-    input[type="radio"] {
-      margin-right: 8px;
-    }
-    .botao-teste {
-      background-color: #6a4d9d;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    .botao-teste:hover {
-      background-color: #523d7a;
-    }
-    .resultado {
-      background-color: #eae3f9;
-      border: 2px solid #6a4d9d;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 30px;
-      font-size: 18px;
-    }
-    .profissoes-lista {
-      margin-top: 12px;
-      padding-left: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="profissoes.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Descubra sua Profissão Ideal com o <span style="color:#a77be0;">Pipo</span>!</h1>
-      <p>Responda ao teste vocacional e veja quais carreiras combinam com você.</p>
+    <header class="topo">
+      <div class="texto-header">
+        <h1>Descubra sua Profissão com o <span class="destaque">Pipo</span>!</h1>
+        <p>Faça o teste vocacional e explore conteúdos incríveis para se inspirar!</p>
+      </div>
+      <img src="pipo-profissoes.png" alt="Pipo pensando na profissão" class="imagem-pipo" />
     </header>
 
-    <section class="teste-vocacional">
-      <h2>Teste Vocacional</h2>
+    <div class="abas">
+      <button class="aba ativa" data-target="teste">📝 Teste Vocacional</button>
+      <button class="aba" data-target="inspiracao">🎬 Inspiração Profissional</button>
+    </div>
 
-      <form id="form-teste">
-        <div class="pergunta">
-          <p>1. O que você mais gosta de fazer no tempo livre?</p>
-          <label><input type="radio" name="q1" value="humanas" required> Ler livros ou escrever</label>
-          <label><input type="radio" name="q1" value="linguagens"> Criar vídeos, desenhos ou editar imagens</label>
-          <label><input type="radio" name="q1" value="natureza"> Observar a natureza, cuidar de plantas ou animais</label>
-          <label><input type="radio" name="q1" value="exatas"> Resolver problemas de lógica ou montar coisas</label>
-        </div>
+    <div class="conteudos">
+      <section id="teste" class="conteudo ativo">
+        <form id="teste-vocacional">
+  <h2>Responda às perguntas abaixo:</h2>
 
-        <div class="pergunta">
-          <p>2. Em qual dessas disciplinas você manda melhor?</p>
-          <label><input type="radio" name="q2" value="humanas" required> História ou Filosofia</label>
-          <label><input type="radio" name="q2" value="linguagens"> Português ou Artes</label>
-          <label><input type="radio" name="q2" value="natureza"> Biologia ou Química</label>
-          <label><input type="radio" name="q2" value="exatas"> Matemática ou Física</label>
-        </div>
-
-        <div class="pergunta">
-          <p>3. Qual dessas frases combina mais com você?</p>
-          <label><input type="radio" name="q3" value="humanas" required> “Quero entender o mundo e as pessoas.”</label>
-          <label><input type="radio" name="q3" value="linguagens"> “Gosto de me expressar e ser criativo.”</label>
-          <label><input type="radio" name="q3" value="natureza"> “Quero ajudar a cuidar da vida e da saúde.”</label>
-          <label><input type="radio" name="q3" value="exatas"> “Quero construir soluções práticas para problemas.”</label>
-        </div>
-
-        <div class="pergunta">
-          <p>4. Que tipo de atividade você prefere?</p>
-          <label><input type="radio" name="q4" value="linguagens" required> Criar e comunicar ideias</label>
-          <label><input type="radio" name="q4" value="humanas"> Refletir sobre sociedade e cultura</label>
-          <label><input type="radio" name="q4" value="exatas"> Resolver problemas técnicos</label>
-          <label><input type="radio" name="q4" value="natureza"> Cuidar do meio ambiente e dos seres vivos</label>
-        </div>
-
-        <div class="pergunta">
-          <p>5. Como você prefere trabalhar?</p>
-          <label><input type="radio" name="q5" value="natureza" required> Ajudando pessoas e animais</label>
-          <label><input type="radio" name="q5" value="exatas"> Organizando e planejando sistemas</label>
-          <label><input type="radio" name="q5" value="linguagens"> Criando conteúdos e expressões</label>
-          <label><input type="radio" name="q5" value="humanas"> Discutindo ideias e liderando grupos</label>
-        </div>
-
-        <div class="pergunta">
-          <p>6. Qual dessas carreiras parece mais interessante para você?</p>
-          <label><input type="radio" name="q6" value="humanas" required> Psicologia, História ou Sociologia</label>
-          <label><input type="radio" name="q6" value="natureza"> Medicina, Biologia ou Nutrição</label>
-          <label><input type="radio" name="q6" value="linguagens"> Jornalismo, Design ou Artes</label>
-          <label><input type="radio" name="q6" value="exatas"> Engenharia, Matemática ou Tecnologia</label>
-        </div>
-
-        <div class="pergunta">
-          <p>7. Qual ambiente você prefere para trabalhar?</p>
-          <label><input type="radio" name="q7" value="linguagens" required> Escritório criativo ou estúdio</label>
-          <label><input type="radio" name="q7" value="exatas"> Laboratório ou ambiente técnico</label>
-          <label><input type="radio" name="q7" value="natureza"> Ao ar livre, em contato com a natureza</label>
-          <label><input type="radio" name="q7" value="humanas"> Instituições de ensino ou ONGs</label>
-        </div>
-
-        <div class="pergunta">
-          <p>8. O que mais te motiva em um trabalho?</p>
-          <label><input type="radio" name="q8" value="natureza" required> Ajudar a melhorar a saúde e o meio ambiente</label>
-          <label><input type="radio" name="q8" value="humanas"> Entender e ajudar as pessoas</label>
-          <label><input type="radio" name="q8" value="linguagens"> Expressar criatividade</label>
-          <label><input type="radio" name="q8" value="exatas"> Resolver problemas complexos</label>
-        </div>
-
-        <div class="pergunta">
-          <p>9. Qual dessas habilidades você acha que tem mais?</p>
-          <label><input type="radio" name="q9" value="exatas" required> Raciocínio lógico e organização</label>
-          <label><input type="radio" name="q9" value="natureza"> Empatia e cuidado</label>
-          <label><input type="radio" name="q9" value="humanas"> Comunicação e argumentação</label>
-          <label><input type="radio" name="q9" value="linguagens"> Criatividade e expressão artística</label>
-        </div>
-
-        <div class="pergunta">
-          <p>10. Como você prefere aprender algo novo?</p>
-          <label><input type="radio" name="q10" value="humanas" required> Lendo e discutindo</label>
-          <label><input type="radio" name="q10" value="exatas"> Experimentando e praticando</label>
-          <label><input type="radio" name="q10" value="linguagens"> Assistindo vídeos e criando</label>
-          <label><input type="radio" name="q10" value="natureza"> Observando e analisando</label>
-        </div>
-
-        <button type="submit" class="botao-teste">Ver resultado</button>
-      </form>
-
-      <div id="resultado" class="resultado" style="display:none;"></div>
-    </section>
+  <div class="pergunta">
+    <p>1. O que você mais gosta de fazer?</p>
+    <label><input type="radio" name="q1" value="criativo" required> Criar coisas novas, desenhar, editar vídeos</label>
+    <label><input type="radio" name="q1" value="exatas"> Resolver problemas matemáticos</label>
+    <label><input type="radio" name="q1" value="humanas"> Ler, escrever e debater ideias</label>
+    <label><input type="radio" name="q1" value="biologicas"> Estudar a natureza e o corpo humano</label>
   </div>
 
-  <script>
-    const form = document.getElementById('form-teste');
-    const resultado = document.getElementById('resultado');
+  <div class="pergunta">
+    <p>2. Como você prefere trabalhar?</p>
+    <label><input type="radio" name="q2" value="exatas" required> Com lógica, números e códigos</label>
+    <label><input type="radio" name="q2" value="humanas"> Com pessoas, comunicação e cultura</label>
+    <label><input type="radio" name="q2" value="biologicas"> Em laboratórios ou com animais e plantas</label>
+    <label><input type="radio" name="q2" value="criativo"> Com artes, design ou produção audiovisual</label>
+  </div>
 
-    const mensagens = {
-      humanas: {
-        texto: "Você tem perfil para Ciências Humanas! 🧠 Gosta de pensar criticamente e entender as pessoas.",
-        profissoes: [
-          "Psicologia", "História", "Geografia", "Sociologia", "Filosofia",
-          "Serviço Social", "Ciências Sociais", "Pedagogia", "Direito", "Administração"
-        ]
-      },
-      linguagens: {
-        texto: "Você tem perfil para Linguagens e Comunicação! 🎨 Expressar-se e criar são seus talentos.",
-        profissoes: [
-          "Publicidade e Propaganda", "Design Gráfico", "Jornalismo", "Rádio, TV e Internet",
-          "Letras", "Relações Públicas", "Moda", "Cinema", "Artes Visuais", "Produção Cultural"
-        ]
-      },
-      natureza: {
-        texto: "Você tem perfil para Ciências da Natureza! 🌱 Se importa com a vida e o meio ambiente.",
-        profissoes: [
-          "Medicina", "Enfermagem", "Veterinária", "Biomedicina", "Nutrição",
-          "Educação Física", "Biologia", "Farmácia", "Fisioterapia", "Zootecnia"
-        ]
-      },
-      exatas: {
-        texto: "Você tem perfil para Ciências Exatas! 🔧 Ama resolver problemas e pensar de forma lógica.",
-        profissoes: [
-          "Engenharia", "Ciência da Computação", "Física", "Matemática",
-          "Arquitetura", "Estatística", "Economia", "Química", "Sistemas de Informação", "Robótica"
-        ]
-      }
+  <div class="pergunta">
+    <p>3. Qual dessas atividades você faria com mais prazer?</p>
+    <label><input type="radio" name="q3" value="criativo" required> Gravar vídeos, tirar fotos, criar jogos</label>
+    <label><input type="radio" name="q3" value="exatas"> Criar um aplicativo ou um robô</label>
+    <label><input type="radio" name="q3" value="humanas"> Planejar um evento ou dar uma palestra</label>
+    <label><input type="radio" name="q3" value="biologicas"> Ajudar a tratar uma pessoa ou fazer pesquisas científicas</label>
+  </div>
+
+  <div class="pergunta">
+    <p>4. Em um projeto escolar, que papel você costuma assumir?</p>
+    <label><input type="radio" name="q4" value="criativo" required> Criar a apresentação, editar vídeos ou slides</label>
+    <label><input type="radio" name="q4" value="humanas"> Organizar ideias, liderar e comunicar</label>
+    <label><input type="radio" name="q4" value="exatas"> Resolver problemas técnicos ou cálculos</label>
+    <label><input type="radio" name="q4" value="biologicas"> Cuidar da parte experimental e pesquisa científica</label>
+  </div>
+
+  <div class="pergunta">
+    <p>5. Qual dessas áreas te chama mais atenção?</p>
+    <label><input type="radio" name="q5" value="exatas" required> Engenharia, Computação, Arquitetura</label>
+    <label><input type="radio" name="q5" value="biologicas"> Medicina, Biologia, Enfermagem</label>
+    <label><input type="radio" name="q5" value="humanas"> Direito, Jornalismo, Psicologia</label>
+    <label><input type="radio" name="q5" value="criativo"> Design, Moda, Cinema</label>
+  </div>
+
+  <button type="submit" class="botao">Ver meu resultado</button>
+</form>
+
+<div id="resultado-teste" class="resultado oculto">
+  <h2>Resultado do Teste</h2>
+  <p id="mensagem-resultado"></p>
+</div>
+
+<script>
+  const form = document.getElementById("teste-vocacional");
+  const resultado = document.getElementById("resultado-teste");
+  const mensagem = document.getElementById("mensagem-resultado");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const respostas = new FormData(form);
+    const contagem = {
+      criativo: 0,
+      exatas: 0,
+      humanas: 0,
+      biologicas: 0
     };
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
+    for (let [_, valor] of respostas.entries()) {
+      contagem[valor]++;
+    }
 
-      // Pega todas respostas do formulário
-      const respostas = [];
-      for(let i=1; i<=10; i++){
-        const resp = form.elements['q'+i].value;
-        respostas.push(resp);
-      }
+    const maior = Object.keys(contagem).reduce((a, b) => contagem[a] > contagem[b] ? a : b);
 
-      // Conta votos de cada área
-      const contagem = { humanas: 0, linguagens: 0, natureza: 0, exatas: 0 };
-      respostas.forEach(r => contagem[r]++);
+    let texto = "";
 
-      // Descobre a área com mais votos
-      const areaMaisForte = Object.entries(contagem).sort((a,b) => b[1]-a[1])[0][0];
+    switch (maior) {
+      case "criativo":
+        texto = "Você tem um perfil criativo! Algumas profissões indicadas para você: Designer, Publicitário, Videomaker, Arquiteto, Criador de Conteúdo.";
+        break;
+      case "exatas":
+        texto = "Você tem um perfil lógico e técnico! Profissões sugeridas: Engenheiro, Programador, Analista de Dados, Físico, Matemático.";
+        break;
+      case "humanas":
+        texto = "Você tem um perfil comunicativo e social! Carreiras indicadas: Professor, Psicólogo, Jornalista, Advogado, Sociólogo.";
+        break;
+      case "biologicas":
+        texto = "Você tem um perfil voltado à natureza e ao cuidado! Sugestões: Médico, Biólogo, Enfermeiro, Nutricionista, Farmacêutico.";
+        break;
+    }
 
-      // Monta o resultado
-      let htmlResultado = `<p>${mensagens[areaMaisForte].texto}</p>`;
-      htmlResultado += '<p><strong>Profissões recomendadas para você:</strong></p><ul class="profissoes-lista">';
-      mensagens[areaMaisForte].profissoes.forEach(prof => {
-        htmlResultado += `<li>${prof}</li>`;
+    mensagem.textContent = texto;
+    resultado.classList.remove("oculto");
+    resultado.scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+      </section>
+
+      <section id="inspiracao" class="conteudo">
+        <div class="inspiracao">
+  <h2>🎬 Filmes e Séries para se Inspirar</h2>
+  <div class="midia">
+    <div class="item">
+      <img src="https://upload.wikimedia.org/wikipedia/en/4/4f/Dead_Poets_Society.jpg" alt="Sociedade dos Poetas Mortos">
+      <h3>Sociedade dos Poetas Mortos</h3>
+      <p>Um professor inspira seus alunos a pensarem por si mesmos. Ideal para quem considera a carreira de professor ou educador.</p>
+      <a href="https://www.youtube.com/watch?v=wrBk780aOis" target="_blank">Assistir Trailer</a>
+    </div>
+    <div class="item">
+      <img src="https://upload.wikimedia.org/wikipedia/en/8/88/Coach_Carter_poster.JPG" alt="Coach Carter">
+      <h3>Coach Carter</h3>
+      <p>Baseado em uma história real, mostra como um técnico de basquete transforma a vida de seus jogadores. Inspirador para quem pensa em liderança e educação.</p>
+      <a href="https://www.youtube.com/watch?v=znyAnWUYf2g" target="_blank">Assistir Trailer</a>
+    </div>
+    <div class="item">
+      <img src="https://upload.wikimedia.org/wikipedia/en/8/88/Hidden_Figures_%28film%29.png" alt="Estrelas Além do Tempo">
+      <h3>Estrelas Além do Tempo</h3>
+      <p>Conta a história de três mulheres negras que trabalharam na NASA e foram fundamentais para o sucesso das missões espaciais. Ideal para quem se interessa por ciência e tecnologia.</p>
+      <a href="https://www.youtube.com/watch?v=RK8xHq6dfAo" target="_blank">Assistir Trailer</a>
+    </div>
+    <div class="item">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/The_Intern_Poster.jpg" alt="Um Senhor Estagiário">
+      <h3>Um Senhor Estagiário</h3>
+      <p>Um viúvo de 70 anos se torna estagiário em uma startup de moda. Mostra que nunca é tarde para recomeçar. Inspirador para todas as idades.</p>
+      <a href="https://www.youtube.com/watch?v=ZU3Xban0Y6A" target="_blank">Assistir Trailer</a>
+    </div>
+  </div>
+
+  <h2>📚 Livros para Guiar sua Carreira</h2>
+  <ul class="lista-livros">
+    <li>
+      <strong>Antifrágil: Coisas que se beneficiam com o caos</strong> - Nassim Nicholas Taleb
+      <p>Explora como algumas pessoas e organizações prosperam em meio ao caos e à desordem. <a href="https://www.amazon.com.br/Antifr%C3%A1gil-Coisas-beneficiam-com-caos/dp/8539004119" target="_blank">Comprar</a></p>
+    </li>
+    <li>
+      <strong>A Coragem de Ser Imperfeito</strong> - Brené Brown
+      <p>Aborda a importância de aceitar nossas imperfeições e vulnerabilidades para alcançar o sucesso pessoal e profissional. <a href="https://www.amazon.com.br/Coragem-Ser-Imperfeito-Bren%C3%A9-Brown/dp/8539004119" target="_blank">Comprar</a></p>
+    </li>
+    <li>
+      <strong>O Poder do Hábito</strong> - Charles Duhigg
+      <p>Investiga como os hábitos funcionam e como podemos mudá-los para melhorar nossas vidas. <a href="https://www.amazon.com.br/Poder-do-H%C3%A1bito-Charles-Duhigg/dp/8539004119" target="_blank">Comprar</a></p>
+    </li>
+  </ul>
+
+  <h2>🎧 Podcasts sobre Carreira</h2>
+  <ul class="lista-podcasts">
+    <li>
+      <strong>LiderCast</strong> - Luciano Pires
+      <p>Entrevistas com líderes e empreendedores brasileiros. <a href="https://open.spotify.com/show/3K0eV0gYx6vK9iY3t9Yk9G" target="_blank">Ouvir</a></p>
+    </li>
+    <li>
+      <strong>Braincast</strong> - B9
+      <p>Discussões sobre criatividade, inovação e comportamento. <a href="https://open.spotify.com/show/3K0eV0gYx6vK9iY3t9Yk9G" target="_blank">Ouvir</a></p>
+    </li>
+    <li>
+      <strong>TED Talks Negócios</strong>
+      <p>Ideias e insights de líderes empresariais do mundo todo. <a href="https://open.spotify.com/show/3K0eV0gYx6vK9iY3t9Yk9G" target="_blank">Ouvir</a></p>
+    </li>
+  </ul>
+
+  <h2>🎥 Vídeos no YouTube sobre Profissões</h2>
+  <div class="videos-youtube">
+    <div class="video">
+      <iframe width="300" height="169" src="https://www.youtube.com/embed/QK6TuZLSFcA" title="Como Orientar seu Aluno na Escolha Profissional" frameborder="0" allowfullscreen></iframe>
+      <p>Como Orientar seu Aluno na Escolha Profissional</p>
+    </div>
+    <div class="video">
+      <iframe width="300" height="169" src="https://www.youtube.com/embed/AB5ITyDwwDM" title="As profissões para crianças - Os trabalhos e ofícios" frameborder="0" allowfullscreen></iframe>
+      <p>As profissões para crianças - Os trabalhos e ofícios</p>
+    </div>
+    <div class="video">
+      <iframe width="300" height="169" src="https://www.youtube.com/embed/KnfW1wrvRwI" title="Escolha Profissional no Mundo Líquido - palestra" frameborder="0" allowfullscreen></iframe>
+      <p>Escolha Profissional no Mundo Líquido - palestra</p>
+    </div>
+  </div>
+</div>
+ próximas partes -->
+      </section>
+    </div>
+  </div>
+<!-- Imagem decorativa do Pipo -->
+<div class="pipo-container">
+  <img src="https://cdn.pixabay.com/photo/2021/07/15/09/08/sloth-6466774_1280.png" alt="Mascote Pipo" class="pipo">
+</div>
+
+<!-- Rodapé -->
+<footer>
+  <p>© 2025 Universidade POC – Projeto estudantil da EEMTI Poeta Otacílio Colares</p>
+</footer>
+  <script>
+    const abas = document.querySelectorAll(".aba");
+    const conteudos = document.querySelectorAll(".conteudo");
+
+    abas.forEach(botao => {
+      botao.addEventListener("click", () => {
+        abas.forEach(a => a.classList.remove("ativa"));
+        conteudos.forEach(c => c.classList.remove("ativo"));
+
+        botao.classList.add("ativa");
+        document.getElementById(botao.dataset.target).classList.add("ativo");
       });
-      htmlResultado += '</ul>';
-
-      resultado.innerHTML = htmlResultado;
-      resultado.style.display = 'block';
-
-      // Scroll para o resultado
-      resultado.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 </body>
-</html
+</html>

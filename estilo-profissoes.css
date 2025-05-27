@@ -1,212 +1,253 @@
-/* Fonte e reset básico */
+/* RESET */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background: #f8f4fb;
-  color: #3b2a6a; /* roxo escuro */
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #f7f5fc, #e9e3f8);
+  color: #333;
   line-height: 1.6;
   padding: 20px;
+  scroll-behavior: smooth;
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* Cabeçalho */
-.cabecalho-profissoes {
+/* CABEÇALHO */
+header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
-.cabecalho-profissoes h1 {
-  font-weight: 800;
-  font-size: 2.2rem;
-  color: #5a3ea0; /* roxo médio */
-  margin-bottom: 8px;
-}
-
-.cabecalho-profissoes .destaque {
-  color: #7c56d9; /* roxo claro */
-}
-
-.cabecalho-profissoes p {
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: #6c5bb3;
-}
-
-/* Seção do teste */
-.teste-vocacional {
-  background: #fff;
-  border-radius: 12px;
-  padding: 25px 30px;
-  box-shadow: 0 4px 12px rgb(122 92 191 / 0.15);
-  margin-bottom: 40px;
-}
-
-.teste-vocacional h2 {
-  font-weight: 700;
-  color: #5a3ea0;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.teste-vocacional p {
-  font-size: 1rem;
-  color: #6c5bb3;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-/* Perguntas */
-.pergunta {
-  margin-bottom: 20px;
-}
-
-.pergunta p {
-  font-weight: 600;
+header h1 {
+  font-size: 2.8rem;
+  color: #5b2d90;
   margin-bottom: 10px;
-  color: #4b3b7b;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
-.pergunta label {
-  display: block;
-  margin-bottom: 8px;
-  cursor: pointer;
-  color: #594f86;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
+header p {
+  color: #666;
+  font-size: 1.2rem;
 }
 
-.pergunta label:hover {
-  color: #7c56d9;
+/* TABS */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  gap: 10px;
 }
 
-input[type="radio"] {
-  margin-right: 10px;
-  accent-color: #7c56d9;
-}
-
-/* Botão enviar */
-.botao-teste {
-  background-color: #7c56d9;
-  color: white;
-  font-weight: 700;
+.tab-button {
+  background: linear-gradient(to right, #7c4dff, #a084f5);
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 12px 25px;
-  font-size: 1.1rem;
+  padding: 12px 24px;
+  font-size: 1rem;
   cursor: pointer;
-  display: block;
-  margin: 30px auto 0;
-  box-shadow: 0 3px 8px rgb(124 86 217 / 0.5);
-  transition: background-color 0.3s ease;
-  width: fit-content;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
-.botao-teste:hover {
-  background-color: #5a3ea0;
+.tab-button:hover,
+.tab-button.active {
+  background: linear-gradient(to right, #5b2d90, #7c4dff);
+  transform: scale(1.05);
 }
 
-/* Resultado */
-.resultado {
-  background-color: #ece6fa;
-  border-radius: 10px;
-  margin-top: 25px;
-  padding: 20px;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #4b3b7b;
+/* CONTEÚDO DAS TABS */
+.tab-content {
   display: none;
-  text-align: center;
-  box-shadow: inset 0 0 8px rgb(124 86 217 / 0.3);
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Seção categorias */
-.categorias {
-  margin-bottom: 40px;
+.tab-content.active {
+  display: block;
 }
 
-.categorias h2 {
-  color: #5a3ea0;
-  font-weight: 800;
-  font-size: 1.9rem;
-  margin-bottom: 20px;
-  text-align: center;
+/* TESTE VOCACIONAL */
+.test-section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 850px;
+  margin: 0 auto 60px auto;
 }
 
-/* Áreas profissionais */
-.area {
-  background-color: #f4efff;
-  border-radius: 12px;
-  padding: 20px 25px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 6px rgb(124 86 217 / 0.15);
+.test-section h2 {
+  color: #5b2d90;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #e0d2ff;
+  padding-bottom: 10px;
 }
 
-.area h3 {
-  color: #6c5bb3;
-  font-weight: 700;
-  margin-bottom: 12px;
-  font-size: 1.3rem;
+.question {
+  margin-bottom: 25px;
 }
 
-.area p {
-  color: #7b6db1;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.area ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  color: #594f86;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-/* Rodapé */
-.rodape {
-  text-align: center;
+.question p {
   font-weight: 600;
-  color: #5a3ea0;
-  padding: 15px 0;
-  border-top: 1px solid #ddd;
-  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #40316b;
 }
 
-/* Responsividade */
+.question label {
+  display: block;
+  margin: 5px 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background-color: #f3efff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.question input[type="radio"]:checked + label {
+  background-color: #d7c7ff;
+  font-weight: bold;
+}
+
+#submitTest {
+  background: linear-gradient(to right, #6a4bbd, #8e7fff);
+  color: #fff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#submitTest:hover {
+  background: linear-gradient(to right, #472b8d, #715cff);
+  transform: scale(1.05);
+}
+
+#result {
+  margin-top: 40px;
+  background-color: #f4eeff;
+  border-left: 5px solid #7c4dff;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* MÍDIA: FILMES, SÉRIES ETC */
+.media-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 10px;
+  margin-bottom: 80px;
+}
+
+.media-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-10px);
+}
+
+.media-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.media-card .card-content {
+  padding: 18px;
+}
+
+.media-card h3 {
+  font-size: 1.3rem;
+  color: #5c3c94;
+  margin-bottom: 10px;
+}
+
+.media-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.media-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #5c3c94;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.media-card a:hover {
+  text-decoration: underline;
+}
+
+/* IMAGEM DO PIPO */
+.pipo-container {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.pipo {
+  max-width: 220px;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  padding: 30px 0;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* RESPONSIVO */
 @media (max-width: 600px) {
-  body {
-    padding: 15px 10px;
+  header h1 {
+    font-size: 2rem;
   }
 
-  .container {
-    max-width: 100%;
+  .tab-button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
   }
 
-  .cabecalho-profissoes h1 {
-    font-size: 1.7rem;
+  .test-section {
+    padding: 20px;
   }
 
-  .categorias h2 {
-    font-size: 1.5rem;
-  }
-
-  .area h3 {
-    font-size: 1.1rem;
-  }
-
-  .botao-teste {
-    width: 100%;
-    font-size: 1rem;
-    padding: 12px 0;
+  .media-card img {
+    height: 160px;
   }
 }

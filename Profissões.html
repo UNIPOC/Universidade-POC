@@ -2,277 +2,140 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profissões - Unipoc</title>
-  <link rel="stylesheet" href="estilo-profissoes.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unipoc - Profissões e Teste Vocacional</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <div class="container header-container">
-      <a href="index.html" class="logo">Unipoc</a>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="ensino-medio.html">Ensino Médio</a></li>
-          <li><a href="vestibulares.html">Vestibulares</a></li>
-          <li><a href="profissoes.html" class="active">Profissões</a></li>
-          <li><a href="informacoes.html">Informações</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">Unipoc</div>
+      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="profissoes.html" class="active">Profissões</a></li>
+        <li><a href="enem.html">ENEM</a></li>
+        <li><a href="uece.html">UECE</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><button id="modo-tema">🌙</button></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container">
-    <h1>Descubra sua Profissão Ideal</h1>
-    <p class="intro-text">
-      Faça nosso teste vocacional detalhado para entender quais carreiras combinam mais com você.
-      Além disso, explore recomendações de filmes, séries, podcasts e livros para se inspirar
-      e conhecer melhor cada profissão.
-    </p>
-
-    <section id="teste-vocacional">
-      <h2>Teste Vocacional</h2>
-      <p class="aviso-teste">
-        <section id="teste-vocacional" class="container">
-  <h2>Teste Vocacional</h2>
-  <form id="form-teste-vocacional">
-    <!-- Pergunta 1 -->
-    <fieldset>
-      <legend>1. Você prefere trabalhar com:</legend>
-      <label><input type="radio" name="q1" value="exatas" required /> Números e cálculos</label><br />
-      <label><input type="radio" name="q1" value="humanas" /> Relações humanas e comunicação</label><br />
-      <label><input type="radio" name="q1" value="biologicas" /> Ciências da vida e natureza</label><br />
-      <label><input type="radio" name="q1" value="criativas" /> Artes e criatividade</label>
-    </fieldset>
-
-    <!-- Pergunta 2 -->
-    <fieldset>
-      <legend>2. Você gosta mais de:</legend>
-      <label><input type="radio" name="q2" value="resolver-problemas" required /> Resolver problemas complexos</label><br />
-      <label><input type="radio" name="q2" value="ajudar-pessoas" /> Ajudar e cuidar das pessoas</label><br />
-      <label><input type="radio" name="q2" value="explorar-natureza" /> Estudar a natureza e o meio ambiente</label><br />
-      <label><input type="radio" name="q2" value="expressar-ideias" /> Expressar ideias e emoções</label>
-    </fieldset>
-
-    <!-- Pergunta 3 -->
-    <fieldset>
-      <legend>3. Qual dessas atividades você mais gosta?</legend>
-      <label><input type="radio" name="q3" value="programar" required /> Programar computadores e sistemas</label><br />
-      <label><input type="radio" name="q3" value="debater" /> Debater ideias e filosofar</label><br />
-      <label><input type="radio" name="q3" value="experimentar" /> Fazer experimentos científicos</label><br />
-      <label><input type="radio" name="q3" value="desenhar" /> Desenhar, pintar ou criar</label>
-    </fieldset>
-
-    <!-- Pergunta 4 -->
-    <fieldset>
-      <legend>4. Você prefere um ambiente de trabalho que seja:</legend>
-      <label><input type="radio" name="q4" value="escritorio" required /> Organizado e previsível</label><br />
-      <label><input type="radio" name="q4" value="dinamico" /> Dinâmico e cheio de pessoas</label><br />
-      <label><input type="radio" name="q4" value="campo" /> Ao ar livre, em contato com a natureza</label><br />
-      <label><input type="radio" name="q4" value="atelier" /> Criativo e artístico</label>
-    </fieldset>
-
-    <!-- Pergunta 5 -->
-    <fieldset>
-      <legend>5. Você se sente mais confortável com:</legend>
-      <label><input type="radio" name="q5" value="logica" required /> Lógica e raciocínio analítico</label><br />
-      <label><input type="radio" name="q5" value="empatia" /> Empatia e comunicação</label><br />
-      <label><input type="radio" name="q5" value="observacao" /> Observação e pesquisa</label><br />
-      <label><input type="radio" name="q5" value="criatividade" /> Criatividade e inovação</label>
-    </fieldset>
-
-    <!-- Pergunta 6 -->
-    <fieldset>
-      <legend>6. Que tipo de matérias você prefere estudar?</legend>
-      <label><input type="radio" name="q6" value="matematica" required /> Matemática e física</label><br />
-      <label><input type="radio" name="q6" value="literatura" /> Literatura e história</label><br />
-      <label><input type="radio" name="q6" value="biologia" /> Biologia e química</label><br />
-      <label><input type="radio" name="q6" value="artes" /> Artes e música</label>
-    </fieldset>
-
-    <!-- Pergunta 7 -->
-    <fieldset>
-      <legend>7. Qual dessas descrições mais combina com você?</legend>
-      <label><input type="radio" name="q7" value="organizado" required /> Organizado e detalhista</label><br />
-      <label><input type="radio" name="q7" value="comunicativo" /> Comunicativo e persuasivo</label><br />
-      <label><input type="radio" name="q7" value="curioso" /> Curioso e investigativo</label><br />
-      <label><input type="radio" name="q7" value="imaginativo" /> Imaginativo e inovador</label>
-    </fieldset>
-
-    <!-- Pergunta 8 -->
-    <fieldset>
-      <legend>8. O que você espera da sua futura profissão?</legend>
-      <label><input type="radio" name="q8" value="estabilidade" required /> Estabilidade e segurança</label><br />
-      <label><input type="radio" name="q8" value="ajudar" /> Fazer a diferença ajudando pessoas</label><br />
-      <label><input type="radio" name="q8" value="descobrir" /> Descobrir coisas novas e inovar</label><br />
-      <label><input type="radio" name="q8" value="expressar" /> Expressar minha criatividade</label>
-    </fieldset>
-<section id="teste-vocacional" class="container">
-  <h2>Teste Vocacional</h2>
-  <form id="form-teste-vocacional">
-    <!-- Perguntas aqui (mesmo código da parte 2, repita) -->
-    <!-- (vou colocar só 2 perguntas para encurtar o exemplo, mas você troca pelas 8 que fiz antes) -->
-    <fieldset>
-      <legend>1. Você prefere trabalhar com:</legend>
-      <label><input type="radio" name="q1" value="exatas" required /> Números e cálculos</label><br />
-      <label><input type="radio" name="q1" value="humanas" /> Relações humanas e comunicação</label><br />
-      <label><input type="radio" name="q1" value="biologicas" /> Ciências da vida e natureza</label><br />
-      <label><input type="radio" name="q1" value="criativas" /> Artes e criatividade</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>2. Você gosta mais de:</legend>
-      <label><input type="radio" name="q2" value="resolver-problemas" required /> Resolver problemas complexos</label><br />
-      <label><input type="radio" name="q2" value="ajudar-pessoas" /> Ajudar e cuidar das pessoas</label><br />
-      <label><input type="radio" name="q2" value="explorar-natureza" /> Estudar a natureza e o meio ambiente</label><br />
-      <label><input type="radio" name="q2" value="expressar-ideias" /> Expressar ideias e emoções</label>
-    </fieldset>
-
-    <button type="submit" id="botao-enviar">Enviar Respostas</button>
-  </form>
-
-  <div id="resultado-teste" style="margin-top:20px;"></div>
-
-  <script>
-    const form = document.getElementById('form-teste-vocacional');
-    const resultado = document.getElementById('resultado-teste');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      // Pega todas as respostas
-      const respostas = {
-        q1: form.q1.value,
-        q2: form.q2.value,
-        // q3, q4, q5 ... você deve incluir conforme o teste completo
-      };
-
-      // Contabilizar pontos para cada área
-      const pontuacao = {
-        exatas: 0,
-        humanas: 0,
-        biologicas: 0,
-        criativas: 0
-      };
-
-      // Regras de pontuação para as respostas — simplificado
-      switch (respostas.q1) {
-        case 'exatas': pontuacao.exatas += 2; break;
-        case 'humanas': pontuacao.humanas += 2; break;
-        case 'biologicas': pontuacao.biologicas += 2; break;
-        case 'criativas': pontuacao.criativas += 2; break;
-      }
-
-      switch (respostas.q2) {
-        case 'resolver-problemas': pontuacao.exatas += 2; break;
-        case 'ajudar-pessoas': pontuacao.humanas += 2; break;
-        case 'explorar-natureza': pontuacao.biologicas += 2; break;
-        case 'expressar-ideias': pontuacao.criativas += 2; break;
-      }
-
-      // Para o teste completo, faça isso para todas as perguntas
-
-      // Descobre a maior pontuação
-      let maiorArea = null;
-      let maiorPontos = 0;
-      for (const area in pontuacao) {
-        if (pontuacao[area] > maiorPontos) {
-          maiorPontos = pontuacao[area];
-          maiorArea = area;
-        }
-      }
-
-      // Mensagens de resultado (exemplo)
-      const mensagens = {
-        exatas: 'Você tem perfil para áreas de Exatas: Engenharias, Computação, Matemática...',
-        humanas: 'Você tem perfil para áreas de Humanas: Comunicação, Direito, Psicologia...',
-        biologicas: 'Você tem perfil para áreas Biológicas: Medicina, Biologia, Enfermagem...',
-        criativas: 'Você tem perfil para áreas Criativas: Artes, Design, Música...'
-      };
-
-      resultado.innerHTML = `<h3>Resultado do Teste</h3><p>${mensagens[maiorArea]}</p>`;
-      resultado.scrollIntoView({ behavior: 'smooth' });
-    });
-    <section id="inspiracoes" class="container">
-  <h2>Inspirações para sua carreira</h2>
-  <p>Confira filmes, séries, podcasts, livros e vídeos que falam sobre profissões para você se inspirar e conhecer melhor cada área.</p>
-
-  <!-- Filmes e Séries -->
-  <div class="card-container">
-    <article class="card">
-      <h3>Filmes e Séries</h3>
-      <ul>
-        <li><strong>“O Jogo da Imitação”</strong> – História real de Alan Turing, matemático e pioneiro da computação.</li>
-        <li><strong>“The Good Doctor” (Série)</strong> – A vida de um jovem cirurgião com autismo.</li>
-        <li><strong>“Erin Brockovich”</strong> – Filme sobre uma assistente jurídica que luta por justiça ambiental.</li>
-        <li><strong>“Breaking Bad” (Série)</strong> – Química e os dilemas éticos na carreira.</li>
-      </ul>
-    </article>
-
-    <!-- Podcasts -->
-    <article class="card">
-      <h3>Podcasts</h3>
-      <ul>
-        <li><strong>Café com ADM</strong> – Discussões sobre carreira e mercado de trabalho.</li>
-        <li><strong>Vai na Ciência</strong> – Explica profissões científicas e descobertas atuais.</li>
-        <li><strong>Jornada do Estudante</strong> – Histórias inspiradoras de estudantes e profissionais.</li>
-      </ul>
-    </article>
-  </div>
-
-  <!-- Livros -->
-  <div class="card-container">
-    <article class="card">
-      <h3>Livros</h3>
-      <ul>
-        <li><strong>“O Poder do Hábito”</strong> – Charles Duhigg, sobre hábitos e produtividade.</li>
-        <li><strong>“Mindset”</strong> – Carol Dweck, sobre mentalidade para o sucesso.</li>
-        <li><strong>“Profissões do Futuro”</strong> – Explora tendências e carreiras emergentes.</li>
-      </ul>
-    </article>
-
-    <!-- Vídeos do YouTube -->
-    <article class="card">
-      <h3>Vídeos no YouTube</h3>
-      <div class="video-wrapper">
-        <iframe
-          width="320"
-          height="180"
-          src="https://www.youtube.com/embed/GEne39vy4fk"
-          title="Profissões do Futuro - Canal Nerdologia"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div class="video-wrapper">
-        <iframe
-          width="320"
-          height="180"
-          src="https://www.youtube.com/embed/rNVDFL08yO4"
-          title="O que estudar para ser engenheiro? - Canal Curso Enem Gratuito"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </article>
-  </div>
-</section>
-  </script>
-</section>
-    <button type="submit" id="botao-enviar">Enviar Respostas</button>
-  </form>
-</section>
-      </p>
+  <main class="conteudo-principal">
+    <section class="intro">
+      <h1>Descubra sua profissão ideal</h1>
+      <p>Explore carreiras, ouça podcasts com profissionais, assista filmes e séries temáticas e faça um teste vocacional completo para encontrar sua vocação.</p>
     </section>
 
-    <section id="pipo-decoracao">
-      <img
-        src="https://i.imgur.com/9fLqFyC.png"
-        alt="Pipo, o mascote preguiça roxa do Unipoc"
-      />
+    <section class="profissoes-lista">
+      <h2>Profissões em Destaque</h2>
+      <div class="card-profissao">
+        <h3>Medicina</h3>
+        <audio controls>
+          <source src="podcasts/medicina.mp3" type="audio/mpeg" />
+          Seu navegador não suporta áudio.
+        </audio>
+        <div class="indicacoes">
+          <h4>Filmes e Séries:</h4>
+          <ul>
+            <li>Grey's Anatomy</li>
+            <li>House M.D.</li>
+            <li>O Menino que Descobriu o Vento</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card-profissao">
+        <h3>Engenharia</h3>
+        <audio controls>
+          <source src="podcasts/engenharia.mp3" type="audio/mpeg" />
+          Seu navegador não suporta áudio.
+        </audio>
+        <div class="indicacoes">
+          <h4>Filmes e Séries:</h4>
+          <ul>
+            <li>O Jogo da Imitação</li>
+            <li>Perdido em Marte</li>
+            <li>Os Eleitos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-profissao">
+        <h3>Direito</h3>
+        <audio controls>
+          <source src="podcasts/direito.mp3" type="audio/mpeg" />
+          Seu navegador não suporta áudio.
+        </audio>
+        <div class="indicacoes">
+          <h4>Filmes e Séries:</h4>
+          <ul>
+            <li>Suits</li>
+            <li>O Juri</li>
+            <li>Doze Homens e uma Sentença</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card-profissao">
+        <h3>Design</h3>
+        <audio controls>
+          <source src="podcasts/design.mp3" type="audio/mpeg" />
+          Seu navegador não suporta áudio.
+        </audio>
+        <div class="indicacoes">
+          <h4>Filmes e Séries:</h4>
+          <ul>
+            <li>Abstract: The Art of Design</li>
+            <li>Helvetica</li>
+            <li>O Diabo Veste Prada</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="teste-vocacional">
+      <h2>Teste Vocacional</h2>
+      <form id="form-teste">
+        <div class="pergunta">
+          <p>1. Você prefere trabalhar com:</p>
+          <label><input type="radio" name="q1" value="exatas" required /> Números e lógica</label>
+          <label><input type="radio" name="q1" value="biologicas" /> Saúde e natureza</label>
+          <label><input type="radio" name="q1" value="humanas" /> Pessoas e comunicação</label>
+        </div>
+
+        <div class="pergunta">
+          <p>2. Você se imagina no futuro:</p>
+          <label><input type="radio" name="q2" value="biologicas" required /> Cuidando de pessoas</label>
+          <label><input type="radio" name="q2" value="exatas" /> Criando soluções tecnológicas</label>
+          <label><input type="radio" name="q2" value="humanas" /> Trabalhando com justiça ou arte</label>
+        </div>
+
+        <div class="pergunta">
+          <p>3. Você se sente mais confortável:</p>
+          <label><input type="radio" name="q3" value="humanas" required /> Falando em público</label>
+          <label><input type="radio" name="q3" value="exatas" /> Analisando dados</label>
+          <label><input type="radio" name="q3" value="biologicas" /> Ajudando quem precisa</label>
+        </div>
+
+        <button type="submit" class="btn-resultado">Ver Resultado</button>
+      </form>
+      <div id="resultado-teste" class="resultado-oculto">
+        <h3>Seu Resultado:</h3>
+        <p id="texto-resultado"></p>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Unipoc - Todos os direitos reservados.</p>
+      <p>Feito com ❤️ para estudantes da Escola Poeta Otacílio Colares</p>
+    </div>
+  </footer>
 </body>
 </html>

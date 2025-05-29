@@ -1,115 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unipoc - Sua Jornada Começa Aqui</title>
-  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
-  <link rel="stylesheet" href="estilo.css">
-  <script defer src="funções.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unipoc - Página Inicial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-  <header class="cabecalho">
-    <div class="logo">
-      <img src="Pipo Lendo.png" alt="Logo do Pipo, a preguiça mascote" class="logo-img">
-      <h1 class="titulo-site">Unipoc</h1>
+  <header>
+    <div class="logo-container" aria-label="Logo do site Unipoc">
+      <img src="logo-pipo.png" alt="Mascote Pipo" class="logo" />
+      <h1>Unipoc</h1>
     </div>
-    <nav class="menu-navegacao">
-      <ul>
-        <li><a href="ensino-medio.html">Ensino Médio</a></li>
-        <li><a href="vestibulares.html">Vestibulares</a></li>
-        <li><a href="profissoes.html">Profissões</a></li>
-        <li><a href="informacoes.html">Informações</a></li>
+
+    <nav>
+      <button id="menu-mobile-btn" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Início</a></li>
+        <li><a href="ensino-medio.html" class="nav-link">Ensino Médio</a></li>
+        <li><a href="vestibulares.html" class="nav-link">Vestibulares</a></li>
+        <li><a href="profissoes.html" class="nav-link">Profissões</a></li>
+        <li><a href="informacoes.html" class="nav-link">Informações</a></li>
       </ul>
     </nav>
+
+    <button id="modo-btn" aria-label="Alternar modo claro e escuro" title="Alternar modo claro e escuro">🌙</button>
   </header>
 
-  <main class="principal">
-    <section class="hero">
-      <div class="texto-hero">
-        <h2>Bem-vindo ao Unipoc!</h2>
-        <p>Sua plataforma divertida e completa para estudar e se preparar para o ENEM, a UECE e muito mais!</p>
-        <a href="#explorar" class="botao-destaque">Explorar Agora</a>
-      </div>
-      <div class="imagem-hero">
-        <img src="Pipo Acenando.png" alt="Pipo sorrindo e acenando" class="imagem-pipo">
-        <div class="fala-pipo animacao-frase">
-          <p>"Ei! Estudar também pode ser legal, sabia? Vamos nessa!"</p>
-        </div>
+  <main>
+    <!-- Frases do Pipo -->
+    <section id="frases-pipo" aria-label="Frases motivacionais do Pipo">
+      <blockquote>
+        <p id="pipo-frase" tabindex="0" aria-live="polite">Carregando frase do Pipo...</p>
+      </blockquote>
+    </section>
+
+    <!-- Botões principais -->
+    <section class="botoes-principais" aria-label="Navegação principal do site">
+      <a href="ensino-medio.html" class="btn principal-btn" role="button" tabindex="0">Ensino Médio</a>
+      <a href="vestibulares.html" class="btn principal-btn" role="button" tabindex="0">Vestibulares</a>
+      <a href="profissoes.html" class="btn principal-btn" role="button" tabindex="0">Profissões</a>
+      <a href="informacoes.html" class="btn principal-btn" role="button" tabindex="0">Informações</a>
+    </section>
+
+    <!-- Avaliações positivas -->
+    <section id="avaliacoes" aria-label="Avaliações positivas dos alunos">
+      <h2>O que nossos alunos dizem</h2>
+      <div class="avaliacoes-container">
+        <article class="avaliacao">
+          <p>"O Unipoc me ajudou muito a organizar meus estudos para o ENEM!"</p>
+          <span>- Ana Clara</span>
+        </article>
+        <article class="avaliacao">
+          <p>"Adoro o jeito que o site deixa o aprendizado mais leve e divertido."</p>
+          <span>- Lucas M.</span>
+        </article>
+        <article class="avaliacao">
+          <p>"Os conteúdos de profissões me ajudaram a descobrir meu caminho."</p>
+          <span>- Beatriz S.</span>
+        </article>
       </div>
     </section>
 
-    <section id="explorar" class="secao-modulos">
-      <h2>O que você quer aprender hoje?</h2>
-      <div class="grade-modulos">
-        <a href="ensino-medio.html" class="card-modulo">
-          <h3>Ensino Médio</h3>
-          <p>Todos os conteúdos organizados por área e matéria.</p>
-        </a>
-        <a href="vestibulares.html" class="card-modulo">
-          <h3>Vestibulares</h3>
-          <p>Dicas, provas anteriores e simulados do ENEM e UECE.</p>
-        </a>
-        <a href="profissoes.html" class="card-modulo">
-          <h3>Profissões</h3>
-          <p>Teste vocacional, vídeos e dicas para descobrir seu futuro!</p>
-        </a>
-        <a href="informacoes.html" class="card-modulo">
-          <h3>Informações</h3>
-          <p>Conheça a história da escola e da criação do site.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="secao-pipo">
-      <div class="pipo-frase destaque">
-        <img src="Pipo inicial.png" alt="Pipo feliz" class="imagem-pipo-menor">
-        <p class="balao-frase">"Você não precisa ser o melhor do mundo, só precisa dar o seu melhor. 💜"</p>
-      </div>
-    </section>
-
-    <section class="secao-depoimentos">
-      <h2>O que os alunos dizem?</h2>
-      <div class="carousel-depoimentos">
-        <div class="depoimento ativo">
-          <p>"Estudar com o Unipoc foi a melhor decisão! O conteúdo é leve e divertido."</p>
-          <span>— Júlia, 3º ano</span>
-        </div>
-        <div class="depoimento">
-          <p>"Eu odiava estudar até conhecer o Pipo. Agora eu adoro aprender!"</p>
-          <span>— Mateus, 2º ano</span>
-        </div>
-        <div class="depoimento">
-          <p>"O site me ajudou muito a entender os temas da UECE. Obrigada, Unipoc!"</p>
-          <span>— Larissa, 3º ano</span>
-        </div>
-      </div>
-    </section>
-    <section class="secao-contato">
-      <h2>Fale com o Pipo</h2>
-      <form id="form-contato" action="#" method="post" autocomplete="off">
+    <!-- Contato -->
+    <section id="contato" aria-label="Formulário de contato">
+      <h2>Fale com a gente</h2>
+      <form id="form-contato" action="mailto:universidadepoc@gmail.com" method="POST" enctype="text/plain" novalidate>
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
 
         <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Escreva sua mensagem para o Pipo"></textarea>
+        <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem" required></textarea>
 
-        <button type="submit" class="botao-enviar">Enviar</button>
+        <button type="submit" class="btn enviar-btn">Enviar</button>
       </form>
     </section>
   </main>
 
-  <footer class="rodape">
-    <div class="info-rodape">
-      <p>© 2025 Unipoc - Plataforma de Estudos. Todos os direitos reservados.</p>
-      <p>Contato: universidadepoc@gmail.com | Tel: (85) 93101-2161</p>
-    </div>
-    <div class="redes-sociais">
-      <a href="https://instagram.com/planeta_poc" target="_blank" rel="noopener" aria-label="Instagram Unipoc">Instagram</a>
-    </div>
+  <footer>
+    <p>© 2025 Unipoc - Universidade Poeta Otacílio Colares</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

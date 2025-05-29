@@ -1,127 +1,98 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Frases do Pipo - muda a cada carregamento
-  const frasesPipo = [
-    "Estudar é uma aventura incrível!",
-    "Com foco e dedicação, você vai longe!",
-    "Aprender é o primeiro passo para o sucesso!",
-    "Cada dia é uma nova chance de aprender!",
-    "Vamos juntos rumo à aprovação!",
-    "A preguiça do Pipo é só pra dar risada, bora estudar!",
-    "Pipo acredita em você, pode confiar!",
-    "O conhecimento é o seu maior superpoder!",
-    "Pequenos passos levam a grandes conquistas!",
-    "Estudar com alegria é o segredo do sucesso!"
-  ];
-  const fraseElemento = document.getElementById("frase-pipo");
-  if(fraseElemento) {
-    const indice = Math.floor(Math.random() * frasesPipo.length);
-    fraseElemento.textContent = frasesPipo[indice];
+/* styles.css - complemento para correções e melhorias */
+
+/* Remove duplicidade da seção contato */
+#contato {
+  margin-top: 60px;
+  padding: 25px 20px;
+  background-color: var(--bege);
+  border-radius: 10px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 15px rgba(124, 77, 255, 0.2);
+}
+
+/* Correção do menu: menos reflexo nos botões */
+nav a {
+  background: linear-gradient(135deg, var(--roxo) 0%, var(--roxo-escuro) 100%);
+  box-shadow: none; /* Remover reflexos exagerados */
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+  background: linear-gradient(135deg, var(--lilas-claro), var(--roxo));
+  color: var(--bege);
+  box-shadow: 0 0 12px var(--roxo); /* reflexo mais sutil */
+}
+
+/* Ajustes botão modo claro/escuro */
+#modo-toggle {
+  background: var(--roxo-escuro);
+  color: var(--bege);
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  box-shadow: none;
+}
+
+#modo-toggle:hover {
+  background-color: var(--roxo);
+  box-shadow: 0 0 10px var(--roxo);
+}
+
+/* Ajustes para o modo escuro funcionar corretamente */
+.dark-mode {
+  --fundo: #121212;
+  --texto: #eee;
+  --roxo: #9575cd;
+  --roxo-escuro: #512da8;
+  --lilas-claro: #b39ddb;
+  --bege: #2c2c2c;
+  --rosa: #f48fb1;
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+
+.dark-mode header,
+.dark-mode footer,
+.dark-mode nav,
+.dark-mode section {
+  background-color: var(--bege);
+  color: var(--texto);
+}
+
+.dark-mode nav a {
+  background: linear-gradient(135deg, var(--roxo-escuro) 0%, var(--roxo) 100%);
+  color: var(--bege);
+  box-shadow: none;
+}
+
+.dark-mode nav a:hover {
+  background: linear-gradient(135deg, var(--lilas-claro), var(--roxo-escuro));
+  color: var(--rosa);
+  box-shadow: 0 0 12px var(--roxo-escuro);
+}
+
+.dark-mode #modo-toggle {
+  background-color: var(--roxo);
+  color: var(--bege);
+}
+
+.dark-mode #modo-toggle:hover {
+  background-color: var(--roxo-escuro);
+  box-shadow: 0 0 12px var(--roxo-escuro);
+}
+
+/* Pequenas correções gerais de espaçamento e responsividade */
+@media (max-width: 700px) {
+  nav a {
+    font-size: 14px;
+    padding: 8px 12px;
   }
-
-  // Reviews dos alunos - troca automática com fade
-  const reviews = [
-    { nome: "Ana Silva", texto: "O site do Pipo mudou minha forma de estudar, muito didático!" },
-    { nome: "Lucas Oliveira", texto: "Conteúdo super organizado e fácil de entender." },
-    { nome: "Mariana Souza", texto: "Recomendo para todos que querem passar no ENEM!" },
-    { nome: "Pedro Lima", texto: "A interação com o Pipo torna o estudo divertido!" },
-    { nome: "Juliana Costa", texto: "Aprendi muito com as explicações claras e exemplos." }
-  ];
-  const reviewTexto = document.getElementById("review-texto");
-  const reviewNome = document.getElementById("review-nome");
-  let reviewIndex = 0;
-
-  function mostrarReview(index) {
-    if(reviewTexto && reviewNome) {
-      reviewTexto.style.opacity = 0;
-      reviewNome.style.opacity = 0;
-      setTimeout(() => {
-        reviewTexto.textContent = `"${reviews[index].texto}"`;
-        reviewNome.textContent = `- ${reviews[index].nome}`;
-        reviewTexto.style.opacity = 1;
-        reviewNome.style.opacity = 1;
-      }, 500);
-    }
+  #contato {
+    padding: 20px 15px;
+    max-width: 90vw;
   }
-  mostrarReview(reviewIndex);
-  setInterval(() => {
-    reviewIndex = (reviewIndex + 1) % reviews.length;
-    mostrarReview(reviewIndex);
-  }, 7000);
-
-  // Animação da logo - pulse e leve rotação
-  const logo = document.querySelector(".logo img");
-  if(logo){
-    let pulse = true;
-    setInterval(() => {
-      if(pulse){
-        logo.style.transform = "scale(1.05) rotate(5deg)";
-      } else {
-        logo.style.transform = "scale(1) rotate(0deg)";
-      }
-      pulse = !pulse;
-    }, 3000);
-  }
-
-  // Menu recolhível para dispositivos móveis
-  const menuBtn = document.querySelector(".menu-btn");
-  const navMenu = document.querySelector("nav ul");
-  if(menuBtn && navMenu) {
-    menuBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("ativo");
-      menuBtn.classList.toggle("ativo");
-    });
-
-    // Fecha menu ao clicar em link (mobile)
-    navMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        if(navMenu.classList.contains("ativo")){
-          navMenu.classList.remove("ativo");
-          menuBtn.classList.remove("ativo");
-        }
-      });
-    });
-  }
-
-  // Botões com animação de reflexo ao passar mouse
-  const botoes = document.querySelectorAll("button, .botao-destaque, .botao-enviar");
-  botoes.forEach(botao => {
-    botao.addEventListener("mouseenter", () => {
-      botao.style.transition = "all 0.3s ease";
-      botao.style.boxShadow = "0 8px 20px rgba(128, 0, 255, 0.6), inset 0 0 30px rgba(255,255,255,0.5)";
-      botao.style.transform = "scale(1.1)";
-    });
-    botao.addEventListener("mouseleave", () => {
-      botao.style.boxShadow = "none";
-      botao.style.transform = "scale(1)";
-    });
-  });
-
-  // Suaviza scroll para links internos
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", e => {
-      e.preventDefault();
-      const target = document.querySelector(anchor.getAttribute("href"));
-      if(target){
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  });
-
-  // Botão "Voltar ao topo" - aparece após rolar 300px
-  const btnTopo = document.getElementById("btn-topo");
-  if(btnTopo){
-    window.addEventListener("scroll", () => {
-      if(window.scrollY > 300){
-        btnTopo.style.opacity = 1;
-        btnTopo.style.pointerEvents = "auto";
-      } else {
-        btnTopo.style.opacity = 0;
-        btnTopo.style.pointerEvents = "none";
-      }
-    });
-    btnTopo.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-});
+}

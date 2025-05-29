@@ -1,98 +1,92 @@
-/* styles.css - complemento para correções e melhorias */
+// script.js
 
-/* Remove duplicidade da seção contato */
-#contato {
-  margin-top: 60px;
-  padding: 25px 20px;
-  background-color: var(--bege);
-  border-radius: 10px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 4px 15px rgba(124, 77, 255, 0.2);
+// Menu Mobile Toggle
+const menuBtn = document.getElementById('menu-mobile-btn');
+const navLinks = document.getElementById('nav-links');
+
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('active');
+  navLinks.classList.toggle('mobile-active');
+});
+
+// Frases do Pipo
+const frasesPipo = [
+  "“Estudar é o passaporte para o futuro, e o Pipo te acompanha nessa jornada!”",
+  "“Com calma e foco, você chega lá! Pipo acredita em você.”",
+  "“Cada dia é uma nova oportunidade para aprender algo incrível.”",
+  "“Não desista, o sucesso começa com uma boa dose de persistência.”",
+  "“Aqui no Unipoc, o conhecimento é o seu melhor amigo.”",
+  "“Pipo diz: relaxe, respire e estude com carinho!”",
+];
+
+const fraseElement = document.getElementById('frase-pipo');
+
+function mudarFrase() {
+  const index = Math.floor(Math.random() * frasesPipo.length);
+  fraseElement.textContent = frasesPipo[index];
 }
 
-/* Correção do menu: menos reflexo nos botões */
-nav a {
-  background: linear-gradient(135deg, var(--roxo) 0%, var(--roxo-escuro) 100%);
-  box-shadow: none; /* Remover reflexos exagerados */
-  transition: background 0.4s ease, color 0.3s ease;
-}
+// Muda a frase a cada 10 segundos
+mudarFrase();
+setInterval(mudarFrase, 10000);
 
-nav a:hover, nav a:focus {
-  background: linear-gradient(135deg, var(--lilas-claro), var(--roxo));
-  color: var(--bege);
-  box-shadow: 0 0 12px var(--roxo); /* reflexo mais sutil */
-}
+// Muda a frase ao carregar a página
+window.addEventListener('load', mudarFrase);
 
-/* Ajustes botão modo claro/escuro */
-#modo-toggle {
-  background: var(--roxo-escuro);
-  color: var(--bege);
-  border-radius: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  box-shadow: none;
-}
+// Contato: envio de formulário simulado (sem backend)
+const formContato = document.getElementById('form-contato');
 
-#modo-toggle:hover {
-  background-color: var(--roxo);
-  box-shadow: 0 0 10px var(--roxo);
-}
+formContato.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-/* Ajustes para o modo escuro funcionar corretamente */
-.dark-mode {
-  --fundo: #121212;
-  --texto: #eee;
-  --roxo: #9575cd;
-  --roxo-escuro: #512da8;
-  --lilas-claro: #b39ddb;
-  --bege: #2c2c2c;
-  --rosa: #f48fb1;
-  background-color: var(--fundo);
-  color: var(--texto);
-}
+  const nome = formContato.nome.value.trim();
+  const email = formContato.email.value.trim();
+  const mensagem = formContato.mensagem.value.trim();
 
-.dark-mode header,
-.dark-mode footer,
-.dark-mode nav,
-.dark-mode section {
-  background-color: var(--bege);
-  color: var(--texto);
-}
-
-.dark-mode nav a {
-  background: linear-gradient(135deg, var(--roxo-escuro) 0%, var(--roxo) 100%);
-  color: var(--bege);
-  box-shadow: none;
-}
-
-.dark-mode nav a:hover {
-  background: linear-gradient(135deg, var(--lilas-claro), var(--roxo-escuro));
-  color: var(--rosa);
-  box-shadow: 0 0 12px var(--roxo-escuro);
-}
-
-.dark-mode #modo-toggle {
-  background-color: var(--roxo);
-  color: var(--bege);
-}
-
-.dark-mode #modo-toggle:hover {
-  background-color: var(--roxo-escuro);
-  box-shadow: 0 0 12px var(--roxo-escuro);
-}
-
-/* Pequenas correções gerais de espaçamento e responsividade */
-@media (max-width: 700px) {
-  nav a {
-    font-size: 14px;
-    padding: 8px 12px;
+  if (!nome || !email || !mensagem) {
+    alert('Por favor, preencha todos os campos antes de enviar.');
+    return;
   }
-  #contato {
-    padding: 20px 15px;
-    max-width: 90vw;
+
+  // Validação básica de email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Por favor, insira um email válido.');
+    return;
+  }
+
+  // Simulação do envio (exibir alerta)
+  alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.\nResponderemos em breve para ${email}.`);
+
+  // Resetar formulário
+  formContato.reset();
+});
+
+// Alternar Modo Claro/Escuro
+const modoToggle = document.getElementById('modo-toggle');
+
+function aplicarModoSalvo() {
+  const modoSalvo = localStorage.getItem('modoUnipoc');
+  if (modoSalvo === 'dark') {
+    document.body.classList.add('dark-mode');
+    modoToggle.textContent = 'Modo Claro';
+  } else {
+    document.body.classList.remove('dark-mode');
+    modoToggle.textContent = 'Modo Escuro';
   }
 }
+
+modoToggle.addEventListener('click', () => {
+  if (document.body.classList.contains('dark-mode')) {
+    document.body.classList.remove('dark-mode');
+    modoToggle.textContent = 'Modo Escuro';
+    localStorage.setItem('modoUnipoc', 'light');
+  } else {
+    document.body.classList.add('dark-mode');
+    modoToggle.textContent = 'Modo Claro';
+    localStorage.setItem('modoUnipoc', 'dark');
+  }
+});
+
+// Aplica o modo salvo ao carregar
+window.addEventListener('DOMContentLoaded', aplicarModoSalvo);

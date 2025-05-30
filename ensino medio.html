@@ -14,6 +14,10 @@
       <p class="subtitulo">
         Nosso curso aborda todos os assuntos do Ensino Médio para os vestibulares do ENEM e da UECE, com conteúdos organizados por áreas para facilitar seus estudos.
       </p>
+      <div class="imagem-e-botao">
+        <img src="Pipo Acenando" alt="Mascote Pipo" class="imagem-pipo">
+        <button id="voltar-btn" class="botao-voltar">← Voltar para a página principal</button>
+      </div>
     </header>
 
     <main class="areas">
@@ -65,5 +69,15 @@
       © 2025 UNIPOC • Estude com o Pipo, sua preguiça favorita!
     </footer>
   </div>
+
+  <script>
+    const botaoVoltar = document.getElementById("voltar-btn");
+    if (botaoVoltar) {
+      botaoVoltar.addEventListener("click", e => {
+        e.preventDefault();
+        window.location.href = "index.html";
+      });
+    }
+  </script>
 </body>
 </html>

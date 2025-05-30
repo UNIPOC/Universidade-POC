@@ -58,9 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Aqui poderia ser feita a integração real com backend.
-    // Como não há backend, simulamos sucesso no envio.
-    statusEnvio.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
+    // Monta o link para envio de email
+    const destinatario = 'universidadepoc@gmail.com'; // Coloque seu email aqui
+    const assunto = encodeURIComponent('Contato via formulário do site');
+    const corpo = encodeURIComponent(`Nome: ${nome}\nEmail: ${email}\nMensagem: ${mensagem}`);
+
+    // Abre o cliente de email com os campos preenchidos
+    window.location.href = `mailto:${destinatario}?subject=${assunto}&body=${corpo}`;
+
+    // Mostra mensagem de sucesso
+    statusEnvio.textContent = 'Abrindo seu cliente de email para envio da mensagem...';
     statusEnvio.style.color = '#5A3A8B';
 
     formContato.reset();

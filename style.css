@@ -243,3 +243,35 @@ body {
     flex-direction: column;
   }
 }
+/* MENU MOBILE */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: var(--roxo-escuro);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-toggle .bar {
+  transition: all 0.3s ease;
+}

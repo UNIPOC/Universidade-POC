@@ -1,0 +1,254 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f5ff;
+  color: #2d145d;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Container principal */
+.container {
+  max-width: 960px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #5d3b8c;
+}
+
+h2 {
+  margin-top: 20px;
+  color: #4c2a7c;
+}
+
+h3 {
+  margin-top: 15px;
+  color: #5e3f97;
+  border-left: 4px solid #b192e4;
+  padding-left: 10px;
+}
+
+/* Abas */
+.abas {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.abas button {
+  background-color: #e0d4f7;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #4c2a7c;
+  transition: background-color 0.3s ease;
+}
+
+.abas button.ativo,
+.abas button:hover {
+  background-color: #a974f2;
+  color: white;
+}
+
+/* Conteúdo das abas */
+.conteudo-aba {
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Lista de contatos */
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+/* Imagens */
+.foto-diretora,
+.foto-pipo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.foto-pipo {
+  display: block;
+  margin: 20px auto;
+}
+
+/* Galeria da equipe */
+.galeria-equipe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.galeria-equipe img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s;
+  border: 3px solid #d6c2f0;
+}
+
+.galeria-equipe img:hover {
+  transform: scale(1.1);
+  border-color: #a974f2;
+}
+
+/* Rodapé */
+.rodape {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+
+/* FAQ - perguntas frequentes */
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid #d6c2f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(122, 77, 196, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  background-color: #a974f2;
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  border-radius: 12px 12px 0 0;
+}
+
+.faq-question:hover {
+  background-color: #7a4dc4;
+}
+
+.faq-answer {
+  padding: 15px 20px;
+  background-color: #f3e9ff;
+  color: #4c2a7c;
+  display: none;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Formulário de contato */
+form#form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+form#form-contato label {
+  font-weight: 600;
+  color: #5d3b8c;
+}
+
+form#form-contato input[type="text"],
+form#form-contato input[type="email"],
+form#form-contato textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1.5px solid #a974f2;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2d145d;
+}
+
+form#form-contato input[type="text"]:focus,
+form#form-contato input[type="email"]:focus,
+form#form-contato textarea:focus {
+  outline: none;
+  border-color: #7a4dc4;
+  background-color: #f4eaff;
+}
+
+form#form-contato button[type="submit"] {
+  background: linear-gradient(135deg, #7a4dc4, #a974f2);
+  border: none;
+  border-radius: 20px;
+  padding: 12px 25px;
+  font-weight: bold;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  align-self: flex-start;
+  box-shadow: 0 4px 12px rgba(122, 77, 196, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form#form-contato button[type="submit"]:hover {
+  background: linear-gradient(135deg, #5a3a8b, #7a4dc4);
+  transform: translateY(-3px);
+}
+
+/* Status do envio */
+#status-envio {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #5d3b8c;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .abas {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .galeria-equipe img {
+    width: 60px;
+    height: 60px;
+  }
+
+  form#form-contato button[type="submit"] {
+    width: 100%;
+  }
+}

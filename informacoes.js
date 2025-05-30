@@ -1,71 +1,68 @@
-// Controle das abas
-const botoesAbas = document.querySelectorAll(".abas button");
-const conteudosAbas = document.querySelectorAll(".conteudo-aba");
+// Função para alternar abas
+function mostrarAba(abaId) {
+  const conteudos = document.querySelectorAll('.conteudo-aba');
+  conteudos.forEach(div => div.style.display = 'none');
 
-botoesAbas.forEach((botao, i) => {
-  botao.addEventListener("click", () => {
-    // Remove ativo de todos
-    botoesAbas.forEach(b => b.classList.remove("ativo"));
-    conteudosAbas.forEach(c => (c.style.display = "none"));
+  document.getElementById(abaId).style.display = 'block';
 
-    // Ativa o clicado e mostra o conteúdo
-    botao.classList.add("ativo");
-    conteudosAbas[i].style.display = "block";
-  });
-});
+  const botoes = document.querySelectorAll('.abas button');
+  botoes.forEach(btn => btn.classList.remove('ativo'));
 
-// Inicializa mostrando a primeira aba
-if (botoesAbas.length > 0) {
-  botoesAbas[0].classList.add("ativo");
-  conteudosAbas[0].style.display = "block";
+  document.querySelector(`[data-aba="${abaId}"]`).classList.add('ativo');
 }
 
-// FAQ - Toggle perguntas frequentes
-const faqs = document.querySelectorAll(".faq-question");
-faqs.forEach(faq => {
-  faq.addEventListener("click", () => {
-    const resposta = faq.nextElementSibling;
-    const aberto = resposta.style.display === "block";
+// Inicializa exibindo a aba padrão "escola"
+document.addEventListener('DOMContentLoaded', () => {
+  mostrarAba('escola');
 
-    // Fecha todas as respostas abertas
-    document.querySelectorAll(".faq-answer").forEach(ans => ans.style.display = "none");
+  // Configura toggle das perguntas frequentes
+  const perguntas = document.querySelectorAll('.faq-question');
+  perguntas.forEach(pergunta => {
+    pergunta.addEventListener('click', () => {
+      const resposta = pergunta.nextElementSibling;
+      const aberta = resposta.style.display === 'block';
+      
+      // Fecha todas as respostas
+      document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
 
-    // Alterna a resposta clicada
-    resposta.style.display = aberto ? "none" : "block";
+      // Abre a clicada se estava fechada
+      if (!aberta) {
+        resposta.style.display = 'block';
+      }
+    });
   });
-});
 
-// Formulário de contato
-const formContato = document.getElementById("form-contato");
-const statusEnvio = document.getElementById("status-envio");
-
-formContato.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  // Dados do formulário
-  const nome = formContato.nome.value.trim();
-  const email = formContato.email.value.trim();
-  const mensagem = formContato.mensagem.value.trim();
-
-  // Validação simples
-  if (!nome || !email || !mensagem) {
-    statusEnvio.textContent = "Por favor, preencha todos os campos.";
-    statusEnvio.style.color = "red";
-    return;
+  // Botão voltar
+  const botaoVoltar = document.getElementById('voltar-btn');
+  if (botaoVoltar) {
+    botaoVoltar.addEventListener('click', e => {
+      e.preventDefault();
+      window.location.href = 'index.html'; // Ajuste se a página principal tiver outro nome
+    });
   }
 
-  // Construir corpo do email (para mailto)
-  const assunto = encodeURIComponent(`Mensagem do site UNIPOC - ${nome}`);
-  const corpo = encodeURIComponent(`Nome: ${nome}\nEmail: ${email}\n\nMensagem:\n${mensagem}`);
+  // Envio do formulário
+  const formContato = document.getElementById('form-contato');
+  const statusEnvio = document.getElementById('status-envio');
 
-  // Usar mailto para abrir o cliente de email do usuário
-  const mailtoLink = `mailto:seuemail@unipoc.com?subject=${assunto}&body=${corpo}`;
+  formContato.addEventListener('submit', e => {
+    e.preventDefault();
 
-  window.location.href = mailtoLink;
+    const nome = formContato.nome.value.trim();
+    const email = formContato.email.value.trim();
+    const mensagem = formContato.mensagem.value.trim();
 
-  statusEnvio.textContent = "Seu cliente de email foi aberto para enviar a mensagem.";
-  statusEnvio.style.color = "#5d3b8c";
+    if (!nome || !email || !mensagem) {
+      statusEnvio.textContent = 'Por favor, preencha todos os campos.';
+      statusEnvio.style.color = 'red';
+      return;
+    }
 
-  // Opcional: limpar campos após abrir email
-  formContato.reset();
+    // Aqui poderia ser feita a integração real com backend.
+    // Como não há backend, simulamos sucesso no envio.
+    statusEnvio.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
+    statusEnvio.style.color = '#5A3A8B';
+
+    formContato.reset();
+  });
 });

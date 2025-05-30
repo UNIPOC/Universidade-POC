@@ -1,87 +1,59 @@
-// Função para formatar o tempo restante em dias, horas, minutos e segundos
-function formatarTempo(ms) {
-  const totalSegundos = Math.floor(ms / 1000);
-  const dias = Math.floor(totalSegundos / (3600 * 24));
-  const horas = Math.floor((totalSegundos % (3600 * 24)) / 3600);
-  const minutos = Math.floor((totalSegundos % 3600) / 60);
-  const segundos = totalSegundos % 60;
+// Função para formatar tempo restante em dias, horas, minutos e segundos
+function formatarTempo(restante) {
+  const dias = Math.floor(restante / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((restante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((restante % (1000 * 60)) / 1000);
 
-  return { dias, horas, minutos, segundos };
+  return `${dias}d ${horas}h ${minutos}m ${segundos}s`;
 }
 
-// Atualiza o contador de um vestibular
-function atualizarContador(idContador, dataAlvo) {
-  const contadorElem = document.getElementById(idContador);
+// Atualiza o contador com base na data alvo e no id do elemento
+function atualizarContador(id, dataAlvo) {
+  const agora = new Date().getTime();
+  const alvo = new Date(dataAlvo).getTime();
+  const restante = alvo - agora;
+  const elemento = document.getElementById(id);
 
-  function atualizar() {
-    const agora = new Date();
-    const diff = dataAlvo - agora;
-
-    if (diff <= 0) {
-      contadorElem.textContent = "Já passou!";
-      clearInterval(intervalo);
-      return;
-    }
-
-    const { dias, horas, minutos, segundos } = formatarTempo(diff);
-
-    contadorElem.innerHTML =
-      `<span>${dias}d</span> ` +
-      `<span>${horas}h</span> ` +
-      `<span>${minutos}m</span> ` +
-      `<span>${segundos}s</span>`;
-  }
-
-  atualizar();
-  const intervalo = setInterval(atualizar, 1000);
-}
-
-// Datas oficiais mais recentes dos vestibulares
-
-// ENEM 2025 - Primeira prova: 3 e 4 de novembro (domingo e segunda-feira)
-// Para contagem regressiva, considere o primeiro dia da prova, 3 de novembro de 2025 às 13:00
-const enem2025 = new Date('2025-11-03T13:00:00-03:00'); // Horário de Brasília (UTC-3)
-
-// UECE 2025 - Vestibular de Inverno 2025
-// Data provável da primeira prova: 8 de dezembro de 2025 às 8:00
-const uece2025 = new Date('2025-12-08T08:00:00-03:00');
-
-// Inicia os contadores
-atualizarContador('contador-enem', enem2025);
-atualizarContador('contador-uece', uece2025);
-
-// Botão voltar para a última seção acessada
-const btnVoltar = document.getElementById('btn-voltar');
-
-// Função para rolar para a última seção salva
-function rolarParaUltimaSecao() {
-  const ultimaSecaoId = localStorage.getItem('ultimaSecaoVestibulares');
-  if (ultimaSecaoId) {
-    const secao = document.getElementById(ultimaSecaoId);
-    if (secao) {
-      secao.scrollIntoView({ behavior: 'smooth' });
-    }
+  if (restante <= 0) {
+    elemento.textContent = 'Evento já ocorreu!';
+  } else {
+    elemento.textContent = formatarTempo(restante);
   }
 }
 
-// Atribui a função ao botão voltar
-btnVoltar.addEventListener('click', rolarParaUltimaSecao);
+// Inicializa os contadores e botão voltar
+function inicializar() {
+  // Datas oficiais aproximadas dos vestibulares 2025
+  // ENEM 2025: 3 e 10 de novembro 2025
+  // Usaremos 3 de novembro como referência para o contador
+  const dataEnem = '2025-11-03T00:00:00-03:00';
 
-// Salva no localStorage a seção atual ao rolar a página
-const secoes = document.querySelectorAll('.vestibular');
+  // UECE 2025: primeira fase prevista em 8 de dezembro 2025
+  const dataUece = '2025-12-08T00:00:00-03:00';
 
-window.addEventListener('scroll', () => {
-  let secaoAtual = null;
-  const topoJanela = window.scrollY + window.innerHeight / 3;
+  // Atualizar os contadores imediatamente
+  atualizarContador('contador-enem', dataEnem);
+  atualizarContador('contador-uece', dataUece);
 
-  secoes.forEach(secao => {
-    const topoSecao = secao.offsetTop;
-    if (topoSecao <= topoJanela) {
-      secaoAtual = secao.id;
-    }
+  // Atualizar a cada 1 segundo
+  setInterval(() => {
+    atualizarContador('contador-enem', dataEnem);
+    atualizarContador('contador-uece', dataUece);
+  }, 1000);
+
+  // Botão voltar - volta para última posição salva ou para topo
+  const btnVoltar = document.getElementById('btn-voltar');
+  btnVoltar.addEventListener('click', () => {
+    const ultimaPosicao = localStorage.getItem('ultimaPosicao') || 0;
+    window.scrollTo({ top: parseInt(ultimaPosicao, 10), behavior: 'smooth' });
   });
 
-  if (secaoAtual) {
-    localStorage.setItem('ultimaSecaoVestibulares', secaoAtual);
-  }
-});
+  // Salvar a posição do scroll sempre que o usuário rolar a página
+  window.addEventListener('scroll', () => {
+    localStorage.setItem('ultimaPosicao', window.scrollY.toString());
+  });
+}
+
+// Espera o DOM estar completamente carregado para rodar a inicialização
+document.addEventListener('DOMContentLoaded', inicializar);

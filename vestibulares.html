@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UNIPOC - Vestibulares</title>
   <link rel="icon" type="image/png" href="Pipo Lendo.png" />
-  <link rel="stylesheet" href="vestibulares.css" />
+  <link rel="stylesheet" href="estilo-vestibulares.css" />
 </head>
 <body>
   <div class="container">
@@ -14,52 +14,46 @@
       <p>
         Aqui você encontra tudo sobre seu ingresso na universidade, com foco em explicar o ENEM e a UECE.
       </p>
+      <img src="pipo-vestibulares.png" alt="Pipo estudando" class="pipo-imagem" />
+      <a href="index.html" class="botao-voltar">← Voltar para a página principal</a>
     </header>
 
-    <section class="topo-interativo">
-      <div class="pipo-container">
-        <img src="Pipo Lendo.png" alt="Mascote Pipo lendo" class="imagem-pipo" />
+    <section class="contadores">
+      <div class="contador">
+        <h2>Faltam:</h2>
+        <p id="contador-enem">Carregando ENEM...</p>
+        <small>para o ENEM 2025</small>
       </div>
-      <div class="contadores-container">
-        <div class="contador-box">
-          <h3>Faltam para o ENEM:</h3>
-          <div id="contador-enem" class="contador">Carregando...</div>
-        </div>
-        <div class="contador-box">
-          <h3>Faltam para a UECE:</h3>
-          <div id="contador-uece" class="contador">Carregando...</div>
-        </div>
+      <div class="contador">
+        <h2>Faltam:</h2>
+        <p id="contador-uece">Carregando UECE...</p>
+        <small>para a 1ª Fase da UECE 2025</small>
       </div>
-      <button id="btn-voltar" aria-label="Voltar para última seção acessada">Voltar</button>
     </section>
 
-    <section id="enem" class="vestibular">
+    <section class="vestibular">
       <h2>ENEM (Exame Nacional do Ensino Médio)</h2>
       <p>O ENEM é a principal porta de entrada para o ensino superior no Brasil. Avalia quatro áreas do conhecimento e uma redação.</p>
-      
       <div class="video">
         <iframe src="https://www.youtube.com/embed/ERBsJitApDw" title="Como funciona o ENEM" frameborder="0" allowfullscreen></iframe>
       </div>
-
       <div class="botoes">
-        <a class="botao" href="https://app.glau.com.vc/aluno/inicio" target="_blank" rel="noopener noreferrer">Correção de Redação (Glau)</a>
-        <a class="botao" href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noopener noreferrer">Provas Anteriores</a>
-        <a class="botao" href="https://edukavest.com.br/simulados/enem" target="_blank" rel="noopener noreferrer">Simulados ENEM</a>
+        <a class="botao" href="https://app.glau.com.vc/aluno/inicio" target="_blank">Correção de Redação (Glau)</a>
+        <a class="botao" href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank">Provas Anteriores</a>
+        <a class="botao" href="https://edukavest.com.br/simulados/enem" target="_blank">Simulados ENEM</a>
       </div>
     </section>
 
-    <section id="uece" class="vestibular">
+    <section class="vestibular">
       <h2>UECE (Universidade Estadual do Ceará)</h2>
       <p>A UECE realiza vestibulares com duas fases e conteúdos específicos como História e Geografia do Ceará.</p>
-
       <div class="video">
         <iframe src="https://www.youtube.com/embed/JbpEAtFSZtY" title="Como funciona o vestibular da UECE" frameborder="0" allowfullscreen></iframe>
       </div>
-
       <div class="botoes">
-        <a class="botao" href="https://www.cev.uece.br/home/home/concursos-servicos/encerrados/vestibulares/vestibular-uece/" target="_blank" rel="noopener noreferrer">Simulados Anteriores</a>
-        <a class="botao" href="#" target="_blank" rel="noopener noreferrer">História e Geografia do Ceará</a>
-        <a class="botao" href="https://edukavest.com.br/" target="_blank" rel="noopener noreferrer">Questões ENEM/UECE</a>
+        <a class="botao" href="https://www.cev.uece.br/home/home/concursos-servicos/encerrados/vestibulares/vestibular-uece/" target="_blank">Simulados Anteriores</a>
+        <a class="botao" href="#" target="_blank">História e Geografia do Ceará</a>
+        <a class="botao" href="https://edukavest.com.br/" target="_blank">Questões ENEM/UECE</a>
       </div>
     </section>
 
@@ -68,6 +62,6 @@
     </footer>
   </div>
 
-  <script src="vestibulares.js"></script>
+  <script src="script-vestibulares.js"></script>
 </body>
 </html>

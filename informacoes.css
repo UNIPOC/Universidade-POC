@@ -34,6 +34,8 @@ h1 {
 h2 {
   margin-top: 20px;
   color: #4c2a7c;
+  text-align: center; /* centralizar título Informações */
+  margin-bottom: 1.5rem; /* espaço entre título e botão */
 }
 
 h3 {
@@ -41,6 +43,25 @@ h3 {
   color: #5e3f97;
   border-left: 4px solid #b192e4;
   padding-left: 10px;
+}
+
+/* Botão Voltar centralizado abaixo do título Informações */
+.botao-voltar {
+  display: block;
+  margin: 0 auto 30px auto; /* centralizado horizontal e 30px abaixo */
+  background: linear-gradient(135deg, #7a4dc4, #a583e3);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(122, 77, 196, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.botao-voltar:hover {
+  transform: translateY(-3px);
 }
 
 /* Abas */

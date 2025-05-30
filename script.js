@@ -1,57 +1,43 @@
-// === FRASES DO PIPO ===
-const frasesPipo = [
-  "Estudar é o primeiro passo para alcançar seus sonhos!",
-  "Uma preguiça que estuda voa mais alto do que muitos que correm.",
-  "Com calma e foco, você conquista tudo!",
-  "A sabedoria também dorme cedo. Não vire noites!",
-  "Você consegue, jovem gafanhoto!",
-  "Relaxa, respira, e bora entender esse conteúdo.",
-  "Todo mundo começa de algum lugar. Continue!",
-  "Não é sobre velocidade, é sobre consistência!",
+// Frases motivacionais do Pipo
+const frases = [
+  "Nunca desista dos seus sonhos! – Pipo",
+  "Cada dia é uma nova oportunidade para aprender. – Pipo",
+  "Estudar com alegria rende muito mais! – Pipo",
+  "Você é capaz de tudo, acredite! – Pipo",
+  "Paciência e foco são seus melhores amigos. – Pipo"
 ];
 
-function atualizarFrasePipo() {
-  const index = Math.floor(Math.random() * frasesPipo.length);
-  document.getElementById("frase-pipo").textContent = frasesPipo[index];
-}
-
-// === COMENTÁRIOS DOS ALUNOS ===
+// Comentários positivos dos alunos
 const comentarios = [
-  "“Esse site me ajudou muito nos estudos pro ENEM!” – Ana L.",
-  "“As dicas do Pipo são tudo! Nota 10!” – João M.",
-  "“Achei super divertido estudar por aqui.” – Carla T.",
-  "“Melhor site que já vi na escola!” – Lucas P.",
-  "“Passei na UECE estudando com a Unipoc!” – Vitória S.",
-  "“O conteúdo é completo e bem explicado.” – Felipe G.",
-  "“O Pipo me motivou a estudar todos os dias.” – Letícia R.",
+  "O UNIPOC mudou minha forma de estudar, super recomendo!",
+  "Conteúdo bem organizado e fácil de entender, amo estudar aqui!",
+  "Pipo é o melhor mascote, sempre motivando a gente!",
+  "As videoaulas e resumos me ajudaram a passar no ENEM!",
+  "Site muito interativo e agradável, estudo com prazer!"
 ];
 
-let comentarioIndex = 0;
-
-function atualizarComentario() {
-  const box = document.getElementById("comentario");
-  box.style.opacity = 0;
-
-  setTimeout(() => {
-    box.textContent = comentarios[comentarioIndex];
-    box.style.opacity = 1;
-    comentarioIndex = (comentarioIndex + 1) % comentarios.length;
-  }, 300);
+// Função para atualizar frase motivacional aleatória
+function atualizarFrase() {
+  const fraseElemento = document.getElementById("frasePipo");
+  const indice = Math.floor(Math.random() * frases.length);
+  fraseElemento.textContent = frases[indice];
 }
 
-// === MENU MOBILE TOGGLE ===
-const menuToggle = document.getElementById("menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
+// Função para atualizar comentário aleatório
+function atualizarComentario() {
+  const comentarioElemento = document.getElementById("comentarioAluno");
+  const indice = Math.floor(Math.random() * comentarios.length);
+  comentarioElemento.textContent = comentarios[indice];
+}
 
-menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("active");
-  menuToggle.classList.toggle("open");
-});
-
-// === INICIALIZAÇÃO ===
-document.addEventListener("DOMContentLoaded", () => {
-  atualizarFrasePipo();
+// Atualiza frase e comentário ao carregar a página
+window.addEventListener("DOMContentLoaded", () => {
+  atualizarFrase();
   atualizarComentario();
-  setInterval(atualizarFrasePipo, 10000); // troca a cada 10s
-  setInterval(atualizarComentario, 8000); // troca a cada 8s
 });
+
+// Atualiza frase e comentário a cada 10 segundos
+setInterval(() => {
+  atualizarFrase();
+  atualizarComentario();
+}, 10000);

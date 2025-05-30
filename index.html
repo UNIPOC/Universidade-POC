@@ -2,113 +2,47 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unipoc - Página Inicial</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UNIPOC - Página Inicial</title>
+  <link rel="icon" type="image/png" href="Pipo inicial.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- NAVBAR FIXA E RESPONSIVA -->
-  <header class="navbar">
-    <div class="container">
-      <div class="logo-title">
-        <img src="imagens/pipo.png" alt="Mascote Pipo" class="pipo-logo" />
-        <h1 class="site-title">Unipoc</h1>
+  <div class="container">
+    <header>
+      <div class="texto-header">
+        <h1>Bem-vindo ao <span class="destaque">UNIPOC</span>!</h1>
+        <p>Estude com resumos, videoaulas e muito conteúdo para passar no ENEM e UECE!</p>
       </div>
-      <nav class="nav-links">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link active">Início</a></li>
-          <li><a href="ensino-medio.html" class="nav-link">Ensino Médio</a></li>
-          <li><a href="vestibulares.html" class="nav-link">Vestibulares</a></li>
-          <li><a href="profissoes.html" class="nav-link">Profissões</a></li>
-          <li><a href="informacoes.html" class="nav-link">Informações</a></li>
-        </ul>
-        <div class="menu-toggle" id="menu-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </nav>
-    </div>
-  </header>
+      <img src="Pipo inicial.png" alt="Mascote Pipo" class="imagem-pipo" />
+    </header>
 
-  <!-- MENU MOBILE -->
-  <div class="mobile-menu" id="mobile-menu">
-    <ul class="mobile-nav-list">
-      <li><a href="index.html" class="mobile-nav-link active">Início</a></li>
-      <li><a href="ensino-medio.html" class="mobile-nav-link">Ensino Médio</a></li>
-      <li><a href="vestibulares.html" class="mobile-nav-link">Vestibulares</a></li>
-      <li><a href="profissoes.html" class="mobile-nav-link">Profissões</a></li>
-      <li><a href="informacoes.html" class="mobile-nav-link">Informações</a></li>
-    </ul>
+    <div class="frase-motivacional" id="frasePipo"></div>
+
+    <section class="cards">
+      <a href="ensino-medio.html" class="card">📚 Ensino Médio</a>
+      <a href="vestibulares.html" class="card">🎯 Vestibulares</a>
+      <a href="profissoes.html" class="card">🔍 Profissões</a>
+      <a href="informacoes.html" class="card">ℹ️ Informações</a>
+    </section>
+
+    <section class="destaques">
+      <h2>Destaques do UNIPOC</h2>
+      <ul>
+        <li>Resumos organizados</li>
+        <li>Videoaulas</li>
+        <li>Conteúdo atualizado</li>
+        <li>Exercícios e interatividade</li>
+      </ul>
+    </section>
+
+    <section class="comentarios-container">
+      <p id="comentarioAluno"></p>
+    </section>
+
+    <footer class="rodape">
+      © 2025 UNIPOC • Estude com o Pipo, sua preguiça favorita!
+    </footer>
   </div>
-
-  <!-- HERO / INTRODUÇÃO -->
-  <section class="hero-section">
-    <div class="hero-container">
-      <div class="hero-text">
-        <h2 class="welcome-title">Bem-vindo ao Unipoc!</h2>
-        <p class="pipo-frase" id="pipo-frase">"Estudar também é um descanso... para quem sonha alto!"</p>
-      </div>
-      <div class="hero-image">
-        <img src="imagens/pipo.png" alt="Mascote Pipo Sorrindo" class="hero-pipo" />
-      </div>
-    </div>
-  </section>
-
-  <!-- BOTÕES PRINCIPAIS -->
-  <section class="botoes-section">
-    <div class="botoes-container">
-      <a href="ensino-medio.html" class="main-btn">Ensino Médio</a>
-      <a href="vestibulares.html" class="main-btn">Vestibulares</a>
-      <a href="profissoes.html" class="main-btn">Profissões</a>
-      <a href="informacoes.html" class="main-btn">Informações</a>
-    </div>
-  </section>
-
-  <!-- COMENTÁRIOS DOS ALUNOS -->
-  <section class="comentarios-section">
-    <h3 class="comentario-titulo">O que os alunos dizem:</h3>
-    <div class="comentario-box">
-      <p id="comentario-texto">"Esse site me ajudou muito a entender melhor os conteúdos do ENEM!"</p>
-    </div>
-  </section>
-
-  <!-- ELEMENTOS OCULTOS PARA JS -->
-  <div class="frases-pipo" style="display: none;">
-    <p>"Estudar também é um descanso... para quem sonha alto!"</p>
-    <p>"Você é capaz de muito mais do que imagina, confie!"</p>
-    <p>"Não existe impossível para quem insiste."</p>
-    <p>"O futuro é seu, e começa com o agora."</p>
-    <p>"Cada página estudada é um degrau a mais no seu sucesso."</p>
-  </div>
-
-  <div class="comentarios-alunos" style="display: none;">
-    <p>"Esse site me ajudou muito a entender melhor os conteúdos do ENEM!"</p>
-    <p>"Adorei o mascote! Aprender ficou mais divertido."</p>
-    <p>"As explicações são claras e diretas. Amei!"</p>
-    <p>"Agora estudar em casa ficou mais fácil com o Unipoc."</p>
-    <p>"Me sinto mais preparado para o vestibular com esse conteúdo."</p>
-  </div>
-
-  <!-- RODAPÉ -->
-  <footer class="footer">
-    <p>&copy; 2025 Unipoc - Todos os direitos reservados.</p>
-  </footer>
-
-  <!-- SCRIPT INLINE APENAS PARA GARANTIA DO MENU MOBILE -->
-  <script>
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('active');
-    });
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('mobile-menu').classList.remove('active');
-      });
-    });
-  </script>
 </body>
 </html>

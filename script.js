@@ -4,7 +4,7 @@ const frases = [
   "Cada dia é uma nova oportunidade para aprender. – Pipo",
   "Estudar com alegria rende muito mais! – Pipo",
   "Você é capaz de tudo, acredite! – Pipo",
-  "Paciência e foco são seus melhores amigos. – Pipo"
+  "Paciência e foco são seus melhores amigos. – Pipo",
   "Ei! Você já estudou hoje? Bora garantir aquela vaga!",
   "A preguiça é minha, mas a aprovação é sua!",
   "Devagar e sempre… mas com foco no ENEM!",
@@ -24,7 +24,7 @@ const frases = [
   "Pausa o TikTok e dá play nos estudos.",
   "Não estuda muito não… estuda bem!",
   "A diferença entre o sonho e a realidade é o esforço.",
-  "Apenas vá no seu ritmo, mas vá!",
+  "Apenas vá no seu ritmo, mas vá!"
 ];
 
 // Comentários positivos dos alunos
@@ -33,7 +33,7 @@ const comentarios = [
   "Conteúdo bem organizado e fácil de entender, amo estudar aqui!",
   "Pipo é o melhor mascote, sempre motivando a gente!",
   "As videoaulas e resumos me ajudaram a passar no ENEM!",
-  "Site muito interativo e agradável, estudo com prazer!"
+  "Site muito interativo e agradável, estudo com prazer!",
   "Estudar com o Pipo mudou minha rotina! Agora até gosto de revisar!",
   "Passei pra UECE com a ajuda do UNIPOC. Obrigado, Pipo!",
   "Amei os resumos! Tudo muito organizado e fácil de entender.",

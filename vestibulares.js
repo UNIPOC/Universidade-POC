@@ -1,59 +1,55 @@
-// Função para formatar tempo restante em dias, horas, minutos e segundos
-function formatarTempo(restante) {
-  const dias = Math.floor(restante / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((restante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((restante % (1000 * 60)) / 1000);
+// Datas oficiais
+const dataEnem = new Date("2025-11-09T00:00:00");
+const dataUece = new Date("2025-12-01T00:00:00");
 
-  return `${dias}d ${horas}h ${minutos}m ${segundos}s`;
-}
+function atualizarContadores() {
+  const agora = new Date();
+  const contadorEnem = document.getElementById("contador-enem");
+  const contadorUece = document.getElementById("contador-uece");
 
-// Atualiza o contador com base na data alvo e no id do elemento
-function atualizarContador(id, dataAlvo) {
-  const agora = new Date().getTime();
-  const alvo = new Date(dataAlvo).getTime();
-  const restante = alvo - agora;
-  const elemento = document.getElementById(id);
+  function calcularTempoRestante(dataFutura) {
+    const total = dataFutura - agora;
 
-  if (restante <= 0) {
-    elemento.textContent = 'Evento já ocorreu!';
+    if (total <= 0) {
+      return null;
+    }
+
+    const segundos = Math.floor((total / 1000) % 60);
+    const minutos = Math.floor((total / 1000 / 60) % 60);
+    const horas = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const dias = Math.floor(total / (1000 * 60 * 60 * 24));
+
+    return { dias, horas, minutos, segundos };
+  }
+
+  const tempoEnem = calcularTempoRestante(dataEnem);
+  const tempoUece = calcularTempoRestante(dataUece);
+
+  if (!tempoEnem) {
+    contadorEnem.textContent = "ENEM já aconteceu";
   } else {
-    elemento.textContent = formatarTempo(restante);
+    contadorEnem.textContent = `${tempoEnem.dias}d ${tempoEnem.horas}h ${tempoEnem.minutos}m ${tempoEnem.segundos}s`;
+  }
+
+  if (!tempoUece) {
+    contadorUece.textContent = "UECE já aconteceu";
+  } else {
+    contadorUece.textContent = `${tempoUece.dias}d ${tempoUece.horas}h ${tempoUece.minutos}m ${tempoUece.segundos}s`;
   }
 }
 
-// Inicializa os contadores e botão voltar
-function inicializar() {
-  // Datas oficiais aproximadas dos vestibulares 2025
-  // ENEM 2025: 3 e 10 de novembro 2025
-  // Usaremos 3 de novembro como referência para o contador
-  const dataEnem = '2025-11-03T00:00:00-03:00';
+// Atualiza imediatamente
+atualizarContadores();
 
-  // UECE 2025: primeira fase prevista em 8 de dezembro 2025
-  const dataUece = '2025-12-08T00:00:00-03:00';
+// Atualiza a cada segundo
+setInterval(atualizarContadores, 1000);
 
-  // Atualizar os contadores imediatamente
-  atualizarContador('contador-enem', dataEnem);
-  atualizarContador('contador-uece', dataUece);
+// Botão de voltar
+const botaoVoltar = document.getElementById("voltar-btn");
 
-  // Atualizar a cada 1 segundo
-  setInterval(() => {
-    atualizarContador('contador-enem', dataEnem);
-    atualizarContador('contador-uece', dataUece);
-  }, 1000);
-
-  // Botão voltar - volta para última posição salva ou para topo
-  const btnVoltar = document.getElementById('btn-voltar');
-  btnVoltar.addEventListener('click', () => {
-    const ultimaPosicao = localStorage.getItem('ultimaPosicao') || 0;
-    window.scrollTo({ top: parseInt(ultimaPosicao, 10), behavior: 'smooth' });
-  });
-
-  // Salvar a posição do scroll sempre que o usuário rolar a página
-  window.addEventListener('scroll', () => {
-    localStorage.setItem('ultimaPosicao', window.scrollY.toString());
+if (botaoVoltar) {
+  botaoVoltar.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "index.html"; // ajuste se necessário
   });
 }
-
-// Espera o DOM estar completamente carregado para rodar a inicialização
-document.addEventListener('DOMContentLoaded', inicializar);

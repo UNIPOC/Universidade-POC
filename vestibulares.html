@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UNIPOC - Vestibulares</title>
   <link rel="icon" type="image/png" href="Pipo Lendo.png" />
-  <link rel="stylesheet" href="vestibulares.css" />
+  <link rel="stylesheet" href="estilo-vestibulares.css" />
 </head>
 <body>
   <div class="container">
@@ -16,23 +16,24 @@
       </p>
     </header>
 
-    <div class="top-bar">
-      <img src="Pipo Lendo.png" alt="Mascote Pipo" class="imagem-pipo" />
-      <button id="btn-voltar" class="btn-voltar" title="Voltar para a última seção">← Voltar</button>
-    </div>
-
-    <section class="contadores">
-      <div class="contador-box">
-        <h3>Contador para ENEM</h3>
-        <div id="enem-contador" class="contador">Carregando...</div>
+    <section class="topo-interativo">
+      <div class="pipo-container">
+        <img src="Pipo Lendo.png" alt="Mascote Pipo lendo" class="imagem-pipo" />
       </div>
-      <div class="contador-box">
-        <h3>Contador para UECE</h3>
-        <div id="uece-contador" class="contador">Carregando...</div>
+      <div class="contadores-container">
+        <div class="contador-box">
+          <h3>Faltam para o ENEM:</h3>
+          <div id="contador-enem" class="contador">Carregando...</div>
+        </div>
+        <div class="contador-box">
+          <h3>Faltam para a UECE:</h3>
+          <div id="contador-uece" class="contador">Carregando...</div>
+        </div>
       </div>
+      <button id="btn-voltar" aria-label="Voltar para última seção acessada">Voltar</button>
     </section>
 
-    <section class="vestibular" id="enem">
+    <section id="enem" class="vestibular">
       <h2>ENEM (Exame Nacional do Ensino Médio)</h2>
       <p>O ENEM é a principal porta de entrada para o ensino superior no Brasil. Avalia quatro áreas do conhecimento e uma redação.</p>
       
@@ -47,7 +48,7 @@
       </div>
     </section>
 
-    <section class="vestibular" id="uece">
+    <section id="uece" class="vestibular">
       <h2>UECE (Universidade Estadual do Ceará)</h2>
       <p>A UECE realiza vestibulares com duas fases e conteúdos específicos como História e Geografia do Ceará.</p>
 

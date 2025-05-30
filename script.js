@@ -1,92 +1,57 @@
-// script.js
-
-// Menu Mobile Toggle
-const menuBtn = document.getElementById('menu-mobile-btn');
-const navLinks = document.getElementById('nav-links');
-
-menuBtn.addEventListener('click', () => {
-  menuBtn.classList.toggle('active');
-  navLinks.classList.toggle('mobile-active');
-});
-
-// Frases do Pipo
+// === FRASES DO PIPO ===
 const frasesPipo = [
-  "“Estudar é o passaporte para o futuro, e o Pipo te acompanha nessa jornada!”",
-  "“Com calma e foco, você chega lá! Pipo acredita em você.”",
-  "“Cada dia é uma nova oportunidade para aprender algo incrível.”",
-  "“Não desista, o sucesso começa com uma boa dose de persistência.”",
-  "“Aqui no Unipoc, o conhecimento é o seu melhor amigo.”",
-  "“Pipo diz: relaxe, respire e estude com carinho!”",
+  "Estudar é o primeiro passo para alcançar seus sonhos!",
+  "Uma preguiça que estuda voa mais alto do que muitos que correm.",
+  "Com calma e foco, você conquista tudo!",
+  "A sabedoria também dorme cedo. Não vire noites!",
+  "Você consegue, jovem gafanhoto!",
+  "Relaxa, respira, e bora entender esse conteúdo.",
+  "Todo mundo começa de algum lugar. Continue!",
+  "Não é sobre velocidade, é sobre consistência!",
 ];
 
-const fraseElement = document.getElementById('frase-pipo');
-
-function mudarFrase() {
+function atualizarFrasePipo() {
   const index = Math.floor(Math.random() * frasesPipo.length);
-  fraseElement.textContent = frasesPipo[index];
+  document.getElementById("frase-pipo").textContent = frasesPipo[index];
 }
 
-// Muda a frase a cada 10 segundos
-mudarFrase();
-setInterval(mudarFrase, 10000);
+// === COMENTÁRIOS DOS ALUNOS ===
+const comentarios = [
+  "“Esse site me ajudou muito nos estudos pro ENEM!” – Ana L.",
+  "“As dicas do Pipo são tudo! Nota 10!” – João M.",
+  "“Achei super divertido estudar por aqui.” – Carla T.",
+  "“Melhor site que já vi na escola!” – Lucas P.",
+  "“Passei na UECE estudando com a Unipoc!” – Vitória S.",
+  "“O conteúdo é completo e bem explicado.” – Felipe G.",
+  "“O Pipo me motivou a estudar todos os dias.” – Letícia R.",
+];
 
-// Muda a frase ao carregar a página
-window.addEventListener('load', mudarFrase);
+let comentarioIndex = 0;
 
-// Contato: envio de formulário simulado (sem backend)
-const formContato = document.getElementById('form-contato');
+function atualizarComentario() {
+  const box = document.getElementById("comentario");
+  box.style.opacity = 0;
 
-formContato.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const nome = formContato.nome.value.trim();
-  const email = formContato.email.value.trim();
-  const mensagem = formContato.mensagem.value.trim();
-
-  if (!nome || !email || !mensagem) {
-    alert('Por favor, preencha todos os campos antes de enviar.');
-    return;
-  }
-
-  // Validação básica de email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert('Por favor, insira um email válido.');
-    return;
-  }
-
-  // Simulação do envio (exibir alerta)
-  alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.\nResponderemos em breve para ${email}.`);
-
-  // Resetar formulário
-  formContato.reset();
-});
-
-// Alternar Modo Claro/Escuro
-const modoToggle = document.getElementById('modo-toggle');
-
-function aplicarModoSalvo() {
-  const modoSalvo = localStorage.getItem('modoUnipoc');
-  if (modoSalvo === 'dark') {
-    document.body.classList.add('dark-mode');
-    modoToggle.textContent = 'Modo Claro';
-  } else {
-    document.body.classList.remove('dark-mode');
-    modoToggle.textContent = 'Modo Escuro';
-  }
+  setTimeout(() => {
+    box.textContent = comentarios[comentarioIndex];
+    box.style.opacity = 1;
+    comentarioIndex = (comentarioIndex + 1) % comentarios.length;
+  }, 300);
 }
 
-modoToggle.addEventListener('click', () => {
-  if (document.body.classList.contains('dark-mode')) {
-    document.body.classList.remove('dark-mode');
-    modoToggle.textContent = 'Modo Escuro';
-    localStorage.setItem('modoUnipoc', 'light');
-  } else {
-    document.body.classList.add('dark-mode');
-    modoToggle.textContent = 'Modo Claro';
-    localStorage.setItem('modoUnipoc', 'dark');
-  }
+// === MENU MOBILE TOGGLE ===
+const menuToggle = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuToggle.addEventListener("click", () => {
+  mobileMenu.classList.toggle("active");
+  menuToggle.classList.toggle("open");
 });
 
-// Aplica o modo salvo ao carregar
-window.addEventListener('DOMContentLoaded', aplicarModoSalvo);
+// === INICIALIZAÇÃO ===
+document.addEventListener("DOMContentLoaded", () => {
+  atualizarFrasePipo();
+  atualizarComentario();
+  setInterval(atualizarFrasePipo, 10000); // troca a cada 10s
+  setInterval(atualizarComentario, 8000); // troca a cada 8s
+});

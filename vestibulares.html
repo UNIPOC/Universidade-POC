@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UNIPOC - Vestibulares</title>
-  <link rel="icon" type="image/png" href="Pipo Lendo.png">
+  <link rel="icon" type="image/png" href="Pipo Lendo.png" />
   <link rel="stylesheet" href="estilo vestibulares.css" />
 </head>
 <body>
@@ -16,7 +16,23 @@
       </p>
     </header>
 
-    <section class="vestibular">
+    <div class="top-bar">
+      <img src="Pipo Lendo.png" alt="Mascote Pipo" class="imagem-pipo" />
+      <button id="btn-voltar" class="btn-voltar" title="Voltar para a última seção">← Voltar</button>
+    </div>
+
+    <section class="contadores">
+      <div class="contador-box">
+        <h3>Contador para ENEM</h3>
+        <div id="enem-contador" class="contador">Carregando...</div>
+      </div>
+      <div class="contador-box">
+        <h3>Contador para UECE</h3>
+        <div id="uece-contador" class="contador">Carregando...</div>
+      </div>
+    </section>
+
+    <section class="vestibular" id="enem">
       <h2>ENEM (Exame Nacional do Ensino Médio)</h2>
       <p>O ENEM é a principal porta de entrada para o ensino superior no Brasil. Avalia quatro áreas do conhecimento e uma redação.</p>
       
@@ -25,13 +41,13 @@
       </div>
 
       <div class="botoes">
-        <a class="botao" href="https://app.glau.com.vc/aluno/inicio" target="_blank">Correção de Redação (Glau)</a>
-        <a class="botao" href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank">Provas Anteriores</a>
-        <a class="botao" href="https://edukavest.com.br/simulados/enem" target="_blank">Simulados ENEM</a>
+        <a class="botao" href="https://app.glau.com.vc/aluno/inicio" target="_blank" rel="noopener noreferrer">Correção de Redação (Glau)</a>
+        <a class="botao" href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noopener noreferrer">Provas Anteriores</a>
+        <a class="botao" href="https://edukavest.com.br/simulados/enem" target="_blank" rel="noopener noreferrer">Simulados ENEM</a>
       </div>
     </section>
 
-    <section class="vestibular">
+    <section class="vestibular" id="uece">
       <h2>UECE (Universidade Estadual do Ceará)</h2>
       <p>A UECE realiza vestibulares com duas fases e conteúdos específicos como História e Geografia do Ceará.</p>
 
@@ -40,9 +56,9 @@
       </div>
 
       <div class="botoes">
-        <a class="botao" href="https://www.cev.uece.br/home/home/concursos-servicos/encerrados/vestibulares/vestibular-uece/" target="_blank">Simulados Anteriores</a>
-        <a class="botao" href="#" target="_blank">História e Geografia do Ceará</a>
-        <a class="botao" href="https://edukavest.com.br/" target="_blank">Questões ENEM/UECE</a>
+        <a class="botao" href="https://www.cev.uece.br/home/home/concursos-servicos/encerrados/vestibulares/vestibular-uece/" target="_blank" rel="noopener noreferrer">Simulados Anteriores</a>
+        <a class="botao" href="#" target="_blank" rel="noopener noreferrer">História e Geografia do Ceará</a>
+        <a class="botao" href="https://edukavest.com.br/" target="_blank" rel="noopener noreferrer">Questões ENEM/UECE</a>
       </div>
     </section>
 
@@ -50,5 +66,7 @@
       © 2025 UNIPOC • Estude com o Pipo, sua preguiça favorita!
     </footer>
   </div>
+
+  <script src="vestibulares.js"></script>
 </body>
 </html>

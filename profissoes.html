@@ -3,50 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Descubra sua Profissão - UNIPOC</title>
+  <title>Descubra sua Profissão</title>
+  <link rel="icon" type="image/png" href="Pipo Lendo.png" />
   <link rel="stylesheet" href="profissoes.css" />
-  <link rel="icon" href="Pipo Lendo.png" type="image/x-icon" />
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <h1>Descubra sua Profissão</h1>
     <img src="pipo.png" alt="Mascote Pipo" class="foto-pipo" />
-
     <button id="voltar-btn" class="botao-voltar">← Voltar para a página inicial</button>
 
     <div class="abas">
-      <button class="aba-btn ativo" data-alvo="teste-vocacional">Testes Vocacionais</button>
-      <button class="aba-btn" data-alvo="cursos">Cursos Gratuitos</button>
+      <button class="aba-btn ativo" data-aba="testes">Testes Vocacionais</button>
+      <button class="aba-btn" data-aba="cursos">Cursos Gratuitos</button>
     </div>
 
-    <div id="teste-vocacional" class="conteudo-aba ativo">
+    <section id="testes" class="conteudo-aba ativo">
       <h2>Testes Vocacionais</h2>
-      <p>Confira este vídeo para ajudar a descobrir sua profissão:</p>
-      <div class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/kOQwMg9yW4g" title="Como descobrir a sua profissão - Teste vocacional" frameborder="0" allowfullscreen></iframe>
+      <p>Vídeo explicativo sobre como descobrir sua profissão:</p>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/wuS-d8xQ_Gw" title="Como descobrir sua profissão - Canal Me Salva!" frameborder="0" allowfullscreen></iframe>
       </div>
+      <p>Testes Vocacionais online confiáveis:</p>
+      <ul class="lista-links">
+        <li><a href="https://www.catho.com.br/teste-de-carreira/" target="_blank" rel="noopener noreferrer">Teste de Carreira Catho</a></li>
+        <li><a href="https://www.vagas.com.br/profissoes/teste-vocacional" target="_blank" rel="noopener noreferrer">Teste Vocacional Vagas.com</a></li>
+        <li><a href="https://www.guiadacarreira.com.br/teste-vocacional" target="_blank" rel="noopener noreferrer">Teste Vocacional Guia da Carreira</a></li>
+      </ul>
+    </section>
 
-      <h3>Testes Vocacionais Gratuitos Online</h3>
-      <div class="botoes-links">
-        <a href="https://www.todamateria.com.br/teste-vocacional/" target="_blank" rel="noopener noreferrer" class="botao-link">Teste Vocacional Toda Matéria</a>
-        <a href="https://www.guiadocarreiras.com.br/teste-vocacional/" target="_blank" rel="noopener noreferrer" class="botao-link">Guia do Carreiras</a>
-        <a href="https://www.vestibulandos.info/teste-vocacional/" target="_blank" rel="noopener noreferrer" class="botao-link">Vestibulandos.info</a>
-      </div>
-    </div>
-
-    <div id="cursos" class="conteudo-aba">
+    <section id="cursos" class="conteudo-aba">
       <h2>Cursos Gratuitos com Certificado</h2>
-      <p>Plataformas confiáveis com cursos gratuitos para aprimorar suas habilidades:</p>
-      <div class="botoes-links">
-        <a href="https://www.cursoemvideo.com/" target="_blank" rel="noopener noreferrer" class="botao-link">Curso em Vídeo</a>
-        <a href="https://kultivi.com.br/" target="_blank" rel="noopener noreferrer" class="botao-link">Kultivi</a>
-        <a href="https://www.fundacaobradesco.org.br/" target="_blank" rel="noopener noreferrer" class="botao-link">Fundação Bradesco</a>
-        <a href="https://aprendamais.mec.gov.br/" target="_blank" rel="noopener noreferrer" class="botao-link">Aprenda Mais - MEC</a>
-        <a href="https://www.ev.org.br/" target="_blank" rel="noopener noreferrer" class="botao-link">Escola Virtual - EV</a>
-      </div>
-    </div>
-  </div>
+      <ul class="lista-links">
+        <li><a href="https://www.cursoemvideo.com/" target="_blank" rel="noopener noreferrer">Curso em Vídeo</a></li>
+        <li><a href="https://kultivi.com/" target="_blank" rel="noopener noreferrer">Kultivi</a></li>
+        <li><a href="https://www.ev.org.br/" target="_blank" rel="noopener noreferrer">Fundação Bradesco - Escola Virtual</a></li>
+        <li><a href="https://aprendamais.mec.gov.br/" target="_blank" rel="noopener noreferrer">Aprenda Mais - MEC</a></li>
+        <li><a href="https://www.senai.br/cursos" target="_blank" rel="noopener noreferrer">Cursos Gratuitos SENAI</a></li>
+      </ul>
+    </section>
+  </main>
 
-  <script src="profissoes.js"></script>
+  <script>
+    // Botão voltar para página inicial
+    const botaoVoltar = document.getElementById('voltar-btn');
+    botaoVoltar.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+
+    // Controle das abas
+    const abas = document.querySelectorAll('.aba-btn');
+    const conteudos = document.querySelectorAll('.conteudo-aba');
+
+    abas.forEach(aba => {
+      aba.addEventListener('click', () => {
+        // Remove ativo de todas abas e conteúdos
+        abas.forEach(b => b.classList.remove('ativo'));
+        conteudos.forEach(c => c.classList.remove('ativo'));
+
+        // Ativa aba clicada e conteúdo relacionado
+        aba.classList.add('ativo');
+        const id = aba.getAttribute('data-aba');
+        document.getElementById(id).classList.add('ativo');
+      });
+    });
+  </script>
 </body>
 </html>

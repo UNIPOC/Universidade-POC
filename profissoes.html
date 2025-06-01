@@ -2,64 +2,49 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profissões - UNIPOC</title>
-  <link rel="stylesheet" href="profissoes.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descubra sua Profissão - UNIPOC</title>
+  <link rel="stylesheet" href="profissoes.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/x-icon" />
 </head>
 <body>
   <div class="container">
-    
-    <h1>Descubra Sua Profissão</h1>
-
-    <img src="imagens/pipo-sorrindo.png" alt="Mascote Pipo" class="foto-pipo"/>
+    <h1>Descubra sua Profissão</h1>
+    <img src="pipo.png" alt="Mascote Pipo" class="foto-pipo" />
 
     <button id="voltar-btn" class="botao-voltar">← Voltar para a página inicial</button>
 
     <div class="abas">
-      <button class="aba-btn ativo" data-aba="testes">Testes Vocacionais</button>
-      <button class="aba-btn" data-aba="conteudos">Conteúdos Inspiradores</button>
-      <button class="aba-btn" data-aba="cursos">Cursos Gratuitos</button>
+      <button class="aba-btn ativo" data-alvo="teste-vocacional">Testes Vocacionais</button>
+      <button class="aba-btn" data-alvo="cursos">Cursos Gratuitos</button>
     </div>
 
-    <div id="testes" class="conteudo-aba" style="display: block;">
-      <h2>Testes Vocacionais Gratuitos</h2>
-      <p>Descubra qual carreira combina mais com você:</p>
-      <ul>
-        <li><a href="https://www.guiadacarreira.com.br/teste-vocacional" target="_blank">Guia da Carreira</a></li>
-        <li><a href="https://g1.globo.com/educacao/noticia/2019/10/04/teste-vocacional-do-g1-ajuda-a-escolher-carreira.ghtml" target="_blank">G1 - Teste Vocacional</a></li>
-        <li><a href="https://www.sejabixo.com.br/teste-vocacional/" target="_blank">Sejabixo!</a></li>
-        <li><a href="https://www.educamaisbrasil.com.br/teste/vocacional" target="_blank">Educa Mais Brasil</a></li>
-        <li><a href="https://www.123test.com/pt/teste-vocacional/" target="_blank">123test</a></li>
-      </ul>
+    <div id="teste-vocacional" class="conteudo-aba ativo">
+      <h2>Testes Vocacionais</h2>
+      <p>Confira este vídeo para ajudar a descobrir sua profissão:</p>
+      <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kOQwMg9yW4g" title="Como descobrir a sua profissão - Teste vocacional" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <h3>Testes Vocacionais Gratuitos Online</h3>
+      <div class="botoes-links">
+        <a href="https://www.todamateria.com.br/teste-vocacional/" target="_blank" rel="noopener noreferrer" class="botao-link">Teste Vocacional Toda Matéria</a>
+        <a href="https://www.guiadocarreiras.com.br/teste-vocacional/" target="_blank" rel="noopener noreferrer" class="botao-link">Guia do Carreiras</a>
+        <a href="https://www.vestibulandos.info/teste-vocacional/" target="_blank" rel="noopener noreferrer" class="botao-link">Vestibulandos.info</a>
+      </div>
     </div>
 
-    <div id="conteudos" class="conteudo-aba" style="display: none;">
-      <h2>Conteúdos Inspiradores</h2>
-      <p>Explore materiais que podem te ajudar a encontrar sua vocação:</p>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=video1" target="_blank">Vídeo: Como Escolher uma Profissão</a></li>
-        <li><a href="https://www.netflix.com/title/serie1" target="_blank">Série: Profissões do Futuro</a></li>
-        <li><a href="https://www.amazon.com.br/livro1" target="_blank">Livro: Descubra Seu Elemento</a></li>
-        <li><a href="https://open.spotify.com/show/podcast1" target="_blank">Podcast: Carreiras em Debate</a></li>
-      </ul>
-    </div>
-
-    <div id="cursos" class="conteudo-aba" style="display: none;">
+    <div id="cursos" class="conteudo-aba">
       <h2>Cursos Gratuitos com Certificado</h2>
-      <p>Aprenda novas habilidades e avance na sua carreira:</p>
-      <ul>
-        <li><a href="https://www.coursera.org/courses?query=cursos+gratis" target="_blank">Coursera</a></li>
-        <li><a href="https://edutin.com/cursos-gratis" target="_blank">Edutin Academy</a></li>
-        <li><a href="https://sebrae.com.br/sites/PortalSebrae/cursosonline" target="_blank">Sebrae</a></li>
-        <li><a href="https://www.ginead.com.br/cursos/de/profissoes" target="_blank">GINEAD</a></li>
-        <li><a href="https://www.unovacursos.com.br/segmento/profissoes" target="_blank">Unova Cursos</a></li>
-      </ul>
+      <p>Plataformas confiáveis com cursos gratuitos para aprimorar suas habilidades:</p>
+      <div class="botoes-links">
+        <a href="https://www.cursoemvideo.com/" target="_blank" rel="noopener noreferrer" class="botao-link">Curso em Vídeo</a>
+        <a href="https://kultivi.com.br/" target="_blank" rel="noopener noreferrer" class="botao-link">Kultivi</a>
+        <a href="https://www.fundacaobradesco.org.br/" target="_blank" rel="noopener noreferrer" class="botao-link">Fundação Bradesco</a>
+        <a href="https://aprendamais.mec.gov.br/" target="_blank" rel="noopener noreferrer" class="botao-link">Aprenda Mais - MEC</a>
+        <a href="https://www.ev.org.br/" target="_blank" rel="noopener noreferrer" class="botao-link">Escola Virtual - EV</a>
+      </div>
     </div>
-
-    <div class="rodape">
-      <p>© 2025 UNIPOC - Todos os direitos reservados.</p>
-    </div>
-
   </div>
 
   <script src="profissoes.js"></script>

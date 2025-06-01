@@ -1,37 +1,33 @@
-// Seleção dos botões das abas e conteúdo das abas
-const botoesAbas = document.querySelectorAll(".abas button");
+// Seleção dos botões das abas e conteúdos
+const botoesAbas = document.querySelectorAll(".aba-btn");
 const conteudosAbas = document.querySelectorAll(".conteudo-aba");
 
-// Função para trocar abas
-function trocarAba(event) {
-  const botaoSelecionado = event.currentTarget;
-  const abaAlvo = botaoSelecionado.getAttribute("data-aba");
-
-  // Remove classe ativo de todos botões e conteúdos
-  botoesAbas.forEach(botao => botao.classList.remove("ativo"));
-  conteudosAbas.forEach(conteudo => conteudo.classList.remove("ativo"));
-
-  // Adiciona classe ativo no botão e conteúdo selecionado
-  botaoSelecionado.classList.add("ativo");
-  document.getElementById(abaAlvo).classList.add("ativo");
+// Função para ativar aba clicada
+function ativarAba(indice) {
+  botoesAbas.forEach((botao, i) => {
+    if (i === indice) {
+      botao.classList.add("ativo");
+      conteudosAbas[i].classList.add("ativo");
+    } else {
+      botao.classList.remove("ativo");
+      conteudosAbas[i].classList.remove("ativo");
+    }
+  });
 }
 
-// Adiciona evento de clique em todos os botões das abas
-botoesAbas.forEach(botao => {
-  botao.addEventListener("click", trocarAba);
+// Inicializa com a primeira aba ativa
+ativarAba(0);
+
+// Adiciona evento de clique para os botões das abas
+botoesAbas.forEach((botao, i) => {
+  botao.addEventListener("click", () => ativarAba(i));
 });
-
-// Define a aba inicial ativa (primeira)
-if (botoesAbas.length > 0 && conteudosAbas.length > 0) {
-  botoesAbas[0].classList.add("ativo");
-  conteudosAbas[0].classList.add("ativo");
-}
 
 // Botão voltar para página inicial
 const botaoVoltar = document.getElementById("voltar-btn");
 if (botaoVoltar) {
   botaoVoltar.addEventListener("click", e => {
     e.preventDefault();
-    window.location.href = "index.html"; // ajuste se necessário
+    window.location.href = "index.html"; // Ajuste o caminho conforme necessário
   });
 }

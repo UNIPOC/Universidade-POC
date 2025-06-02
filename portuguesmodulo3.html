@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Módulo 3 - Morfologia</title>
+  <link rel="stylesheet" href="modulos.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 3: Morfologia">
+    <h1>Módulo 3: Morfologia</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase1-title" tabindex="0">
+      <h2 id="fase1-title">Fase 1: Conceitos Básicos de Morfologia</h2>
+      <p>
+        Morfologia é o estudo da estrutura, formação e classificação das palavras, identificando seus componentes e funções no contexto da língua.
+      </p>
+      <p>
+        Ela analisa as classes gramaticais, como substantivos, verbos, adjetivos, pronomes, advérbios, preposições, conjunções e interjeições.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=BgP5eJzJThg', '_blank')" aria-label="Assistir aula Conceitos Básicos de Morfologia no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> O que estuda a morfologia?</p>
+        <ul>
+          <li><button onclick="responder(this, true)" aria-pressed="false">A estrutura e formação das palavras</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">O significado das palavras</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">A pronúncia correta das palavras</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> Qual destas é uma classe gramatical estudada na morfologia?</p>
+        <ul>
+          <li><button onclick="responder(this, false)">Frase</button></li>
+          <li><button onclick="responder(this, true)">Substantivo</button></li>
+          <li><button onclick="responder(this, false)">Parágrafo</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Classes Gramaticais">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase2-title" tabindex="0">
+      <h2 id="fase2-title">Fase 2: Classes Gramaticais</h2>
+      <p>
+        As classes gramaticais dividem as palavras conforme sua função sintática e significado, incluindo:
+      </p>
+      <ul>
+        <li><strong>Substantivos:</strong> nomes de seres, coisas, lugares e ideias.</li>
+        <li><strong>Adjetivos:</strong> qualificam ou caracterizam os substantivos.</li>
+        <li><strong>Verbos:</strong> indicam ações, estados ou fenômenos.</li>
+        <li><strong>Pronomes:</strong> substituem ou acompanham os substantivos.</li>
+        <li><strong>Advérbios:</strong> modificam verbos, adjetivos ou outros advérbios.</li>
+        <li><strong>Preposições:</strong> estabelecem relações entre termos.</li>
+        <li><strong>Conjunções:</strong> ligam orações ou termos semelhantes.</li>
+        <li><strong>Interjeições:</strong> expressam emoções ou reações.</li>
+      </ul>
+      <button onclick="window.open('https://www.youtube.com/watch?v=4lP7Y1vhvlI', '_blank')" aria-label="Assistir aula Classes Gramaticais no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 1:</strong> Qual a função do verbo?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-verbo">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-verbo" class="resposta escondida" tabindex="-1">
+          Indicar ações, estados ou fenômenos na oração.
+        </p>
+      </div>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 2:</strong> O que é um adjetivo?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-adjetivo">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-adjetivo" class="resposta escondida" tabindex="-1">
+          Palavra que qualifica ou caracteriza um substantivo.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Formação de Palavras">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase3-title" tabindex="0">
+      <h2 id="fase3-title">Fase 3: Formação de Palavras</h2>
+      <p>
+        A formação de palavras ocorre por processos como derivação, composição, abreviação, e empréstimo linguístico.
+      </p>
+      <p>
+        <strong>Derivação:</strong> criação de novas palavras a partir de uma palavra base, com prefixos ou sufixos (ex: feliz → infeliz).
+      </p>
+      <p>
+        <strong>Composição:</strong> união de duas ou mais palavras para formar uma nova (ex: guarda-chuva).
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=GMMZ9_y9IjA', '_blank')" aria-label="Assistir aula Formação de Palavras no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Qual das palavras abaixo é um exemplo de composição?</p>
+        <ul>
+          <li><button onclick="responder(this, false)">Infeliz</button></li>
+          <li><button onclick="responder(this, true)">Guarda-chuva</button></li>
+          <li><button onclick="responder(this, false)">Felizmente</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> Derivação é:</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Formação de palavras a partir de uma base com acréscimo de prefixos ou sufixos</button></li>
+          <li><button onclick="responder(this, false)">União de duas palavras para formar uma nova</button></li>
+          <li><button onclick="responder(this, false)">Abreviação de palavras</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='portugues.html'" aria-label="Voltar à página de Português">
+        ← Voltar à Página de Português
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

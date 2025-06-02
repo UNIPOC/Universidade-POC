@@ -1,218 +1,99 @@
-/* calculadora.css */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora de Pegada Ecológica - UNIPOC</title>
+  <link rel="stylesheet" href="calculadora.css" />
+</head>
+<body>
+  <main class="container">
+    <h1 class="titulo">🌿 Calculadora de Pegada Ecológica</h1>
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    <!-- Etapas das perguntas -->
+    <section class="etapa" data-etapa="1">
+      <h2>🚗 Transporte</h2>
+      <p>Como você costuma se deslocar no dia a dia?</p>
+      <div class="opcoes">
+        <div class="card-opcao" data-pergunta="transporte" data-peso="1">🚶‍♂️ A pé ou bicicleta</div>
+        <div class="card-opcao" data-pergunta="transporte" data-peso="2">🚌 Transporte público</div>
+        <div class="card-opcao" data-pergunta="transporte" data-peso="3">🚗 Carro compartilhado</div>
+        <div class="card-opcao" data-pergunta="transporte" data-peso="4">🚙 Carro particular</div>
+        <div class="card-opcao" data-pergunta="transporte" data-peso="5">✈️ Avião frequente</div>
+      </div>
+    </section>
 
-:root {
-  --roxo-medio: #8B5EBE;
-  --roxo-escuro: #5A3A8B;
-  --roxo-claro: #A67FCE;
-  --bege-claro: #F8EDE6;
-  --vermelho-suave: #D9655F;
-  --preto-suave: #3A2E44;
-  --branco: #FFFFFF;
-  --sombra: rgba(122, 77, 196, 0.2);
-}
+    <section class="etapa" data-etapa="2">
+      <h2>🥗 Alimentação</h2>
+      <p>Qual a frequência do seu consumo de carne?</p>
+      <div class="opcoes">
+        <div class="card-opcao" data-pergunta="alimentacao" data-peso="1">Vegetariano / Vegano</div>
+        <div class="card-opcao" data-pergunta="alimentacao" data-peso="2">Carne 1 vez por semana</div>
+        <div class="card-opcao" data-pergunta="alimentacao" data-peso="3">Carne 3 vezes por semana</div>
+        <div class="card-opcao" data-pergunta="alimentacao" data-peso="4">Carne diariamente</div>
+        <div class="card-opcao" data-pergunta="alimentacao" data-peso="5">Carne em todas as refeições</div>
+      </div>
+    </section>
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    <section class="etapa" data-etapa="3">
+      <h2>💡 Energia</h2>
+      <p>Como é o consumo de energia na sua casa?</p>
+      <div class="opcoes">
+        <div class="card-opcao" data-pergunta="energia" data-peso="1">Energia 100% renovável</div>
+        <div class="card-opcao" data-pergunta="energia" data-peso="2">Uso moderado de energia</div>
+        <div class="card-opcao" data-pergunta="energia" data-peso="3">Uso intenso de energia</div>
+        <div class="card-opcao" data-pergunta="energia" data-peso="4">Uso muito alto de energia</div>
+        <div class="card-opcao" data-pergunta="energia" data-peso="5">Desperdício constante</div>
+      </div>
+    </section>
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, var(--roxo-claro), var(--roxo-medio));
-  color: var(--bege-claro);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
+    <section class="etapa" data-etapa="4">
+      <h2>🗑️ Lixo</h2>
+      <p>Você costuma separar seu lixo para reciclagem?</p>
+      <div class="opcoes">
+        <div class="card-opcao" data-pergunta="lixo" data-peso="1">Sempre separo e reciclo</div>
+        <div class="card-opcao" data-pergunta="lixo" data-peso="2">Quase sempre separo</div>
+        <div class="card-opcao" data-pergunta="lixo" data-peso="3">Separação ocasional</div>
+        <div class="card-opcao" data-pergunta="lixo" data-peso="4">Quase nunca separo</div>
+        <div class="card-opcao" data-pergunta="lixo" data-peso="5">Nunca separo lixo</div>
+      </div>
+    </section>
 
-.container {
-  background: var(--roxo-escuro);
-  border-radius: 20px;
-  padding: 2rem 3rem 3rem 3rem;
-  max-width: 520px;
-  width: 100%;
-  box-shadow: 0 8px 25px var(--sombra);
-  text-align: center;
-}
+    <section class="etapa" data-etapa="5">
+      <h2>💧 Água</h2>
+      <p>Como você cuida do consumo de água?</p>
+      <div class="opcoes">
+        <div class="card-opcao" data-pergunta="agua" data-peso="1">Uso consciente e reutilizo</div>
+        <div class="card-opcao" data-pergunta="agua" data-peso="2">Uso moderado</div>
+        <div class="card-opcao" data-pergunta="agua" data-peso="3">Uso alto</div>
+        <div class="card-opcao" data-pergunta="agua" data-peso="4">Desperdício frequente</div>
+        <div class="card-opcao" data-pergunta="agua" data-peso="5">Não me preocupo com consumo</div>
+      </div>
+    </section>
 
-.titulo {
-  font-size: 2.4rem;
-  margin-bottom: 0.2rem;
-  text-shadow: 0 0 10px var(--branco);
-}
+    <section class="etapa" data-etapa="6">
+      <h2>🛍️ Consumo</h2>
+      <p>Com que frequência você compra produtos novos?</p>
+      <div class="opcoes">
+        <div class="card-opcao" data-pergunta="consumo" data-peso="1">Muito raramente, prefiro reutilizar</div>
+        <div class="card-opcao" data-pergunta="consumo" data-peso="2">Compro apenas o necessário</div>
+        <div class="card-opcao" data-pergunta="consumo" data-peso="3">Compro com certa frequência</div>
+        <div class="card-opcao" data-pergunta="consumo" data-peso="4">Compro muito frequentemente</div>
+        <div class="card-opcao" data-pergunta="consumo" data-peso="5">Compro compulsivamente</div>
+      </div>
+    </section>
 
-.subtitulo {
-  font-size: 1.1rem;
-  color: var(--bege-claro);
-  margin-bottom: 2rem;
-  font-weight: 500;
-  opacity: 0.9;
-}
-
-.etapa {
-  margin-bottom: 2.5rem;
-}
-
-.etapa h2 {
-  font-weight: 700;
-  font-size: 1.6rem;
-  margin-bottom: 1.2rem;
-  color: var(--branco);
-  text-shadow: 0 0 6px var(--roxo-claro);
-}
-
-.opcoes {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.card-opcao {
-  background: var(--roxo-medio);
-  color: var(--branco);
-  border: 2px solid transparent;
-  border-radius: 15px;
-  padding: 1.3rem 1.7rem;
-  font-size: 1.4rem;
-  cursor: pointer;
-  flex: 1 1 45%;
-  box-shadow: 0 6px 15px var(--sombra);
-  transition: all 0.3s ease;
-  user-select: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.card-opcao:hover {
-  background: var(--roxo-claro);
-  box-shadow: 0 8px 20px var(--branco);
-  transform: translateY(-4px);
-  border-color: var(--branco);
-}
-
-.card-opcao.selected {
-  background: var(--vermelho-suave);
-  border-color: var(--branco);
-  box-shadow: 0 0 15px var(--vermelho-suave);
-  transform: translateY(-4px);
-}
-
-.escondido {
-  display: none !important;
-}
-
-/* Resultado */
-
-#resultado h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--branco);
-  text-shadow: 0 0 10px var(--roxo-claro);
-}
-
-#planeta-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.8rem;
-  color: var(--bege-claro);
-}
-
-#planetas-quantidade {
-  font-size: 4rem;
-  font-weight: 900;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px var(--vermelho-suave);
-  animation: pulsar 1.6s infinite ease-in-out;
-}
-
-@keyframes pulsar {
-  0%, 100% { transform: scale(1); color: var(--vermelho-suave); }
-  50% { transform: scale(1.15); color: var(--branco); }
-}
-
-#mensagem-final {
-  font-size: 1.3rem;
-  font-weight: 600;
-  max-width: 380px;
-  margin-bottom: 1.8rem;
-  line-height: 1.4;
-}
-
-#dicas {
-  text-align: left;
-  max-width: 400px;
-  margin: 0 auto 2rem auto;
-  background: var(--roxo-medio);
-  padding: 1.2rem 1.6rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px var(--sombra);
-}
-
-#dicas h3 {
-  margin-bottom: 0.8rem;
-  font-weight: 700;
-  color: var(--bege-claro);
-  text-shadow: 0 0 4px var(--branco);
-}
-
-#lista-dicas {
-  list-style: none;
-  color: var(--bege-claro);
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-#lista-dicas li::before {
-  content: "🌱 ";
-}
-
-#botao-reiniciar,
-.botao-voltar {
-  background: linear-gradient(135deg, var(--roxo-medio), var(--roxo-claro));
-  color: var(--branco);
-  border: none;
-  padding: 0.8rem 2rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-  border-radius: 15px;
-  cursor: pointer;
-  box-shadow: 0 6px 15px var(--sombra);
-  transition: all 0.3s ease;
-  margin: 0 0.5rem;
-  user-select: none;
-}
-
-#botao-reiniciar:hover,
-.botao-voltar:hover {
-  background: linear-gradient(135deg, var(--roxo-claro), var(--roxo-medio));
-  box-shadow: 0 8px 20px var(--branco);
-  transform: translateY(-3px);
-}
-
-/* Responsividade */
-
-@media (max-width: 480px) {
-  .container {
-    padding: 2rem 1.5rem 2.5rem 1.5rem;
-  }
-  .card-opcao {
-    flex: 1 1 100%;
-    font-size: 1.2rem;
-    padding: 1rem 1.4rem;
-  }
-  #planetas-quantidade {
-    font-size: 3.2rem;
-  }
-  #mensagem-final {
-    font-size: 1.1rem;
-  }
-}
+    <!-- Resultado final -->
+    <section id="resultado" class="escondido">
+      <h2>🌎 Resultado da sua pegada ecológica</h2>
+      <div id="planetas-quantidade" class="planetas"></div>
+      <div id="mensagem-final" class="mensagem"></div>
+      <h3>Dicas para reduzir seu impacto:</h3>
+      <ul id="lista-dicas"></ul>
+      <button id="botao-reiniciar" class="botao">🔄 Reiniciar</button>
+      <button id="voltar-btn" class="botao-voltar">← Voltar</button>
+    </section>
+  </main>
+  <script src="calculadora.js"></script>
+</body>
+</html>

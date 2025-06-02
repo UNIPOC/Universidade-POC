@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Módulo 4 - Sintaxe</title>
+  <link rel="stylesheet" href="modulos.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 4: Sintaxe">
+    <h1>Módulo 4: Sintaxe</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase4-1-title" tabindex="0">
+      <h2 id="fase4-1-title">Fase 1: Conceitos Fundamentais de Sintaxe</h2>
+      <p>
+        Sintaxe é o estudo das relações entre as palavras dentro da oração, analisando a função e a organização dos termos na frase.
+      </p>
+      <p>
+        Ela mostra como os elementos da oração se relacionam para formar sentido completo.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=fQdvtz3vG8M', '_blank')" aria-label="Assistir aula Conceitos Fundamentais de Sintaxe no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> O que estuda a sintaxe?</p>
+        <ul>
+          <li><button onclick="responder(this, true)" aria-pressed="false">A organização e relação dos termos na oração</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">O significado das palavras isoladas</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">A ortografia das palavras</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> Qual é o principal foco da sintaxe?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">A função dos termos na oração</button></li>
+          <li><button onclick="responder(this, false)">A formação de palavras</button></li>
+          <li><button onclick="responder(this, false)">A pronúncia correta</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Termos da Oração">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase4-2-title" tabindex="0">
+      <h2 id="fase4-2-title">Fase 2: Termos da Oração</h2>
+      <p>
+        Os termos da oração são as palavras ou grupos de palavras que exercem funções sintáticas, como sujeito, predicado, objetos, adjuntos, entre outros.
+      </p>
+      <ul>
+        <li><strong>Sujeito:</strong> quem ou o que pratica a ação ou sobre quem se declara algo.</li>
+        <li><strong>Predicado:</strong> o que se declara sobre o sujeito.</li>
+        <li><strong>Objeto Direto:</strong> complemento que não exige preposição.</li>
+        <li><strong>Objeto Indireto:</strong> complemento que exige preposição.</li>
+        <li><strong>Adjunto Adnominal:</strong> termo que caracteriza um substantivo.</li>
+        <li><strong>Adjunto Adverbial:</strong> termo que modifica o verbo, adjetivo ou outro advérbio.</li>
+      </ul>
+      <button onclick="window.open('https://www.youtube.com/watch?v=0Zdj4UkmVG4', '_blank')" aria-label="Assistir aula Termos da Oração no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 1:</strong> Qual a função do sujeito na oração?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-sujeito">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-sujeito" class="resposta escondida" tabindex="-1">
+          Indicar quem ou o que pratica a ação ou sobre quem se declara algo.
+        </p>
+      </div>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 2:</strong> O que é objeto direto?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-objeto-direto">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-objeto-direto" class="resposta escondida" tabindex="-1">
+          Complemento que completa o sentido do verbo sem preposição.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Orações Coordenadas e Subordinadas">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase4-3-title" tabindex="0">
+      <h2 id="fase4-3-title">Fase 3: Orações Coordenadas e Subordinadas</h2>
+      <p>
+        Orações podem ser coordenadas (independentes) ou subordinadas (dependentes), formando períodos compostos.
+      </p>
+      <p>
+        <strong>Orações Coordenadas:</strong> ligadas sem depender sintaticamente uma da outra, podem ser aditivas, adversativas, alternativas, conclusivas ou explicativas.
+      </p>
+      <p>
+        <strong>Orações Subordinadas:</strong> dependem sintaticamente da oração principal e podem ser substantivas, adjetivas ou adverbiais.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=GXO8DLnQym8', '_blank')" aria-label="Assistir aula Orações Coordenadas e Subordinadas no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Qual é a característica das orações coordenadas?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">São independentes sintaticamente</button></li>
+          <li><button onclick="responder(this, false)">Dependem da oração principal</button></li>
+          <li><button onclick="responder(this, false)">São sempre explicativas</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> Orações subordinadas são:</p>
+        <ul>
+          <li><button onclick="responder(this, false)">Independentes</button></li>
+          <li><button onclick="responder(this, true)">Dependentes sintaticamente da oração principal</button></li>
+          <li><button onclick="responder(this, false)">Sem sentido próprio</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='portugues.html'" aria-label="Voltar à página de Português">
+        ← Voltar à Página de Português
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

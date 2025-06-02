@@ -1,0 +1,116 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f0fb;
+  color: #3A2E44;
+}
+
+.modulo-fases {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modulo-fases h1 {
+  text-align: center;
+  color: #5A3A8B;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+
+.fase {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: #f2e7fb;
+  border-left: 5px solid #8B5EBE;
+  border-radius: 15px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fase h2 {
+  color: #5A3A8B;
+  margin-bottom: 1rem;
+}
+
+.fase p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.fase button,
+.questao button,
+.flashcard button,
+.proxima-fase {
+  background: linear-gradient(135deg, #7a4dc4, #a583e3);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  transition: transform 0.2s ease, background 0.3s;
+  font-size: 1rem;
+}
+
+.fase button:hover,
+.questao button:hover,
+.flashcard button:hover,
+.proxima-fase:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #5A3A8B, #A67FCE);
+}
+
+.questao ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.questao li {
+  margin: 0.4rem 0;
+}
+
+.questao .feedback {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.flashcard {
+  background-color: #e8d9f8;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.flashcard .resposta {
+  margin-top: 0.7rem;
+  color: #3A2E44;
+  font-weight: bold;
+}
+
+.escondida {
+  display: none;
+}
+
+.proxima-fase {
+  display: block;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .modulo-fases {
+    padding: 1rem;
+  }
+
+  .fase button,
+  .proxima-fase {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}

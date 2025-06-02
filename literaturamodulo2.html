@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Literatura - Módulo 2: Literatura Brasileira</title>
+  <link rel="stylesheet" href="modulos.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 2: Literatura Brasileira">
+    <h1>Módulo 2: Literatura Brasileira</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase2-lit-1-title" tabindex="0">
+      <h2 id="fase2-lit-1-title">Fase 1: Panorama Geral da Literatura Brasileira</h2>
+      <p>
+        A Literatura Brasileira teve início com os registros feitos pelos colonizadores portugueses, evoluindo ao longo dos séculos até as expressões contemporâneas. 
+      </p>
+      <p>
+        Ela é marcada por influências culturais indígenas, africanas e europeias, refletindo as transformações históricas, sociais e políticas do país.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=5SpwHBGqGZI', '_blank')" aria-label="Assistir panorama da literatura brasileira no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão:</strong> A literatura brasileira começou com qual tipo de registro?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Registros dos colonizadores portugueses</button></li>
+          <li><button onclick="responder(this, false)">Poesias indígenas orais</button></li>
+          <li><button onclick="responder(this, false)">Jornais independentes do século XX</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Períodos Literários no Brasil">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase2-lit-2-title" tabindex="0">
+      <h2 id="fase2-lit-2-title">Fase 2: Períodos Literários no Brasil</h2>
+      <p>
+        A literatura brasileira é dividida em escolas ou períodos literários. Cada fase tem características próprias e está relacionada ao contexto histórico.
+      </p>
+      <ul>
+        <li><strong>Quinhentismo:</strong> Textos informativos e catequéticos.</li>
+        <li><strong>Barroco:</strong> Linguagem rebuscada e conflitos espirituais.</li>
+        <li><strong>Arcadismo:</strong> Valorização da razão e da natureza.</li>
+        <li><strong>Romantismo, Realismo, Naturalismo...</strong></li>
+      </ul>
+      <button onclick="window.open('https://www.youtube.com/watch?v=j7kmzBLMRF0', '_blank')" aria-label="Assistir aula sobre períodos literários no Brasil no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" style="margin-top:1rem;">
+        <p><strong>Flashcard:</strong> Qual o nome do movimento que marcou a literatura no início da colonização?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-lit-periodo">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-lit-periodo" class="resposta escondida" tabindex="-1">
+          Quinhentismo.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Autores Brasileiros Relevantes">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase2-lit-3-title" tabindex="0">
+      <h2 id="fase2-lit-3-title">Fase 3: Autores Brasileiros Relevantes</h2>
+      <p>
+        A literatura brasileira é rica em nomes que marcaram época:
+      </p>
+      <ul>
+        <li><strong>Machado de Assis:</strong> Realismo sofisticado e crítico.</li>
+        <li><strong>Clarice Lispector:</strong> Escrita introspectiva e existencial.</li>
+        <li><strong>Cecília Meireles:</strong> Poemas líricos e musicais.</li>
+        <li><strong>Ariano Suassuna:</strong> Representante da cultura nordestina.</li>
+      </ul>
+      <button onclick="window.open('https://www.youtube.com/watch?v=we8t9E63IKQ', '_blank')" aria-label="Assistir aula sobre autores brasileiros no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão:</strong> Qual autor é considerado o maior representante do Realismo brasileiro?</p>
+        <ul>
+          <li><button onclick="responder(this, false)">Aluísio Azevedo</button></li>
+          <li><button onclick="responder(this, true)">Machado de Assis</button></li>
+          <li><button onclick="responder(this, false)">Carlos Drummond de Andrade</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='literatura.html'" aria-label="Voltar à página de Literatura">
+        ← Voltar à Página de Literatura
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

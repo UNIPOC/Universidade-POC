@@ -1,0 +1,150 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #F8EDE6; /* Bege claro */
+  color: #5A3A8B; /* Roxo escuro */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+}
+
+/* Container principal */
+.materia {
+  background: #FFFFFF;
+  max-width: 1000px;
+  width: 100%;
+  padding: 2.5rem 3rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(91, 62, 139, 0.2);
+}
+
+/* Cabeçalho */
+.materia header h1 {
+  font-size: 2.8rem;
+  color: #8B5EBE;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(122, 77, 196, 0.3);
+}
+
+.materia header p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #5A3A8B;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Container dos módulos */
+.modulos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Botões dos módulos */
+.modulo {
+  background: linear-gradient(135deg, #8B5EBE, #5A3A8B);
+  border: none;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(91, 62, 139, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  min-width: 240px;
+  text-align: center;
+  user-select: none;
+}
+
+.modulo:hover {
+  background: linear-gradient(135deg, #A67FCE, #7A4DC4);
+  box-shadow: 0 8px 25px rgba(166, 127, 206, 0.5);
+  transform: translateY(-4px);
+}
+
+.modulo:active {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(91, 62, 139, 0.25);
+}
+
+/* Botão de voltar */
+.botao-voltar {
+  background: linear-gradient(135deg, #7a4dc4, #a583e3);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(122, 77, 196, 0.3);
+  transition: transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+.botao-voltar:hover {
+  transform: translateY(-3px);
+}
+
+/* Espaço para a imagem do Ceará */
+.imagem-ceara {
+  margin-top: 3rem;
+  background: #E0D7F2;
+  height: 300px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5A3A8B;
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-align: center;
+  box-shadow: inset 0 0 12px rgba(139, 94, 190, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .materia {
+    padding: 2rem 1.5rem;
+  }
+
+  .materia header h1 {
+    font-size: 2.2rem;
+  }
+
+  .materia header p {
+    font-size: 1rem;
+  }
+
+  .modulo {
+    min-width: 100%;
+    padding: 1rem;
+  }
+
+  .imagem-ceara {
+    height: 200px;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .botao-voltar {
+    width: 100%;
+    font-size: 1rem;
+  }
+}

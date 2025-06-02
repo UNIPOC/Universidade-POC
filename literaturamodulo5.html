@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Literatura - Módulo 5: Análise e Interpretação</title>
+  <link rel="stylesheet" href="modulos.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 5: Análise e Interpretação">
+    <h1>Módulo 5: Análise e Interpretação</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase5-lit-1-title" tabindex="0">
+      <h2 id="fase5-lit-1-title">Fase 1: Leitura Crítica</h2>
+      <p>
+        A análise literária envolve uma leitura atenta e crítica dos elementos de um texto, como linguagem, estilo, temas e contexto histórico. Essa etapa é fundamental para a compreensão mais profunda da obra.
+      </p>
+      <p>
+        A leitura crítica vai além do conteúdo literal — exige interpretar símbolos, metáforas e intenções do autor.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=9ipVJ__Ym8k', '_blank')" aria-label="Assistir aula sobre leitura crítica literária">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão:</strong> Qual é o objetivo da leitura crítica?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Compreender a profundidade e os sentidos do texto</button></li>
+          <li><button onclick="responder(this, false)">Identificar apenas a estrutura do texto</button></li>
+          <li><button onclick="responder(this, false)">Decorar trechos e nomes</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Elementos de análise textual">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase5-lit-2-title" tabindex="0">
+      <h2 id="fase5-lit-2-title">Fase 2: Elementos de Análise</h2>
+      <p>
+        Para analisar uma obra, é importante observar os seguintes elementos: enredo, personagens, narrador, espaço, tempo, linguagem, estilo e intertextualidade.
+      </p>
+      <p>
+        Cada componente revela detalhes sobre a construção da obra e contribui para sua interpretação.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=chCBDEsG2_A', '_blank')" aria-label="Assistir aula sobre elementos de análise literária">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" style="margin-top:1rem;">
+        <p><strong>Flashcard:</strong> O que é intertextualidade?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-intertextualidade">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-intertextualidade" class="resposta escondida" tabindex="-1">
+          É a relação que um texto estabelece com outros textos, ampliando sentidos e interpretações.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Interpretação de significados">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase5-lit-3-title" tabindex="0">
+      <h2 id="fase5-lit-3-title">Fase 3: Interpretação de Sentidos</h2>
+      <p>
+        Interpretar é construir sentidos a partir dos elementos do texto e do contexto em que ele foi escrito. A interpretação pode variar conforme o leitor, o tempo e o espaço.
+      </p>
+      <p>
+        Uma boa interpretação considera: tema, intenção do autor, recursos expressivos, e os efeitos causados no leitor.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=6BD7cmNlyCo', '_blank')" aria-label="Assistir aula sobre interpretação literária">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão:</strong> Qual fator influencia a interpretação de um texto?</p>
+        <ul>
+          <li><button onclick="responder(this, false)">A capa do livro</button></li>
+          <li><button onclick="responder(this, true)">O repertório e vivências do leitor</button></li>
+          <li><button onclick="responder(this, false)">A nacionalidade do autor</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-4')" aria-label="Avançar para a fase 4: Prática de interpretação">
+        Avançar para Fase 4 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-4" role="region" aria-labelledby="fase5-lit-4-title" tabindex="0">
+      <h2 id="fase5-lit-4-title">Fase 4: Prática de Interpretação</h2>
+      <p>
+        Vamos praticar com um pequeno poema:
+      </p>
+      <blockquote>
+        "O tempo perguntou ao tempo<br />
+        Quanto tempo o tempo tem<br />
+        O tempo respondeu ao tempo<br />
+        Que o tempo tem tanto tempo<br />
+        Quanto tempo o tempo tem"
+      </blockquote>
+      <p>
+        A interpretação envolve perceber o jogo de palavras, a sonoridade, e a reflexão sobre o próprio tempo.
+      </p>
+      <div class="flashcard">
+        <p><strong>Flashcard:</strong> Qual é o principal recurso usado nesse poema?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-jogo-tempo">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-jogo-tempo" class="resposta escondida" tabindex="-1">
+          Repetição e ambiguidade — jogo de palavras com o termo “tempo”.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='literatura.html'" aria-label="Voltar à página de Literatura">
+        ← Voltar à Página de Literatura
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

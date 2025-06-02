@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Módulo 1 - Português</title>
+<link rel="icon" href="Pipo Lendo.png" type="image/png" />
+  <link rel="stylesheet" href="modulos.css" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 1: Ortografia e Pontuação">
+    <h1>Módulo 1: Ortografia e Pontuação</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase1-title" tabindex="0">
+      <h2 id="fase1-title">Fase 1: Ortografia e Pontuação</h2>
+      <p>
+        A ortografia é o conjunto de regras que determina a forma correta de escrever as palavras, garantindo clareza e padronização na comunicação escrita. A pontuação organiza o texto por meio de sinais gráficos, facilitando a compreensão e a interpretação correta.
+      </p>
+      <p>
+        Dominar a ortografia e a pontuação é essencial para produzir textos claros, coerentes e com boa fluidez de leitura.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=RZO6pTojlkg', '_blank')" aria-label="Assistir aula Ortografia e Pontuação no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Qual a função principal da pontuação em um texto?</p>
+        <ul>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Indicar a origem das palavras</button></li>
+          <li><button onclick="responder(this, true)" aria-pressed="false">Organizar e estruturar o texto</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Definir o significado das palavras</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> O que é ortografia?</p>
+        <ul>
+          <li><button onclick="responder(this, true)" aria-pressed="false">Conjunto de regras para escrever corretamente</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Estudo dos sons das palavras</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Análise da estrutura das frases</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Uso do Hífen">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase2-title" tabindex="0">
+      <h2 id="fase2-title">Fase 2: Uso do Hífen</h2>
+      <p>
+        O hífen é um sinal gráfico usado para unir elementos na escrita, principalmente em palavras compostas, locuções e em algumas formações prefixais. Seu uso correto segue regras específicas que evitam confusões na leitura.
+      </p>
+      <p>
+        Entender as regras do hífen ajuda a escrever corretamente e a evitar erros comuns que podem mudar o sentido das palavras.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=k0vN9uAEEY4', '_blank')" aria-label="Assistir aula Uso do Hífen no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Quando se usa o hífen em palavras compostas?</p>
+        <ul>
+          <li><button onclick="responder(this, true)" aria-pressed="false">Quando os elementos mantêm sentido próprio e são ligados</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Sempre que houver mais de duas palavras</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Nunca se usa hífen em palavras compostas</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Regras de Acentuação">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase3-title" tabindex="0">
+      <h2 id="fase3-title">Fase 3: Regras de Acentuação</h2>
+      <p>
+        As regras de acentuação indicam quando e como usar os acentos gráficos nas palavras, que são fundamentais para a pronúncia correta e para evitar ambiguidades na escrita.
+      </p>
+      <p>
+        Conhecer essas regras ajuda na leitura e escrita, garantindo que o significado das palavras seja mantido.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=xbV9Sl_7rNQ', '_blank')" aria-label="Assistir aula Regras de Acentuação no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Qual é a função do acento gráfico nas palavras?</p>
+        <ul>
+          <li><button onclick="responder(this, true)" aria-pressed="false">Indicar a sílaba tônica e evitar ambiguidades</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Marcar a origem da palavra</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Substituir letras na escrita</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> Qual das palavras abaixo está corretamente acentuada?</p>
+        <ul>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Juri</button></li>
+          <li><button onclick="responder(this, true)" aria-pressed="false">Júri</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Jurií</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='portugues.html'" aria-label="Voltar à página de Português">
+        ← Voltar à Página de Português
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Módulo 5 - Interpretação de Texto</title>
+  <link rel="stylesheet" href="modulos.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 5: Interpretação de Texto">
+    <h1>Módulo 5: Interpretação de Texto</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase5-1-title" tabindex="0">
+      <h2 id="fase5-1-title">Fase 1: Compreensão Geral do Texto</h2>
+      <p>
+        A compreensão geral consiste em captar o tema, a ideia principal e o propósito do texto.
+      </p>
+      <p>
+        Para isso, leia o texto atentamente, identifique seu gênero, público-alvo e intenção do autor.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=X8xqHZVQbuE', '_blank')" aria-label="Assistir aula Compreensão Geral do Texto no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Qual é o primeiro passo para interpretar um texto?</p>
+        <ul>
+          <li><button onclick="responder(this, true)" aria-pressed="false">Identificar o tema e a ideia principal</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Analisar a ortografia</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Focar só nas palavras difíceis</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> O que é importante para entender o propósito do autor?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Identificar o gênero e o público-alvo</button></li>
+          <li><button onclick="responder(this, false)">Ler rapidamente sem atenção</button></li>
+          <li><button onclick="responder(this, false)">Focar apenas nas figuras de linguagem</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Inferência e Contexto">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase5-2-title" tabindex="0">
+      <h2 id="fase5-2-title">Fase 2: Inferência e Contexto</h2>
+      <p>
+        Inferência é a capacidade de deduzir informações que não estão explícitas no texto.
+      </p>
+      <p>
+        Analisar o contexto ajuda a entender o significado implícito das palavras e frases.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=L1cLtPi02Xo', '_blank')" aria-label="Assistir aula Inferência e Contexto no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 1:</strong> O que é inferência?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-inferencia">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-inferencia" class="resposta escondida" tabindex="-1">
+          É deduzir informações não explícitas a partir do texto.
+        </p>
+      </div>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 2:</strong> Por que analisar o contexto é importante?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-contexto">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-contexto" class="resposta escondida" tabindex="-1">
+          Porque ajuda a entender o significado implícito e as intenções do texto.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Figuras de Linguagem">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase5-3-title" tabindex="0">
+      <h2 id="fase5-3-title">Fase 3: Figuras de Linguagem</h2>
+      <p>
+        Figuras de linguagem são recursos estilísticos que enriquecem o texto, como metáfora, metonímia, hipérbole e personificação.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=UgX6DTS3iGg', '_blank')" aria-label="Assistir aula Figuras de Linguagem no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Qual figura de linguagem consiste em exagero?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Hipérbole</button></li>
+          <li><button onclick="responder(this, false)">Metáfora</button></li>
+          <li><button onclick="responder(this, false)">Metonímia</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> O que é metáfora?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Comparação implícita entre termos</button></li>
+          <li><button onclick="responder(this, false)">Exagero exagerado</button></li>
+          <li><button onclick="responder(this, false)">Substituição de palavra por outra relacionada</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='portugues.html'" aria-label="Voltar à página de Português">
+        ← Voltar à Página de Português
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

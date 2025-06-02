@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Literatura - Módulo 1: Introdução à Literatura</title>
+  <link rel="stylesheet" href="modulos.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 1: Introdução à Literatura">
+    <h1>Módulo 1: Introdução à Literatura</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase1-lit-1-title" tabindex="0">
+      <h2 id="fase1-lit-1-title">Fase 1: O que é Literatura?</h2>
+      <p>
+        Literatura é uma forma de expressão artística que utiliza a linguagem como instrumento. Vai além da informação: provoca reflexão, emoção e imaginação.
+      </p>
+      <p>
+        Ela está presente em diversos gêneros e formas, como poesia, romance, conto e teatro.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=J7xRWpNJtaU', '_blank')" aria-label="Assistir aula sobre o que é literatura no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Qual a principal característica da literatura?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Uso estético e criativo da linguagem</button></li>
+          <li><button onclick="responder(this, false)">Transmissão de dados científicos</button></li>
+          <li><button onclick="responder(this, false)">Instruções técnicas e manuais</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Funções da Literatura">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase1-lit-2-title" tabindex="0">
+      <h2 id="fase1-lit-2-title">Fase 2: Funções da Literatura</h2>
+      <p>
+        A literatura pode entreter, ensinar, provocar reflexão, preservar a cultura e representar a realidade.
+      </p>
+      <p>
+        Ela dialoga com o contexto histórico e social de cada época, moldando e sendo moldada por ele.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=05MzXq_4BoU', '_blank')" aria-label="Assistir aula sobre funções da literatura no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" style="margin-top:1rem;">
+        <p><strong>Flashcard:</strong> Cite uma função importante da literatura.</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-lit-funcao">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-lit-funcao" class="resposta escondida" tabindex="-1">
+          Provocar reflexão crítica sobre a realidade social.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Gêneros Literários">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase1-lit-3-title" tabindex="0">
+      <h2 id="fase1-lit-3-title">Fase 3: Gêneros Literários</h2>
+      <p>
+        Os gêneros literários se dividem em três grandes grupos: lírico, narrativo e dramático.
+      </p>
+      <ul>
+        <li><strong>Lírico:</strong> expressa sentimentos e emoções (poemas, sonetos).</li>
+        <li><strong>Narrativo:</strong> conta uma história com personagens e enredo (romances, contos).</li>
+        <li><strong>Dramático:</strong> texto feito para ser encenado (peças de teatro).</li>
+      </ul>
+      <button onclick="window.open('https://www.youtube.com/watch?v=X4OWMQxFDqY', '_blank')" aria-label="Assistir aula sobre gêneros literários no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão:</strong> Qual gênero é predominante em peças teatrais?</p>
+        <ul>
+          <li><button onclick="responder(this, false)">Lírico</button></li>
+          <li><button onclick="responder(this, false)">Narrativo</button></li>
+          <li><button onclick="responder(this, true)">Dramático</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='literatura.html'" aria-label="Voltar à página de Literatura">
+        ← Voltar à Página de Literatura
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

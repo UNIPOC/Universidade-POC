@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Literatura - Módulo 3: Literatura Mundial</title>
+  <link rel="stylesheet" href="modulos.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 3: Literatura Mundial">
+    <h1>Módulo 3: Literatura Mundial</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase3-lit-1-title" tabindex="0">
+      <h2 id="fase3-lit-1-title">Fase 1: Introdução à Literatura Mundial</h2>
+      <p>
+        A literatura mundial abrange as produções literárias de diversas culturas e épocas, permitindo o contato com diferentes perspectivas humanas e históricas.
+      </p>
+      <p>
+        Desde os épicos da Antiguidade até os romances modernos, ela revela as transformações da linguagem, da sociedade e da arte ao redor do mundo.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=jsZmJKUeO_g', '_blank')" aria-label="Assistir aula introdutória sobre literatura mundial no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão:</strong> Qual a principal característica da literatura mundial?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Diversidade cultural e histórica</button></li>
+          <li><button onclick="responder(this, false)">Exclusividade da língua portuguesa</button></li>
+          <li><button onclick="responder(this, false)">Apenas obras pós-modernas</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Grandes Obras da Literatura Mundial">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase3-lit-2-title" tabindex="0">
+      <h2 id="fase3-lit-2-title">Fase 2: Grandes Obras da Literatura Mundial</h2>
+      <p>
+        Entre as obras mais influentes da literatura mundial, podemos citar:
+      </p>
+      <ul>
+        <li><strong>A Ilíada</strong> (Homero, Grécia Antiga)</li>
+        <li><strong>A Divina Comédia</strong> (Dante Alighieri, Itália)</li>
+        <li><strong>Dom Quixote</strong> (Miguel de Cervantes, Espanha)</li>
+        <li><strong>Hamlet</strong> (William Shakespeare, Inglaterra)</li>
+        <li><strong>Guerra e Paz</strong> (Liev Tolstói, Rússia)</li>
+      </ul>
+      <button onclick="window.open('https://www.youtube.com/watch?v=whsOVYr6CqM', '_blank')" aria-label="Assistir aula sobre grandes obras da literatura mundial no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" style="margin-top:1rem;">
+        <p><strong>Flashcard:</strong> Quem escreveu "Dom Quixote"?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-litmundial-1">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-litmundial-1" class="resposta escondida" tabindex="-1">
+          Miguel de Cervantes.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Movimentos Literários Internacionais">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase3-lit-3-title" tabindex="0">
+      <h2 id="fase3-lit-3-title">Fase 3: Movimentos Literários Internacionais</h2>
+      <p>
+        Os principais movimentos literários que marcaram a literatura mundial:
+      </p>
+      <ul>
+        <li><strong>Classicismo:</strong> Harmonia, racionalismo e inspiração greco-romana.</li>
+        <li><strong>Romantismo:</strong> Emoção, subjetividade, nacionalismo.</li>
+        <li><strong>Realismo/Naturalismo:</strong> Crítica social, objetividade e descrição científica.</li>
+        <li><strong>Modernismo:</strong> Ruptura com o passado, liberdade formal.</li>
+        <li><strong>Pós-modernismo:</strong> Fragmentação, metalinguagem, intertextualidade.</li>
+      </ul>
+      <button onclick="window.open('https://www.youtube.com/watch?v=O3dyaS8Dbak', '_blank')" aria-label="Assistir aula sobre movimentos literários no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão:</strong> O movimento literário que valoriza a emoção e a subjetividade é:</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Romantismo</button></li>
+          <li><button onclick="responder(this, false)">Realismo</button></li>
+          <li><button onclick="responder(this, false)">Classicismo</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='literatura.html'" aria-label="Voltar à página de Literatura">
+        ← Voltar à Página de Literatura
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filosofia</title>
+  <link rel="stylesheet" href="disciplinas.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="materia">
+    <header>
+      <h1>Filosofia</h1>
+      <p>
+        Explore os principais conceitos da filosofia, desde os pré-socráticos até a filosofia contemporânea, abordando ética, epistemologia, lógica e política.
+      </p>
+    </header>
+
+    <div class="modulos">
+      <button class="modulo" id="modulo-1">Módulo 1: Filosofia Antiga</button>
+      <button class="modulo" id="modulo-2">Módulo 2: Filosofia Medieval</button>
+      <button class="modulo" id="modulo-3">Módulo 3: Filosofia Moderna</button>
+      <button class="modulo" id="modulo-4">Módulo 4: Filosofia Contemporânea</button>
+      <button class="modulo" id="modulo-5">Módulo 5: Ética</button>
+      <button class="modulo" id="modulo-6">Módulo 6: Lógica</button>
+      <button class="modulo" id="modulo-7">Módulo 7: Epistemologia</button>
+      <button class="modulo" id="modulo-8">Módulo 8: Filosofia Política</button>
+    </div>
+
+    <div style="margin-top: 3rem; display: flex; justify-content: center;">
+      <button id="voltar-btn" class="botao-voltar">← Voltar</button>
+    </div>
+  </section>
+
+  <script>
+    const botoesModulos = document.querySelectorAll('.modulo');
+    botoesModulos.forEach(botao => {
+      botao.addEventListener('click', () => {
+        switch (botao.id) {
+          case 'modulo-1':
+            window.location.href = 'modulos/filosofia/filosofia-antiga.html';
+            break;
+          case 'modulo-2':
+            window.location.href = 'modulos/filosofia/filosofia-medieval.html';
+            break;
+          case 'modulo-3':
+            window.location.href = 'modulos/filosofia/filosofia-moderna.html';
+            break;
+          case 'modulo-4':
+            window.location.href = 'modulos/filosofia/filosofia-contemporanea.html';
+            break;
+          case 'modulo-5':
+            window.location.href = 'modulos/filosofia/etica.html';
+            break;
+          case 'modulo-6':
+            window.location.href = 'modulos/filosofia/logica.html';
+            break;
+          case 'modulo-7':
+            window.location.href = 'modulos/filosofia/epistemologia.html';
+            break;
+          case 'modulo-8':
+            window.location.href = 'modulos/filosofia/filosofia-politica.html';
+            break;
+        }
+      });
+    });
+
+    const botaoVoltar = document.getElementById("voltar-btn");
+    if (botaoVoltar) {
+      botaoVoltar.addEventListener("click", e => {
+        e.preventDefault();
+        window.location.href = "vestibulares.html";
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Módulo 6 - Produção Textual</title>
+  <link rel="stylesheet" href="modulos.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 6: Produção Textual">
+    <h1>Módulo 6: Produção Textual</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase6-1-title" tabindex="0">
+      <h2 id="fase6-1-title">Fase 1: Planejamento do Texto</h2>
+      <p>
+        O planejamento é o primeiro passo para uma boa produção textual. Defina o tema, o público e o objetivo do texto.
+      </p>
+      <p>
+        Organize as ideias principais em tópicos para guiar sua escrita.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=6P8HgYJPZl0', '_blank')" aria-label="Assistir aula Planejamento do Texto no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Qual é o objetivo principal do planejamento?</p>
+        <ul>
+          <li><button onclick="responder(this, true)" aria-pressed="false">Organizar as ideias antes de escrever</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Escrever o texto diretamente sem pensar</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Ignorar o público-alvo</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Estrutura do Texto">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase6-2-title" tabindex="0">
+      <h2 id="fase6-2-title">Fase 2: Estrutura do Texto</h2>
+      <p>
+        A estrutura típica do texto é composta por introdução, desenvolvimento e conclusão.
+      </p>
+      <p>
+        Cada parte deve ter um papel específico para garantir clareza e coerência.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=RcvbORPq9xk', '_blank')" aria-label="Assistir aula Estrutura do Texto no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 1:</strong> Qual a função da introdução?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-introducao">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-introducao" class="resposta escondida" tabindex="-1">
+          Apresentar o tema e despertar o interesse do leitor.
+        </p>
+      </div>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 2:</strong> O que deve conter o desenvolvimento?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-desenvolvimento">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-desenvolvimento" class="resposta escondida" tabindex="-1">
+          Apresentar os argumentos e ideias que sustentam o tema.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Revisão e Edição">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase6-3-title" tabindex="0">
+      <h2 id="fase6-3-title">Fase 3: Revisão e Edição</h2>
+      <p>
+        Após escrever, revise o texto para corrigir erros de ortografia, gramática e coerência.
+      </p>
+      <p>
+        A edição melhora a clareza, a coesão e o impacto do texto final.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=ZzzbXipIqwc', '_blank')" aria-label="Assistir aula Revisão e Edição no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Qual é o principal objetivo da revisão?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Encontrar e corrigir erros</button></li>
+          <li><button onclick="responder(this, false)">Ignorar erros para escrever mais rápido</button></li>
+          <li><button onclick="responder(this, false)">Copiar texto de outras fontes</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='portugues.html'" aria-label="Voltar à página de Português">
+        ← Voltar à Página de Português
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Módulo 1 - Português</title>
+<link rel="icon" href="Pipo Lendo.png" type="image/png" />
+  <link rel="stylesheet" href="modulos.css" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 1: Introdução à Língua Portuguesa">
+    <h1>Módulo 1: Introdução à Língua Portuguesa</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase1-title" tabindex="0">
+      <h2 id="fase1-title">Fase 1: História da Língua Portuguesa</h2>
+      <p>
+        A língua portuguesa tem sua origem no latim vulgar, trazido pelos romanos à Península Ibérica no século III a.C. 
+        Essa língua passou por transformações ao longo dos séculos, influenciada pelas invasões germânicas, 
+        pelos mouros e pelo contato com línguas locais, resultando na diversidade dos dialetos medievais que deram origem ao português moderno.
+      </p>
+      <p>
+        O português espalhou-se pelo mundo durante a Era dos Descobrimentos, tornando-se língua oficial em vários países, 
+        e hoje é falado por mais de 270 milhões de pessoas.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=0VXBD6ItzMI', '_blank')" aria-label="Assistir aula História da Língua Portuguesa no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true">
+        <p><strong>Questão 1:</strong> Qual a origem da língua portuguesa?</p>
+        <ul>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Grego Clássico</button></li>
+          <li><button onclick="responder(this, false)" aria-pressed="false">Árabe Antigo</button></li>
+          <li><button onclick="responder(this, true)" aria-pressed="false">Latim Vulgar</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> Qual evento histórico ajudou a espalhar o português pelo mundo?</p>
+        <ul>
+          <li><button onclick="responder(this, false)">Revolução Industrial</button></li>
+          <li><button onclick="responder(this, true)">Era dos Descobrimentos</button></li>
+          <li><button onclick="responder(this, false)">Era Romântica</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Fonética e Fonologia">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase2-title" tabindex="0">
+      <h2 id="fase2-title">Fase 2: Fonética e Fonologia</h2>
+      <p>
+        A fonética é o estudo dos sons da fala humana, analisando como eles são produzidos, transmitidos e percebidos. 
+        Já a fonologia se ocupa da organização desses sons no sistema linguístico, suas funções e padrões.
+      </p>
+      <p>
+        Compreender fonética e fonologia é fundamental para aprimorar a pronúncia, a acentuação e a compreensão oral, 
+        além de ser base para o estudo da ortografia.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=PH58OAk2lA4', '_blank')" aria-label="Assistir aula Fonética e Fonologia no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 1:</strong> O que estuda a fonologia?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-fonologia">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-fonologia" class="resposta escondida" tabindex="-1">
+          O funcionamento dos sons na estrutura da língua, incluindo padrões e regras que determinam sua organização.
+        </p>
+      </div>
+
+      <div class="flashcard" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Flashcard 2:</strong> Qual a diferença entre fonética e fonologia?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-diferenca">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-diferenca" class="resposta escondida" tabindex="-1">
+          Fonética estuda os sons fisicamente, fonologia analisa a função desses sons no sistema linguístico.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Ortografia">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase3-title" tabindex="0">
+      <h2 id="fase3-title">Fase 3: Ortografia</h2>
+      <p>
+        Ortografia é o conjunto de regras que determina a forma correta de escrever as palavras, garantindo clareza e padronização na comunicação escrita.
+        Inclui aspectos como o uso correto de letras, acentuação, hífen e pontuação.
+      </p>
+      <p>
+        O domínio da ortografia é essencial para a produção textual de qualidade e para evitar ambiguidades na interpretação de textos.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=Lt54KfQGtdg', '_blank')" aria-label="Assistir aula Ortografia no YouTube">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 1:</strong> Ortografia trata de:</p>
+        <ul>
+          <li><button onclick="responder(this, false)">Pronúncia correta</button></li>
+          <li><button onclick="responder(this, true)">Forma correta de escrever</button></li>
+          <li><button onclick="responder(this, false)">Uso dos verbos</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 2:</strong> Qual das palavras está escrita corretamente?</p>
+        <ul>
+          <li><button onclick="responder(this, false)">Excessão</button></li>
+          <li><button onclick="responder(this, true)">Exceção</button></li>
+          <li><button onclick="responder(this, false)">Exceçãoe</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <div class="questao" aria-live="polite" aria-atomic="true" style="margin-top:1rem;">
+        <p><strong>Questão 3:</strong> Quando se usa o hífen em palavras compostas?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Quando os elementos mantêm sentido próprio e são ligados</button></li>
+          <li><button onclick="responder(this, false)">Sempre que houver mais de duas palavras</button></li>
+          <li><button onclick="responder(this, false)">Nunca se usa hífen em palavras compostas</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='portugues.html'" aria-label="Voltar à página de Português">
+        ← Voltar à Página de Português
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

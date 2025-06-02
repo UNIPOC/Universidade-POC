@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Literatura - Módulo 4: Gêneros Literários</title>
+  <link rel="stylesheet" href="modulos.css" />
+  <link rel="icon" href="Pipo Lendo.png" type="image/png" />
+</head>
+<body>
+  <section class="modulo-fases" aria-label="Módulo 4: Gêneros Literários">
+    <h1>Módulo 4: Gêneros Literários</h1>
+
+    <div class="fase" id="fase-1" role="region" aria-labelledby="fase4-lit-1-title" tabindex="0">
+      <h2 id="fase4-lit-1-title">Fase 1: O que são Gêneros Literários?</h2>
+      <p>
+        Gêneros literários são categorias utilizadas para classificar textos literários de acordo com suas características formais e temáticas. Os três principais são: épico, lírico e dramático.
+      </p>
+      <p>
+        Essa divisão facilita o estudo da literatura, pois agrupa textos com estruturas e finalidades semelhantes.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=tvBLUowxdsY', '_blank')" aria-label="Assistir aula introdutória sobre gêneros literários">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão:</strong> Qual das alternativas representa um gênero literário?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Gênero lírico</button></li>
+          <li><button onclick="responder(this, false)">Gênero jornalístico</button></li>
+          <li><button onclick="responder(this, false)">Gênero técnico</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-2')" aria-label="Avançar para a fase 2: Gênero Épico">
+        Avançar para Fase 2 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-2" role="region" aria-labelledby="fase4-lit-2-title" tabindex="0">
+      <h2 id="fase4-lit-2-title">Fase 2: Gênero Épico (Narrativo)</h2>
+      <p>
+        O gênero épico, também chamado de narrativo, caracteriza-se pela narração de feitos grandiosos e heróicos. É comum o uso da terceira pessoa e a presença de um narrador.
+      </p>
+      <p>
+        Exemplos clássicos são os poemas "Ilíada" e "Eneida", além de romances como "Os Lusíadas".
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=JXH7I9T4MXA', '_blank')" aria-label="Assistir aula sobre gênero épico">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" style="margin-top:1rem;">
+        <p><strong>Flashcard:</strong> Qual é a principal característica do gênero épico?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-epico">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-epico" class="resposta escondida" tabindex="-1">
+          Narração de ações grandiosas, com heróis e feitos históricos.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-3')" aria-label="Avançar para a fase 3: Gênero Lírico">
+        Avançar para Fase 3 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-3" role="region" aria-labelledby="fase4-lit-3-title" tabindex="0">
+      <h2 id="fase4-lit-3-title">Fase 3: Gênero Lírico</h2>
+      <p>
+        O gênero lírico expressa emoções, sentimentos e pensamentos subjetivos, geralmente em forma de poesia. O eu lírico é uma figura central nesse tipo de texto.
+      </p>
+      <p>
+        É marcado por musicalidade, métrica e figuras de linguagem.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=62IECTkRQek', '_blank')" aria-label="Assistir aula sobre gênero lírico">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="questao" style="margin-top:1rem;">
+        <p><strong>Questão:</strong> O eu lírico está mais presente em qual gênero?</p>
+        <ul>
+          <li><button onclick="responder(this, true)">Gênero lírico</button></li>
+          <li><button onclick="responder(this, false)">Gênero dramático</button></li>
+          <li><button onclick="responder(this, false)">Gênero épico</button></li>
+        </ul>
+        <p class="feedback" role="alert" aria-live="assertive"></p>
+      </div>
+
+      <button class="proxima-fase" onclick="mostrarFase('fase-4')" aria-label="Avançar para a fase 4: Gênero Dramático">
+        Avançar para Fase 4 →
+      </button>
+    </div>
+
+    <div class="fase escondida" id="fase-4" role="region" aria-labelledby="fase4-lit-4-title" tabindex="0">
+      <h2 id="fase4-lit-4-title">Fase 4: Gênero Dramático</h2>
+      <p>
+        O gênero dramático é aquele feito para ser encenado. A estrutura inclui diálogos, personagens e geralmente indicações cênicas.
+      </p>
+      <p>
+        É o gênero das peças teatrais, como as tragédias gregas e os dramas modernos.
+      </p>
+      <button onclick="window.open('https://www.youtube.com/watch?v=W7zWS_uwlhE', '_blank')" aria-label="Assistir aula sobre gênero dramático">
+        📺 Assistir Aula no YouTube
+      </button>
+
+      <div class="flashcard" style="margin-top:1rem;">
+        <p><strong>Flashcard:</strong> Qual é a função principal do gênero dramático?</p>
+        <button onclick="mostrarResposta(this)" aria-expanded="false" aria-controls="resposta-dramatico">
+          Mostrar Resposta
+        </button>
+        <p id="resposta-dramatico" class="resposta escondida" tabindex="-1">
+          Ser representado em cena por atores, como no teatro.
+        </p>
+      </div>
+
+      <button class="proxima-fase" onclick="window.location.href='literatura.html'" aria-label="Voltar à página de Literatura">
+        ← Voltar à Página de Literatura
+      </button>
+    </div>
+  </section>
+
+  <script src="modulos.js"></script>
+</body>
+</html>

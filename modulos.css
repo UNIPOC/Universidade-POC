@@ -5,70 +5,68 @@
   box-sizing: border-box;
 }
 
+/* Fonte e fundo geral */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom, #f8ede6, #ffffff);
+  background-color: #f8f0fc;
   color: #3A2E44;
   line-height: 1.6;
   padding: 1rem;
 }
 
-/* Cabeçalho */
-header {
-  background-color: #8B5EBE;
-  color: white;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
+/* Título principal */
 header h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: #8B5EBE;
+  text-align: center;
   margin-bottom: 0.5rem;
 }
 
+/* Subtítulo */
 header p {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #5A3A8B;
 }
 
-/* Container principal */
+/* Conteúdo geral */
 main {
-  max-width: 1000px;
-  margin: 2rem auto;
-  background: white;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 2rem;
+  background-color: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(138, 90, 185, 0.1);
+  box-shadow: 0 4px 20px rgba(139, 94, 190, 0.1);
 }
 
-/* Títulos dos conteúdos */
+/* Títulos dentro do conteúdo */
 main h2 {
   color: #5A3A8B;
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
+  margin-top: 2rem;
+  font-size: 1.8rem;
 }
 
 main h3 {
+  color: #8B5EBE;
   margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #7A4DC4;
+  font-size: 1.4rem;
 }
 
 /* Parágrafos */
 main p {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
+  margin-top: 1rem;
+  font-size: 1rem;
   text-align: justify;
 }
 
 /* Listas */
-main ul, main ol {
-  margin-left: 2rem;
-  margin-bottom: 1rem;
+main ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
 }
 
-main li {
+main ul li {
   margin-bottom: 0.5rem;
 }
 
@@ -78,11 +76,11 @@ main img {
   height: auto;
   display: block;
   margin: 1rem auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
 }
 
 /* Botão voltar */
+#voltar-btn,
 .botao-voltar {
   background: linear-gradient(135deg, #7a4dc4, #a583e3);
   color: white;
@@ -93,28 +91,30 @@ main img {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(122, 77, 196, 0.3);
   transition: transform 0.2s ease;
-  margin-top: 2rem;
+  display: block;
+  margin: 2rem auto 0 auto;
 }
 
+#voltar-btn:hover,
 .botao-voltar:hover {
   transform: translateY(-3px);
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
   main {
     padding: 1rem;
   }
 
-  main h2 {
-    font-size: 1.3rem;
+  header h1 {
+    font-size: 2rem;
   }
 
-  .botao-voltar {
-    width: 100%;
+  main h2 {
+    font-size: 1.5rem;
+  }
+
+  main h3 {
+    font-size: 1.2rem;
   }
 }

@@ -1,120 +1,166 @@
-/* Reset básico */
+/* Reset e base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fonte e fundo geral */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f0fc;
+  background-color: #f8f0fb;
   color: #3A2E44;
   line-height: 1.6;
   padding: 1rem;
 }
 
-/* Título principal */
-header h1 {
-  font-size: 2.5rem;
-  color: #8B5EBE;
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-/* Subtítulo */
-header p {
-  font-size: 1.1rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #5A3A8B;
-}
-
-/* Conteúdo geral */
-main {
+/* Container principal */
+.modulo-fases {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(139, 94, 190, 0.1);
+  margin: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.6s ease;
 }
 
-/* Títulos dentro do conteúdo */
-main h2 {
+/* Título do módulo */
+.modulo-fases h1 {
+  text-align: center;
   color: #5A3A8B;
-  margin-top: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Cada fase */
+.fase {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #f2e7fb;
+  border-left: 6px solid #8B5EBE;
+  border-radius: 16px;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fase h2 {
+  color: #5A3A8B;
   font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
-main h3 {
-  color: #8B5EBE;
-  margin-top: 1.5rem;
-  font-size: 1.4rem;
+.fase p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
-/* Parágrafos */
-main p {
-  margin-top: 1rem;
-  font-size: 1rem;
-  text-align: justify;
-}
-
-/* Listas */
-main ul {
-  margin-top: 1rem;
-  padding-left: 1.5rem;
-}
-
-main ul li {
-  margin-bottom: 0.5rem;
-}
-
-/* Imagens */
-main img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem auto;
-  border-radius: 12px;
-}
-
-/* Botão voltar */
-#voltar-btn,
-.botao-voltar {
+/* Botões gerais */
+.fase button,
+.questao button,
+.flashcard button,
+.proxima-fase {
   background: linear-gradient(135deg, #7a4dc4, #a583e3);
-  color: white;
+  color: #fff;
   border: none;
-  padding: 0.7rem 1.4rem;
-  border-radius: 10px;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(122, 77, 196, 0.3);
-  transition: transform 0.2s ease;
-  display: block;
-  margin: 2rem auto 0 auto;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(138, 80, 180, 0.2);
 }
 
-#voltar-btn:hover,
-.botao-voltar:hover {
+.fase button:hover,
+.questao button:hover,
+.flashcard button:hover,
+.proxima-fase:hover {
   transform: translateY(-3px);
+  background: linear-gradient(135deg, #5A3A8B, #A67FCE);
+  box-shadow: 0 6px 14px rgba(90, 58, 139, 0.3);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  main {
-    padding: 1rem;
+/* Questões */
+.questao {
+  margin-top: 1.5rem;
+}
+
+.questao ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.questao li {
+  margin: 0.6rem 0;
+}
+
+.questao .feedback {
+  margin-top: 0.6rem;
+  font-weight: bold;
+}
+
+/* Flashcards */
+.flashcard {
+  background-color: #e8d9f8;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.flashcard .resposta {
+  margin-top: 0.8rem;
+  color: #3A2E44;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Botão de avançar */
+.proxima-fase {
+  display: block;
+  margin-top: 2rem;
+}
+
+/* Esconder fases */
+.escondida {
+  display: none;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .modulo-fases {
+    padding: 1.2rem;
   }
 
-  header h1 {
-    font-size: 2rem;
+  .fase {
+    padding: 1.2rem;
   }
 
-  main h2 {
-    font-size: 1.5rem;
+  .fase button,
+  .proxima-fase {
+    width: 100%;
+    font-size: 1rem;
   }
 
-  main h3 {
-    font-size: 1.2rem;
+  .modulo-fases h1 {
+    font-size: 1.8rem;
+  }
+
+  .fase h2 {
+    font-size: 1.4rem;
   }
 }

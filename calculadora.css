@@ -43,7 +43,8 @@ body {
 .titulo {
   font-size: 2.4rem;
   margin-bottom: 0.2rem;
-  text-shadow: 0 0 10px var(--branco);
+  color: var(--branco);
+  /* Removed neon text-shadow */
 }
 
 .subtitulo {
@@ -63,7 +64,7 @@ body {
   font-size: 1.6rem;
   margin-bottom: 1.2rem;
   color: var(--branco);
-  text-shadow: 0 0 6px var(--roxo-claro);
+  text-shadow: none; /* Removed neon effect */
 }
 
 .opcoes {
@@ -115,7 +116,7 @@ body {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: var(--branco);
-  text-shadow: 0 0 10px var(--roxo-claro);
+  text-shadow: none; /* Removed neon effect */
 }
 
 #planeta-container {
@@ -161,7 +162,7 @@ body {
   margin-bottom: 0.8rem;
   font-weight: 700;
   color: var(--bege-claro);
-  text-shadow: 0 0 4px var(--branco);
+  text-shadow: none; /* Removed neon */
 }
 
 #lista-dicas {
